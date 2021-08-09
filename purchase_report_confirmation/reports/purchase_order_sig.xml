@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <template id="report_quotation_inherit_purchase" inherit_id="purchase.report_purchaseorder_document">
+
+
+            <xpath expr="//div[@class='page']/p[@t-field='o.notes']" position="after">
+
+
+                <br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/><br/><br/><br/>
+                <footer>
+                <table width="100%">
+                     <thead>
+                        <tr t-if="o.state == 'draft'">
+                            <th width="40%" class="text-center">
+                                <strong>Printed By</strong>
+                            </th>
+
+                        </tr>
+                         <tr t-if="o.state != 'draft'">
+                            <th class="text-center" width="50%">
+                                <strong>Approving Financial Manager</strong>
+                            </th>
+                            <th class="text-center" width="50%">
+                                <strong>Purchase Representative	</strong>
+                            </th>
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr t-if="o.state == 'draft'">
+                            <td class="text-center">
+                                <span t-field="o.printer_name"/>
+                            </td>
+
+                        </tr>
+                        <tr t-if="o.state != 'draft'">
+                            <td class="text-center">
+                                <span t-field="o.financial_manager_confirmation"/><br/>
+                                <span t-field="o.f_m_confirmation_date"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="o.user_id"/>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                </footer>
+            </xpath>
+
+        </template>
+
+    </data>
+</odoo>

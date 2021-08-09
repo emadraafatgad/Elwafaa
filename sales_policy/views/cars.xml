@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="car_data_form_view" model="ir.ui.view">
+            <field name="name">car_data_form_view</field>
+            <field name="model">car.data</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="car_type"/>
+                                <field name="plate_number"/>
+                                <field name="customer"/>
+
+                            </group>
+                            <group>
+
+                                 <field name="car_model"/>
+                                <field name="chassis_number"/>
+                                <field name="driver_name"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="car_data_tree_view" model="ir.ui.view">
+            <field name="name">car_data_tree_view</field>
+            <field name="model">car.data</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="car_type"/>
+                    <field name="plate_number"/>
+                    <field name="chassis_number"/>
+                    <field name="car_model"/>
+                    <field name="driver_name"/>
+                    <field name="customer"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_car_data" model="ir.actions.act_window">
+            <field name="name">Car Data</field>
+            <field name="res_model">car.data</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record id="car_model_form_view" model="ir.ui.view">
+            <field name="name">car_model_form_view</field>
+            <field name="model">model.car</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+
+                            </group>
+                            <group>
+                                <field name="car_type"/>
+
+                            </group>
+
+                        </group>
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="car_model_tree_view" model="ir.ui.view">
+            <field name="name">car_model_tree_view</field>
+            <field name="model">model.car</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="car_type"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_car_model" model="ir.actions.act_window">
+            <field name="name">Car Model</field>
+            <field name="res_model">model.car</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_cars_root_menu"
+                  name="Cars"
+                  parent="sale.sale_menu_root"
+                  sequence="10"
+                  groups="sales_policy.sales_policy_group"
+        />
+
+        <menuitem id="menu_car_data_menu"
+                  name="Cars Data"
+                  action="action_car_data"
+                  parent="menu_cars_root_menu"
+                  sequence="1"
+                  groups="sales_policy.sales_policy_group"
+        />
+        <menuitem id="menu_car_type_menu"
+                  name="Cars Model"
+                  action="action_car_model"
+                  parent="menu_cars_root_menu"
+                  sequence="2"
+                  groups="sales_policy.sales_policy_group"
+        />
+
+
+    </data>
+</odoo>
+
+
+

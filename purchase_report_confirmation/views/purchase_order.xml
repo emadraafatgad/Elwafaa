@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <record id="purchase_order_inherit_form_view" model="ir.ui.view">
+            <field name="name">purchase_order_inherit_form_view</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group/group/field[@name='date_order']" position="after">
+                    <field name="printer_name" attrs="{'invisible':[('state', '!=','draft')]}"/>
+                    <field name="financial_manager_confirmation" attrs="{'invisible':[('state', '=','draft')]}"/>
+                    <field name="f_m_confirmation_date" attrs="{'invisible':[('state', '=','draft')]}"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

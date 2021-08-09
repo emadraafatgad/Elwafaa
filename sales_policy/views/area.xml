@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="area_data_form_view" model="ir.ui.view">
+            <field name="name">area_data_form_view</field>
+            <field name="model">area.data</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+<!--                                <field name="center"/>-->
+<!--                                <field name="country"/>-->
+
+                            </group>
+                            <group>
+
+<!--                                <field name="governorate"/>-->
+                                <field name="workshop_number" readonly="1"/>
+                                <field name="merchants_number" readonly="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Workshops list" name="workshop">
+                                <!--                                <group>-->
+                                <field name="workshop_table" widget="one2many_list" force_save="1">
+                                    <tree string="Workshop Table" editable="0" create="0">
+                                        <field name="name" force_save="1" readonly="1"/>
+                                        <field name="phone" force_save="1" readonly="1"/>
+                                    </tree>
+                                </field>
+                                <!--                                </group>-->
+                            </page>
+                            <page string="Merchants list" name="merchants">
+                                <!--                                <group>-->
+                                <field name="merchants_table" widget="one2many_list" force_save="1">
+                                    <tree string="Merchants Table" editable="0" create="0">
+                                        <field name="name" force_save="1" readonly="1"/>
+                                        <field name="phone" force_save="1" readonly="1"/>
+                                    </tree>
+                                </field>
+                                <!--                                </group>-->
+                            </page>
+                        </notebook>
+
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="area_data_tree_view" model="ir.ui.view">
+            <field name="name">area_data_tree_view</field>
+            <field name="model">area.data</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+<!--                    <field name="center"/>-->
+<!--                    <field name="governorate"/>-->
+<!--                    <field name="country"/>-->
+                    <field name="workshop_number"/>
+                    <field name="merchants_number"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_area_data" model="ir.actions.act_window">
+            <field name="name">Area Data</field>
+            <field name="res_model">area.data</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+
+
+        <record id="area_record_form_view" model="ir.ui.view">
+            <field name="name">area_record_form_view</field>
+            <field name="model">area.record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="center"/>
+
+                            </group>
+                            <group>
+
+                                <field name="governorate"/>
+                                <field name="country"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="area_record_tree_view" model="ir.ui.view">
+            <field name="name">area_record_tree_view</field>
+            <field name="model">area.record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="center"/>
+                    <field name="governorate"/>
+                    <field name="country"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_area_record" model="ir.actions.act_window">
+            <field name="name">Area Record</field>
+            <field name="res_model">area.record</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+         <menuitem id="menu_area_menu_root"
+                  name="Area"
+                  parent="sale.sale_menu_root"
+                  sequence="12"
+                  groups="sales_policy.sales_policy_group"
+        />
+        <menuitem id="menu_area_record_menu"
+                  name="Area Record"
+                  action="action_area_record"
+                  parent="menu_area_menu_root"
+                  sequence="1"
+                  groups="sales_policy.sales_policy_group"
+        />
+
+
+
+         <menuitem id="menu_area_menu"
+                  name="Area Data"
+                  action="action_area_data"
+                  parent="menu_area_menu_root"
+                  sequence="12"
+                  groups="sales_policy.sales_policy_group"
+        />
+
+
+    </data>
+</odoo>
+
+
+
