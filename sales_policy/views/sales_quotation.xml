@@ -11,9 +11,20 @@
 
 
                 </xpath>
+
                 <xpath expr="//sheet/notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='price_unit']" position="replace">
                     <!-- Add your fields or attributes here -->
                   <field name="price_unit" readonly="1"/>
+
+
+                </xpath>
+                <xpath expr="//sheet/notebook/page[@name='other_information']" position="after">
+                        <page string="Cars" name="cars">
+                            <group>
+                                    <field name="cars" />
+                            </group>
+                        </page>
+
 
 
                 </xpath>

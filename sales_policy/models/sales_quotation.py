@@ -1,6 +1,6 @@
 from odoo import models, fields, api, exceptions, _
 
-class SalesQuotationInherit(models.Model):
+class SalesQuotationLineInherit(models.Model):
     _inherit = 'sale.order.line'
 
 
@@ -91,4 +91,11 @@ class SalesQuotationInherit(models.Model):
         #                                                                                   product.taxes_id, self.tax_id,
         #                                                                                   self.company_id)
         #     #
+
+
+class SalesQuotationInherit(models.Model):
+    _inherit = 'sale.order'
+
+
+    cars = fields.Many2many('car.data',string='Cars',domain="[('customer','=',partner_id)]")
 
