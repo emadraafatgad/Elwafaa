@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <template id="report_report_delivery_document" inherit_id="stock.report_delivery_document">
+
+
+            <xpath expr="//t/t/div[@class='page']/table/thead/tr/th[@name='td_sched_date_h']" position="after">
+
+                <th name="purchase_request_number">
+                    <strong>Purchase request Number</strong>
+                </th>
+                <th name="vendor_bill_no">
+                    <strong>Vendor Bill Number</strong>
+                </th>
+
+            </xpath>
+            <xpath expr="//t/t/div[@class='page']/table/tbody/tr/td[@name='td_sched_date']" position="after">
+
+                <td>
+                    <span t-field="o.purchase_order_no"/>
+                </td>
+                <td>
+                    <span t-field="o.vendor_bill_no"/>
+                </td>
+
+            </xpath>
+            <xpath expr="//t/t/div[@class='page']/p" position="after">
+                <br/><br/><br/><br/> <br/><br/><br/><br/> <br/><br/><br/><br/>
+                <br/><br/><br/><br/> <br/><br/><br/><br/>
+                <table align="right"  style="text-align:left" width="100%">
+                    <tr>
+                        <td colspan="2" align="center">
+                            <h5>&amp;nbsp; Committee members &amp;nbsp;</h5>
+                        </td>
+                        <td>
+                            <h5>&amp;nbsp; Committee head &amp;nbsp;</h5>
+                        </td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <h5>
+                                &amp;nbsp; Name ...................&amp;nbsp;
+                            </h5>
+                        </td>
+                        <td>
+                            <h5>
+                                &amp;nbsp; Name ...................&amp;nbsp;
+                            </h5>
+                        </td>
+                        <td>
+                            <h5>
+                                &amp;nbsp; Name ...................&amp;nbsp;
+                            </h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5>
+                                &amp;nbsp; Signature ...................&amp;nbsp;
+                            </h5>
+                        </td>
+                        <td>
+                            <h5>
+                                &amp;nbsp; Signature ...................&amp;nbsp;
+                            </h5>
+                        </td>
+                        <td>
+                            <h5>
+                                &amp;nbsp; Signature ...................&amp;nbsp;
+                            </h5>
+                        </td>
+                    </tr>
+                </table>
+            </xpath>
+
+
+        </template>
+
+    </data>
+</odoo>

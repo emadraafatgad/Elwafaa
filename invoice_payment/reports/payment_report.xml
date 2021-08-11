@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="report_wafa_payment_receipt" inherit_id="account.report_payment_receipt_document">
+            <xpath expr="//div[@t-if='o.amount']" position="after">
+                <div class="col-6" t-if="o.amount_for">
+                    <strong>Amount Reason:</strong>
+                    <span t-field="o.amount_for"/>
+                </div>
+            </xpath>
+            <xpath expr="//div[@class='row']" position="after">
+                <div t-if="o.payment_type == 'inbound'">
+                    <strong>Receiver Name:</strong>
+                    <span t-field="o.receiver_name"/>
+                    <br/>
+                    <strong>National ID :</strong>
+                    <span t-field="o.national_id"/>
+                    <br/>
+                    <strong>Collection Representative:</strong>
+                    <span t-field="o.collection_representative"/>
+                </div>
+                <div t-if="o.payment_type == 'outbound'" string="Address">
+                    <strong>Main Street:</strong>
+                    <span t-field="o.main_street"/>
+                    <br/>
+                    <strong>Sub Street :</strong>
+                    <span t-field="o.sub_street"/>
+                    <br/>
+                    <strong>City :</strong>
+                    <span t-field="o.city"/>
+                    <br/>
+                    <strong>Governorate:</strong>
+                    <span t-field="o.governorate"/>
+                    <br/>
+                    <strong>Country :</strong>
+                    <span t-field="o.country_name"/>
+                    <br/>
+                    <strong>Phone :</strong>
+                    <span t-field="o.phone"/>
+                    <br/>
+
+
+                </div>
+            </xpath>
+            <xpath expr="//table" position="after">
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <div t-if="o.payment_type == 'inbound'">
+                <br/><br/><br/>
+                <table align="right" dir="rtl" style="text-align:right" width="100%">
+                    <tr>
+                        <td>
+                            <h5>&amp;nbsp; representative signature &amp;nbsp;</h5>
+                        </td>
+                         <td>
+                            <h5>&amp;nbsp;  customer signature &amp;nbsp;</h5>
+                        </td>
+
+                         <td>
+                            <h5>&amp;nbsp;  treasury signature &amp;nbsp;</h5>
+                        </td>
+
+                    </tr>
+
+                     <tr>
+
+                        <td>
+                            <h2>
+                                &amp;nbsp;...................&amp;nbsp;
+                            </h2>
+                        </td>
+
+                        <td>
+                            <h2>
+                                 &amp;nbsp;...................&amp;nbsp;
+                            </h2>
+                        </td>
+                        <td>
+                            <h2>
+                                 &amp;nbsp;...................&amp;nbsp;
+                            </h2>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+                <div t-if="o.payment_type == 'outbound'">
+                <br/><br/><br/>
+                <table align="right" dir="rtl" style="text-align:right" width="100%">
+                    <tr>
+                        <td>
+                            <h5>&amp;nbsp; receiver name &amp;nbsp;</h5>
+                        </td>
+                         <td>
+                            <h5>&amp;nbsp; Specialist's signature &amp;nbsp;</h5>
+                        </td>
+
+
+
+                    </tr>
+
+                     <tr>
+                        <td>
+                            <h2>
+                                 &amp;nbsp;...................&amp;nbsp;
+                            </h2>
+                        </td>
+                        <td>
+                            <h2>
+                                 &amp;nbsp;...................&amp;nbsp;
+                            </h2>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+
+            </xpath>
+
+
+        </template>
+
+    </data>
+</odoo>

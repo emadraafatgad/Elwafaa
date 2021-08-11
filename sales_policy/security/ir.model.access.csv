@@ -16,6 +16,8 @@ workshop_table_group_access,workshop_table_group_access,model_workshop_table,sal
 area_record_group_access,area_record_group_access,model_area_record,sales_policy_group,1,1,1,1
 merchants_table_group_access,merchants_table_group_access,model_merchants_table,sales_policy_group,1,1,1,1
 car_model_group_access,car_model_group_access,model_model_car,sales_policy_group,1,1,1,1
+worker_name_group_access,worker_name_group_access,model_worker_name,sales_policy_group,1,1,1,1
+
 
 
 

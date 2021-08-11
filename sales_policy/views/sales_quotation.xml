@@ -20,9 +20,9 @@
                 </xpath>
                 <xpath expr="//sheet/notebook/page[@name='other_information']" position="after">
                         <page string="Cars" name="cars">
-                            <group>
+
                                     <field name="cars" />
-                            </group>
+
                         </page>
 
 

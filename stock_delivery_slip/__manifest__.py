@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Sales Policy",
+    'name': "Stock Delivery Slip",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -20,19 +20,14 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail','sale_management'],
+    'depends': ['base','mail','stock'],
 
     # always loaded
     'data': [
-        'security/contact.xml',
-        'security/ir.model.access.csv',
-        'views/pricelist_co.xml',
-        'views/customer.xml',
-        'views/cars.xml',
-        'views/area.xml',
-        'views/sales_quotation.xml',
-        'views/workshop.xml',
-        'reports/car_reception_detection.xml',
+        # 'security/contact.xml',
+        # 'security/ir.model.access.csv',
+        'views/delivery_slip.xml',
+        'reports/delivery_slip_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
