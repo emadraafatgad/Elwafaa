@@ -3,7 +3,7 @@ from odoo import models, fields, api, exceptions, _
 class ResPartnerModify(models.Model):
     _inherit = 'res.partner'
 
-    categories = fields.Selection([('company','Companies'),('individuals','Individuals'),('workshops','Workshops')],string='Categories',required=True)
+    categories = fields.Selection([('company','Companies'),('individuals','Individuals'),('workshops','Workshops')],string='Categories',required=True,default='company')
     company_activity=fields.Many2one('company.activity',string='Company Activity')
     company_category = fields.Selection([('a','A'),('b','B'),('c','C'),('d','D'),('competitive','Competitive')],string='Company Category')
     movement_responsible_name =fields.Char('Movement Responsible Name')

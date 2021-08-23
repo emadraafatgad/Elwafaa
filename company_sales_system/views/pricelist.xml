@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="pricelist_info_form_view" model="ir.ui.view">
+            <field name="name">pricelist_info_form_view</field>
+            <field name="model">pricelist.info</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_request" string="Sent Request" states="draft"
+                                type="object" class="oe_highlight"/>
+                        <button name="action_approve" string="Approve" states="request"
+                                type="object" class="oe_highlight"/>
+
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="company"/>
+                                <field name="sending_date"/>
+                                <field name="approve_date"/>
+                            </group>
+                            <group>
+                                <field name="end_date"/>
+                                <field name="sales_person"/>
+
+
+                            </group>
+
+                        </group>
+
+                         <notebook>
+                            <page string="Price list" name="pricelist">
+<!--                                <group>-->
+                                    <field name="pricelist" widget="one2many_list" force_save="1">
+                                        <tree string="Price List Table" editable="bottom">
+                                            <field name="product" force_save="1"/>
+                                            <field name="price" force_save="1"/>
+                                            <field name="price_percentage" force_save="1"/>
+                                            <field name="sign" force_save="1"/>
+                                            <field name="total" force_save="1"/>
+
+                                        </tree>
+                                    </field>
+<!--                                </group>-->
+                            </page>
+                        </notebook>
+
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="pricelist_info_tree_view" model="ir.ui.view">
+            <field name="name">pricelist_info_tree_view</field>
+            <field name="model">pricelist.info</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="company"/>
+                    <field name="sending_date"/>
+                    <field name="approve_date"/>
+                    <field name="end_date"/>
+                    <field name="sales_person"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_pricelist_data" model="ir.actions.act_window">
+            <field name="name">Price List</field>
+            <field name="res_model">pricelist.info</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="menu_pricelist_data_menu"
+                  name="Price List"
+                  action="action_pricelist_data"
+                  parent="menu_pipeline_root_menu"
+                  sequence="3"
+
+        />
+
+
+    </data>
+</odoo>
+
+
+

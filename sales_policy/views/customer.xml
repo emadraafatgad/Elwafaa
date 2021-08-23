@@ -11,43 +11,43 @@
                     <group>
 
                         <field name="categories"/>
-                        <field name="company_activity" attrs="{'invisible':[('categories', '!=', 'company')]}"/>
-                        <field name="company_category" attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
+                        <field name="company_activity" attrs="{'invisible':['|',('customer', '=', False),('categories', '!=', 'company')]}"/>
+                        <field name="company_category" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
                         <field name="movement_responsible_name"
-                               attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
+                               attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
                         <field name="movement_responsible_phone"
-                               attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
+                               attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
                     </group>
                     <group>
-                        <field name="accounting_manager_name" attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
+                        <field name="accounting_manager_name" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
                         <field name="accounting_manager_phone"
-                               attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
+                               attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
                         <field name="purchase_responsible_name"
-                               attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
+                               attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
                         <field name="purchase_responsible_phone"
-                               attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
+                               attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
                     </group>
                     <group>
-                        <field name="owner_name" attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
-                        <field name="owner_phone" attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
-                        <field name="previous_deal"/>
-                        <field name="cars_no" attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
-                        <field name="car_type" attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
+                        <field name="owner_name" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
+                        <field name="owner_phone" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
+                        <field name="previous_deal"  attrs="{'invisible':[('customer', '=', False)]}"/>
+                        <field name="cars_no" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
+                        <field name="car_type" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
                     </group>
                     <group>
-                        <field name="salesperson" attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
-                        <field name="dealing_way" attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
-                        <field name="payment_method" attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
-                        <field name="work_method" attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
-                        <field name="Competitor_companies" attrs="{'invisible':[('categories',  '!=', 'company')]}"/>
+                        <field name="salesperson" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
+                        <field name="dealing_way" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
+                        <field name="payment_method" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
+                        <field name="work_method" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
+                        <field name="Competitor_companies" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
                     </group>
 
                     <group>
-                        <field name="area" attrs="{'invisible':[('categories', '=', 'company')]}"/>
-                        <field name="used_paper_type" attrs="{'invisible':[('categories', '=', 'company')]}"/>
-                        <field name="best_price_for_customer" attrs="{'invisible':[('categories', '=', 'company')]}"/>
+                        <field name="area" attrs="{'invisible':['|',('customer', '=', False),('categories', '=', 'company')]}"/>
+                        <field name="used_paper_type" attrs="{'invisible':['|',('customer', '=', False),('categories', '=', 'company')]}"/>
+                        <field name="best_price_for_customer" attrs="{'invisible':['|',('customer', '=', False),('categories', '=', 'company')]}"/>
                         <field name="average_customer_consumption"
-                               attrs="{'invisible':[('categories', '=', 'company')]}"/>
+                               attrs="{'invisible':['|',('customer', '=', False),('categories', '=', 'company')]}"/>
                     </group>
                 </xpath>
                 <xpath expr="//sheet/div[@class='oe_title']/field[@name='company_type']" position="replace">
@@ -57,7 +57,7 @@
                            options="{'horizontal': true}" invisible="1"/>
                 </xpath>
                 <xpath expr="//sheet/notebook/page[@name='sales_purchases']" position="after">
-                    <page string="Cars" name="cars">
+                    <page string="Cars" name="cars" attrs="{'invisible':[('customer', '=', False)]}">
                         <field name="cars" widget="one2many_list" force_save="1">
                             <tree string="Cars" editable="bottom">
                                 <field name="car_type" force_save="1"/>

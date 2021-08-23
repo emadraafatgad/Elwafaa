@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+<!--        <record id="crm_lead_lost_action" model="ir.actions.act_window">-->
+<!--            <field name="name">Lost Reason</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">crm.lead.lost</field>-->
+<!--            <field name="view_mode">form</field>-->
+<!--            <field name="view_id" ref="crm_lead_lost_view_form"/>-->
+<!--            <field name="target">new</field>-->
+<!--        </record>-->
+
+        <record id="pipeline_data_form_view" model="ir.ui.view">
+            <field name="name">pipeline_data_form_view</field>
+            <field name="model">pipeline.data</field>
+            <field name="arch" type="xml">
+                <form>
+                      <header>
+                        <button name="action_accept" string="Mark Won" states="draft"
+                                type="object" class="oe_highlight"/>
+                        <button name="%(crm.crm_lead_lost_action)d" string="Mark Lost"
+                                type="action" class="oe_highlight" states="accept"
+                               />
+
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <field name="active" invisible="1"/>
+<!--                        <field name="partner_id" invisible="1"/>-->
+                        <div class="oe_button_box" name="button_box" attrs="{'invisible': [('state', '!=','accept')]}">
+                            <button class="oe_stat_button" type="object"
+                                context="{'company': company}"
+                                name="action_schedule_meeting" icon="fa-calendar">
+                                <div class="o_stat_info">
+                                    <field name="meeting_count" class="o_stat_value"/>
+                                    <span class="o_stat_text" attrs="{'invisible': [('meeting_count', '&lt;', 2)]}"> Meetings</span>
+                                    <span class="o_stat_text" attrs="{'invisible': [('meeting_count', '&gt;', 1)]}"> Meeting</span>
+                                </div>
+                            </button>
+                        </div>
+                    <div class="oe_button_box" name="button_box">
+                    </div>
+                    <div class="badge-pill badge-danger float-right" attrs="{'invisible': ['|',('state','=','draft'),('active', '=', True)]}">Lost</div>
+                    <div class="badge-pill badge-success float-right" attrs="{'invisible': ['|',('state','=','draft'),('active', '=', False)]}">Won</div>
+
+                        <group>
+                            <group>
+                                <field name="company"/>
+                                <field name="phone"/>
+                                <field name="employee"/>
+                                <field name="have_meetings" invisible="1"/>
+                                <field name="have_m" force_save="1"/>
+                            </group>
+                            <group>
+                                <label for='main_street' string="Address"/>
+                                <div class="o_address_format">
+                                    <group>
+                                        <field name="main_street"/>
+                                        <field name="sub_street"/>
+                                        <field name="city"/>
+                                        <field name="governorate"/>
+                                        <field name="country_name"/>
+                                    </group>
+                                </div>
+                            </group>
+
+                        </group>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="pipeline_data_tree_view" model="ir.ui.view">
+            <field name="name">pipeline_data_tree_view</field>
+            <field name="model">pipeline.data</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="company"/>
+                    <field name="main_street"/>
+                    <field name="sub_street"/>
+                    <field name="city"/>
+                    <field name="governorate"/>
+                    <field name="country_name"/>
+                    <field name="phone"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_pipeline_data" model="ir.actions.act_window">
+            <field name="name">Pipeline Data</field>
+            <field name="res_model">pipeline.data</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="menu_pipeline_root_menu"
+                  name="Sales System"
+                  groups="company_sales_system.company_sales_system"
+        />
+
+        <menuitem id="menu_pipeline_data_menu"
+                  name="Pipeline"
+                  action="action_pipeline_data"
+                  parent="menu_pipeline_root_menu"
+                  sequence="1"
+                  groups="company_sales_system.company_sales_system"
+        />
+
+
+    </data>
+</odoo>
+
+
+

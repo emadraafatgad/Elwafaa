@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="action_calendar_event" model="ir.actions.act_window">
+            <field name="name">Meetings</field>
+            <field name="res_model">calendar.event</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="view_id" ref="calendar.view_calendar_event_calendar"/>
+            <field name="search_view_id" ref="calendar.view_calendar_event_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Schedule a new meeting
+                </p>
+                <p>
+                    The calendar is shared between employees and fully integrated with
+                    other applications such as the employee leaves or the business
+                    opportunities.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_meetings_calendar_menu"
+                  name="Meetings"
+                  action="action_calendar_event"
+                  parent="menu_pipeline_root_menu"
+                  sequence="4"
+
+        />
+
+    </data>
+</odoo>

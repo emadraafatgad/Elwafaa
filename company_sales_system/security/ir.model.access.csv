@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+pipeline_data_access,pipeline_data_access,model_pipeline_data,company_sales_system,1,1,1,1
+pricelist_info_access,pricelist_info_access,model_pricelist_info,company_sales_system,1,1,1,1
+price_offer_access,price_offer_access,model_price_offer,company_sales_system,1,1,1,1
+
+
+
+
+
+
+

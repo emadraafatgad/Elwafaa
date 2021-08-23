@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+                id="car_reception_detection"
+                model="car.data"
+                string="كشف استقبال سيارة"
+                report_type="qweb-pdf"
+                name="sales_policy.car_reception_detection_temp"
+                file="sales_policy.car_reception_detection_temp"
+        />
+        <template id="car_reception_detection_temp">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.internal_layout">
+                        <div class="page">
+                                                        <style type="text/css">
+                                                            table.supplier {
+                                                            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                                                            border-collapse: collapse;
+                                                            width: 100%;
+                                                            text-align : center;
+                                                            margin :auto;
+                                                            }
+
+                                                            table.supplier td, table.supplier th {
+                                                            border: 1px solid #ddd;
+                                                            padding: 8px;
+                                                            }
+
+                                                            table.supplier tr:nth-child(even){background-color: #f2f2f2;}
+
+                                                            table.supplier tr:hover {background-color: #ddd;}
+
+                                                            table.supplier th {
+                                                            padding-top: 12px;
+                                                            padding-bottom: 12px;
+                                                            text-align: left;
+                                                            background-color: #990000 ;
+                                                            color: white;
+                                                            text-align : center;
+                                                            }
+                                                        </style>
+
+
+                            <div margin="0 auto" padding-top="0">
+                                <table width="100%"  style="border: 1px solid #ddd; background-color: #EFECEB ;">
+                                    <tr>
+                                        <td width="30%" height="80px" style="border: 1px solid #ddd;">
+                                            <span>
+                                                <img src="sales_policy/static/description/logo.png" alt="logo"
+                                                     width="100%" height="148px;"/>
+                                            </span>
+                                        </td>
+
+                                        <td width="30%" style="border: 1px solid #ddd;" align="center">
+                                            <h3>كشف استقبال سيارة</h3>
+                                            <h6>امر تشغيل نقدا/أجل</h6>
+                                            <h6>قطاع عام/قطاع خاص</h6>
+                                        </td>
+                                        <td width="30%" style="border: 1px solid #ddd;" align="center">
+                                            <h4>مون ياي للصناعة والتجارة </h4>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </div>
+
+                            <br/>
+                            <br/>
+
+                            <div align="right" dir="rtl"  style="text-align:right">
+                                <table width="100%"   class="supplier">
+                                    <tr>
+
+                                        <td text-align="right">
+                                            <h6>خزان الوقود: 0 -1/4 -1/3-3/4-1</h6>
+                                        </td>
+                                        <td>
+                                            <h4>
+                                                <field t-field="o.fuel_tank"/>
+                                            </h4>
+                                        </td>
+
+                                        <td text-align="right">
+                                            <h4> سوست:</h4>
+                                        </td>
+
+                                        <td>
+                                            <h4>
+                                                <field t-field="o.sliders"/>
+                                            </h4>
+                                        </td>
+                                         <td text-align="right">
+                                            <h4> عفشة:</h4>
+                                        </td>
+
+                                        <td>
+                                            <h4>
+                                                <field t-field="o.traps"/>
+                                            </h4>
+                                        </td>
+                                         <td text-align="right">
+                                            <h4> دناجل:</h4>
+                                        </td>
+
+                                        <td>
+                                            <h4>
+                                                <field t-field="o.danagel"/>
+                                            </h4>
+                                        </td>
+
+
+                                    </tr>
+                                     <tr>
+
+                                        <td text-align="right" colspan="2">
+                                            <h5>تاريخ الدخول</h5>
+                                        </td>
+                                        <td>
+                                            <h5>
+                                                <field t-field="o.entery_date"/>
+                                            </h5>
+                                        </td>
+
+                                        <td text-align="right">
+                                            <h6> تاريخ انتهاء الاصلاح</h6>
+                                        </td>
+
+                                        <td>
+                                            <h5>
+                                                <field t-field="o.fix_date"/>
+                                            </h5>
+                                        </td>
+                                         <td text-align="right" colspan="2">
+                                            <h5> تاريخ التسليم</h5>
+                                        </td>
+                                        <td>
+                                            <h5>
+                                                <field t-field="o.delivery_date"/>
+                                            </h5>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td text-align="right">
+                                            <h5> اسم العميل:</h5>
+                                        </td>
+
+                                        <td colspan="7">
+                                            <h4>
+                                                <field t-field="o.customer"/>
+                                            </h4>
+                                        </td>
+
+
+
+
+                                    </tr>
+                                    <tr>
+
+                                        <td text-align="right" >
+                                            <h6>تليفون</h6>
+                                        </td>
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.customer.phone"/>
+                                            </h6>
+                                        </td>
+
+                                        <td text-align="right">
+                                            <h6> عنوان</h6>
+                                        </td>
+
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.customer.street"/>
+                                            </h6>
+                                        </td>
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.customer.state_id"/>
+                                            </h6>
+                                        </td>
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.customer.country_id"/>
+                                            </h6>
+                                        </td>
+                                         <td text-align="right" >
+                                            <h6> رقم بطاقة</h6>
+                                        </td>
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.customer.vat"/>
+                                            </h6>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td text-align="right" >
+                                            <h6>رقم اللوحات</h6>
+                                        </td>
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.plate_number"/>
+                                            </h6>
+                                        </td>
+
+                                        <td text-align="right">
+                                            <h6> عداد ال كم دخول</h6>
+                                        </td>
+
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.entry_counter"/>
+                                            </h6>
+                                        </td>
+                                        <td text-align="right">
+                                            <h6> عداد ال كم خروج</h6>
+                                        </td>
+
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.exit_counter"/>
+                                            </h6>
+                                        </td>
+                                         <td text-align="right" >
+                                            <h6>مودل السيارة</h6>
+                                        </td>
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.car_model"/>
+                                            </h6>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td text-align="right" >
+                                            <h6>خاص بالشركات</h6>
+                                        </td>
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.for_companies"/>
+                                            </h6>
+                                        </td>
+                                        <td text-align="right">
+                                            <h6>authority</h6>
+                                        </td>
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.authority"/>
+                                            </h6>
+                                        </td>
+                                        <td text-align="right">
+                                            <h6> رقم الشاسيه</h6>
+                                        </td>
+
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.chassis_number"/>
+                                            </h6>
+                                        </td>
+                                         <td text-align="right" >
+                                            <h6>نوع العربية</h6>
+                                        </td>
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.car_type"/>
+                                            </h6>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td text-align="right" >
+                                            <h6>اسم المشرف</h6>
+                                        </td>
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.supervisor_name"/>
+                                            </h6>
+                                        </td>
+                                        <td text-align="right">
+                                            <h6>اسم الفني</h6>
+                                        </td>
+                                        <td>
+                                            <h6>
+                                                <field t-field="o.technician_name"/>
+                                            </h6>
+                                        </td>
+                                        <td text-align="right">
+                                            <h6> اسم العامل</h6>
+                                        </td>
+
+                                        <td colspan="3">
+                                            <h6>
+                                                <field t-field="o.worker_name"/>
+                                            </h6>
+                                        </td>
+
+
+                                    </tr>
+                                    <tr>
+
+                                        <td text-align="right" >
+                                            <h6>شكوي العميل</h6>
+                                        </td>
+                                        <td colspan="7">
+                                            <h6>
+                                                <field t-field="o.customer_complain"/>
+                                            </h6>
+                                        </td>
+
+                                    </tr>
+
+                                </table>
+
+                            </div>
+
+
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
+
+
+
