@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="calendar_meetings_inherit_form_view" model="ir.ui.view">
+            <field name="name">calendar_meetings_inherit_form_view</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//form/sheet" position="before">
+                    <header>
+                        <button name="action_accept" string="Mark Won"
+                                attrs="{'invisible':[('state_workflow', '!=', 'draft')]}"
+                                type="object" class="oe_highlight"/>
+
+                        <button name="action_reject" string="Mark Lost"
+                                attrs="{'invisible':[('state_workflow', '=', 'reject')]}"
+                                type="object" class="oe_highlight"/>
+                        <!--                        <button name="%(crm.crm_lead_lost_action)d" string="Mark Lost"-->
+                        <!--                                type="action" class="oe_highlight" states="accept,draft"-->
+                        <!--                               />-->
+
+                        <field name="state_workflow" widget="statusbar"/>
+                    </header>
+
+
+                </xpath>
+                <xpath expr="//form/sheet/notebook" position="before">
+                    <group>
+                        <field name="company"/>
+                        <field name="phone"/>
+                        <field name="employee_user"/>
+                    </group>
+
+                </xpath>
+                <xpath expr="//sheet/notebook/page[@name='page_misc']" position="after">
+                    <page string="Price List" name="priclist"
+                          attrs="{'invisible':[('state_workflow', '!=', 'accept')]}">
+                        <group>
+                            <field name="priclist"/>
+                        </group>
+
+
+                    </page>
+                    <page string="Lost Reason" name="lost_reason"
+                          attrs="{'invisible':[('state_workflow', '!=', 'reject')]}">
+                        <group>
+                            <field name="lost_reason"/>
+                        </group>
+                    </page>
+
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

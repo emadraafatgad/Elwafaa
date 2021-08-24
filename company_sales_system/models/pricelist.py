@@ -6,18 +6,17 @@ class PricelistInfoClass(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = 'company'
 
-
-    company = fields.Char(string='Company Name',store=True,copy=True)
+    company = fields.Char(string='Company Name',store=True,copy=True,track_visibility='onchange')
     state = fields.Selection([
         ('draft', "Draft"),
         ('request', "Request Sent"),
-        ('approve', "Approved"), ], default='draft')
+        ('approve', "Approved"), ], default='draft',track_visibility='onchange')
 
-    sending_date =fields.Date(string='Sending Date',readonly=True)
-    approve_date = fields.Date(string='Approve Date',readonly=True)
-    end_date = fields.Date(string='Final Date',readonly=True)
+    sending_date =fields.Date(string='Sending Date',readonly=True,track_visibility='onchange')
+    approve_date = fields.Date(string='Approve Date',readonly=True,track_visibility='onchange')
+    end_date = fields.Date(string='Final Date',readonly=True,track_visibility='onchange')
     sales_person = fields.Many2one('res.users',string='SalesPerson',track_visibility='onchange', default=lambda self: self.env.user)
-    pricelist = fields.One2many('price.offer','inverse_price_offer',string='Price List')
+    pricelist = fields.One2many('price.offer','inverse_price_offer',string='Price List',track_visibility='onchange')
 
     @api.multi
     def action_draft(self):

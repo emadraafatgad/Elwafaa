@@ -29,7 +29,7 @@
         'views/reason_lost.xml',
         'views/pricelist.xml',
         'views/meetings.xml',
-        # 'reports/car_reception_detection.xml',
+        'views/calendar.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

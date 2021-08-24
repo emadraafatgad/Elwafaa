@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-
 from odoo import api, fields, models
-
 
 class CrmLeadLostInherit(models.TransientModel):
     _inherit = 'crm.lead.lost'

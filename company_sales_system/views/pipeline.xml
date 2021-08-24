@@ -20,7 +20,7 @@
                         <button name="action_accept" string="Mark Won" states="draft"
                                 type="object" class="oe_highlight"/>
                         <button name="%(crm.crm_lead_lost_action)d" string="Mark Lost"
-                                type="action" class="oe_highlight" states="accept"
+                                type="action" class="oe_highlight" states="accept,draft"
                                />
 
                         <field name="state" widget="statusbar"/>
@@ -49,8 +49,9 @@
                                 <field name="company"/>
                                 <field name="phone"/>
                                 <field name="employee"/>
-                                <field name="have_meetings" invisible="1"/>
+<!--                                <field name="have_meetings"  force_save="1"/>-->
                                 <field name="have_m" force_save="1"/>
+                                <field name="lost_reason" readonly="1" attrs="{'invisible': [('state','!=','reject')]}"/>
                             </group>
                             <group>
                                 <label for='main_street' string="Address"/>
@@ -97,11 +98,27 @@
             </field>
         </record>
 
+        <record id="view_pipeline_data_search" model="ir.ui.view">
+            <field name="name">view_pipeline_data_search</field>
+            <field name="model">pipeline.data</field>
+            <field name="arch" type="xml">
+                <search string="Payments">
+<!--                    <field name="name" filter_domain="['|', ('name','ilike',self), ('communication','ilike',self)]" string="Description"/>-->
+                    <separator/>
+                    <field name="have_m" domain="[('have_m','=','yes')]"/>
+                    <filter string="Have Meeting" domain="[('have_m','=','yes')]" name='have_m'/>
+                    <separator/>
+                        <filter string="Have meeting" name="have_m" domain="[]" context="{'group_by': 'have_m'}"/>
+<!--                    <filter string="Company" name="company" domain="[]" context="{'group_by': 'company_id'}" groups="base.group_multi_company" invisible="1" />-->
+                </search>
+            </field>
+        </record>
+
 
         <record id="action_pipeline_data" model="ir.actions.act_window">
             <field name="name">Pipeline Data</field>
             <field name="res_model">pipeline.data</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,search</field>
         </record>
 
 
