@@ -53,6 +53,15 @@ class PipelineDataClass(models.Model):
     #     return expression.distribute_not(['!'] + abandoned_domain)  # negative domain
 
     meeting_count = fields.Integer('# Meetings', compute='_compute_meeting_count')
+    counter=fields.Integer(string='Counter',)
+
+    @api.multi
+    @api.onchange('meeting_count','state')
+    def _counter_meeting_count(self):
+        if self.meeting_count:
+            self.counter = self.meeting_count
+        else:
+            self.counter =0
 
     @api.multi
     def _compute_meeting_count(self):

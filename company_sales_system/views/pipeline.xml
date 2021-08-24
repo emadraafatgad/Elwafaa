@@ -49,7 +49,7 @@
                                 <field name="company"/>
                                 <field name="phone"/>
                                 <field name="employee"/>
-<!--                                <field name="have_meetings"  force_save="1"/>-->
+                                <field name="counter" invisible="1" force_save="1"/>
                                 <field name="have_m" force_save="1"/>
                                 <field name="lost_reason" readonly="1" attrs="{'invisible': [('state','!=','reject')]}"/>
                             </group>
@@ -103,13 +103,11 @@
             <field name="model">pipeline.data</field>
             <field name="arch" type="xml">
                 <search string="Payments">
-<!--                    <field name="name" filter_domain="['|', ('name','ilike',self), ('communication','ilike',self)]" string="Description"/>-->
                     <separator/>
-                    <field name="have_m" domain="[('have_m','=','yes')]"/>
-                    <filter string="Have Meeting" domain="[('have_m','=','yes')]" name='have_m'/>
+                    <field name="have_m" />
+<!--                    <filter string="Have Meeting" domain="[('have_m','=','yes')]" name='have_m'/>-->
                     <separator/>
-                        <filter string="Have meeting" name="have_m" domain="[]" context="{'group_by': 'have_m'}"/>
-<!--                    <filter string="Company" name="company" domain="[]" context="{'group_by': 'company_id'}" groups="base.group_multi_company" invisible="1" />-->
+<!--                        <filter string="Have meeting" name="have_m" domain="[]" context="{'group_by': 'have_m'}"/>-->
                 </search>
             </field>
         </record>
