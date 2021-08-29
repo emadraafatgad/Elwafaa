@@ -30,6 +30,8 @@
         'views/pricelist.xml',
         'views/meetings.xml',
         'views/calendar.xml',
+        'views/cronjob.xml',
+        'views/mail_template.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

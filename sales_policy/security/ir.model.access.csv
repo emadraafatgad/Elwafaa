@@ -17,6 +17,8 @@ area_record_group_access,area_record_group_access,model_area_record,sales_policy
 merchants_table_group_access,merchants_table_group_access,model_merchants_table,sales_policy_group,1,1,1,1
 car_model_group_access,car_model_group_access,model_model_car,sales_policy_group,1,1,1,1
 worker_name_group_access,worker_name_group_access,model_worker_name,sales_policy_group,1,1,1,1
+car_fix_access,car_fix_access,model_car_fix,sales_policy_group,1,1,1,1
+car_parts_access,car_parts_access,model_car_part,sales_policy_group,1,1,1,1
 
 
 

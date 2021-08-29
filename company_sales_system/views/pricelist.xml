@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data>
-
         <record id="pricelist_info_form_view" model="ir.ui.view">
             <field name="name">pricelist_info_form_view</field>
             <field name="model">pricelist.info</field>
@@ -11,6 +10,9 @@
                         <button name="action_request" string="Sent Request" states="draft"
                                 type="object" class="oe_highlight"/>
                         <button name="action_approve" string="Approve" states="request"
+                                type="object" class="oe_highlight"/>
+
+                        <button name="action_receive" string="Receive car" states="approve"
                                 type="object" class="oe_highlight"/>
 
                         <field name="state" widget="statusbar"/>
@@ -25,6 +27,7 @@
                             <group>
                                 <field name="end_date"/>
                                 <field name="sales_person"/>
+                                 <field name="mail" invisible="1"/>
 
 
                             </group>

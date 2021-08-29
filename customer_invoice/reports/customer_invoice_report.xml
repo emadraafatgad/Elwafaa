@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <template id="report_customer_invoice_inherit" inherit_id="account.report_invoice_document">
+
+
+            <xpath expr="//table[@name='invoice_line_table']" position="after">
+
+                <br/>
+                <br/>
+                <table>
+<!--                    <thead>-->
+                        <tr>
+                            <th class="text-center">
+                                <strong>Total Accessories</strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Total Service
+                                </strong>
+                            </th>
+                            <th class="text-center">
+                                <strong>Total Steel</strong>
+                            </th>
+                        </tr>
+
+<!--                    </thead>-->
+<!--                    <tbody>-->
+                        <tr>
+                            <td class="text-center">
+                                <span t-field="o.total_accessories"/>
+
+                            </td>
+                            <td class="text-center">
+
+                                <span t-field="o.total_service"/>
+
+                            </td>
+                            <td class="text-center">
+
+                                <span t-field="o.total_steel"/>
+                            </td>
+
+                        </tr>
+<!--                    </tbody>-->
+                    <tr>
+                        <th class="text-center">
+                            <strong>Accessories Quantities</strong>
+                        </th>
+                        <th class="text-center">
+                            <strong>Service Quantities</strong>
+                        </th>
+                        <th class="text-center">
+                            <strong>Steel Quantities</strong>
+                        </th>
+
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <span t-field="o.total_accessories_qty"/>
+
+                        </td>
+                        <td class="text-center">
+
+                            <span t-field="o.total_service_qty"/>
+
+                        </td>
+                        <td class="text-center">
+
+                            <span t-field="o.total_steel_qty"/>
+                        </td>
+                    </tr>
+                </table>
+            </xpath>
+
+        </template>
+
+    </data>
+</odoo>

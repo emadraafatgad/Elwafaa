@@ -52,10 +52,10 @@ class AreaRecordClass(models.Model):
     _name = 'area.record'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    name= fields.Char(string='Area')
-    center = fields.Char(string='Center')
-    governorate=fields.Many2one('res.country.state',string='Governorate')
-    country = fields.Many2one('res.country', string='Country')
+    name= fields.Char(string='Area',track_visibility='onchange')
+    center = fields.Char(string='Center',track_visibility='onchange')
+    governorate=fields.Many2one('res.country.state',string='Governorate',track_visibility='onchange')
+    country = fields.Many2one('res.country', string='Country',track_visibility='onchange')
 
 
 
@@ -64,17 +64,17 @@ class AreaRecordClass(models.Model):
 class WorkshopTableClass(models.Model):
     _name = 'workshop.table'
 
-    name= fields.Char('Name',store=True)
-    phone = fields.Char('Phone',store=True)
+    name= fields.Char('Name',store=True,track_visibility='onchange')
+    phone = fields.Char('Phone',store=True,track_visibility='onchange')
 
-    workshop_inverse=fields.Many2one('area.data')
+    workshop_inverse=fields.Many2one('area.data',track_visibility='onchange')
 
 
 
 class MerchantsTableClass(models.Model):
     _name = 'merchants.table'
 
-    name= fields.Many2one('res.partner',string='Name',store=True)
+    name= fields.Many2one('res.partner',string='Name',store=True,track_visibility='onchange')
     phone = fields.Char('Phone',store=True)
 
-    merchants_inverse=fields.Many2one('area.data')
+    merchants_inverse=fields.Many2one('area.data',track_visibility='onchange')

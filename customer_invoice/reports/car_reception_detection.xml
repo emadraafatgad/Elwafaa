@@ -3,7 +3,7 @@
     <data>
         <report
                 id="car_reception_detection"
-                model="car.fix"
+                model="car.data"
                 string="كشف استقبال سيارة"
                 report_type="qweb-pdf"
                 name="sales_policy.car_reception_detection_temp"
@@ -269,7 +269,7 @@
                                         </td>
                                         <td>
                                             <h6>
-                                                <field t-field="o.car"/>
+                                                <field t-field="o.car_type"/>
                                             </h6>
                                         </td>
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Mail template are declared in a NOUPDATE block so users can freely customize/delete them -->
+    <data noupdate="1">
+        <!--Email template -->
+        <record id="lead_dates_email" model="mail.template">
+            <field name="name">Company sales System: Check Lead Date</field>
+            <field name="model_id" ref="company_sales_system.model_pricelist_info"/>
+            <field name="email_from">${object.mail}</field>
+            <field name="email_to">${object.mail}</field>
+            <field name="subject">About ${object.company} company late dates</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Dear ${object.sales_person.name} ,<br/><br/>
+                        We inform you that (${object.company})<br/>
+                        has exceeded the period specified (final date)On ${object.end_date}<br/>
+                        which ended yesterday and did not do the necessary or send us any notification.<br/><br/>
+
+                        ... So do what you have to do about this customer.<br/><br/>
+                        Thanks
+                        <br/>
+                        <br/>
+                        Do not hesitate to contact us if you have any question.
+                    </p>
+                </div>
+            </field>
+<!--                        <field name="report_template" ref="account.account_invoices"/>-->
+            <!--            <field name="report_name">Invoice_${(object.number or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}</field>-->
+
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="cron_job_end_date" model="ir.cron">
+            <field name="name">Final Date Notification</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_pricelist_info"/>
+            <field name="code">model.check_for_incomplete_customer_leads()</field>
+            <field name="state">code</field>
+        </record>
+<!--        <record id="your_scheduler_action_id" model="ir.cron">-->
+<!--            <field name="name">Name of your Scheduler Action</field>-->
+<!--            <field name="user_id" ref="base.user_root"/>-->
+<!--            <field name="interval_number">1</field>-->
+<!--            <field name="   ">days</field>-->
+<!--            <field name="numbercall">-1</field>-->
+<!--            <field eval="False" name="doall"/>-->
+<!--            &lt;!&ndash;            <field name="nextcall" >2021-01-07 11:35:28</field>   &lt;!&ndash;Static&ndash;&gt;&ndash;&gt;-->
+<!--            &lt;!&ndash;                                or&ndash;&gt;-->
+<!--            <field name="nextcall"-->
+<!--                   eval="(datetime.now() + timedelta(days=10)).strftime('%Y-%m-%d 23:59:59')"/>   &lt;!&ndash;Dynamic&ndash;&gt;-->
+<!--            <field eval="'your.model'" name="model"/>-->
+<!--            <field eval="'function_that_will_be_defined_in_above_model'" name="function"/>-->
+<!--        </record>-->
+    </data>
+</odoo>

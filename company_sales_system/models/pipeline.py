@@ -56,10 +56,10 @@ class PipelineDataClass(models.Model):
     counter=fields.Integer(string='Counter',)
 
     @api.multi
-    @api.onchange('meeting_count','state')
+    @api.onchange('meeting_count','have_m')
     def _counter_meeting_count(self):
-        if self.meeting_count:
-            self.counter = self.meeting_count
+        if self.meeting_count >0 and self.have_m=='yes':
+            self.counter = int(self.meeting_count)
         else:
             self.counter =0
 

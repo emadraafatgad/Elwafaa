@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="stock_picking_wafa_form_view" model="ir.ui.view">
+            <field name="name">stock_picking_wafa_form_view</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="supervisor_name"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="car_fix_form_view" model="ir.ui.view">
+            <field name="name">car_fix_form_view</field>
+            <field name="model">car.fix</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_reserve" type="object"
+                                string="Check reserved quantities" states="confirmed" class="btn-primary"
+                                groups="sales_policy.modify_pricelist_group"
+                        />
+
+                        <button name="create_invoice_with_fix_data" type="object"
+                                string="Create Invoice" states="reserve" class="btn-primary"
+                                groups="sales_policy.modify_pricelist_group"
+                        />
+
+                        <button name="create_delivery_records_in_the_stock" type="object"
+                                string="Request from stock" class="btn-primary" states="draft"
+                                groups="sales_policy.sales_policy_group"
+                        />
+
+                        <field name="state" widget="statusbar"/>
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="customer"/>
+                                <field name="car"/>
+                                <field name="plate_number"/>
+                            </group>
+                            <group>
+                                <field name="entery_date"/>
+                                <field name="fix_date"/>
+                                <field name="delivery_date"/>
+                            </group>
+                            <group>
+                                <field name="car_model"/>
+                                <field name="chassis_number"/>
+                                <field name="driver_name"/>
+                            </group>
+                            <group>
+                                <field name="sliders"/>
+                                <field name="traps"/>
+                                <field name="danagel"/>
+                            </group>
+                            <group>
+                                <field name="fuel_tank"/>
+                                <field name="entry_counter"/>
+                                <field name="exit_counter"/>
+                            </group>
+                            <group>
+                                <field name="for_companies"/>
+                                <field name="authority"/>
+                                <field name="supervisor_name"/>
+                            </group>
+                            <group>
+                                <field name="technician_name"/>
+                                <field name="worker_name" widget="many2many_tags"/>
+                                <field name="customer_complain"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Cars Parts" name="car_part">
+                                <field name="parts" widget="one2many_list" force_save="1">
+                                    <tree string="Car Parts" editable="bottom">
+                                        <field name="product" force_save="1"/>
+                                        <field name="quantity" force_save="1"/>
+                                        <field name="product_uom" force_save="1"/>
+                                         <field name="quantity_done" force_save="1" readonly="1"/>
+                                    </tree>
+                                </field>
+                                <group>
+                                    <field name="operation_type" required="1"/>
+                                    <field name="location_id" required="1"/>
+                                    <field name="location_dest_id" required="1"/>
+                                    <field name="account_id" attrs="{'required':[('state', '=', 'reserve')]}"/>
+                                </group>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="car_fix_tree_view" model="ir.ui.view">
+            <field name="name">car_fix_tree_view</field>
+            <field name="model">car.fix</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="customer"/>
+                    <field name="car"/>
+                    <field name="plate_number"/>
+                    <field name="chassis_number"/>
+                    <field name="car_model"/>
+                    <field name="entery_date"/>
+                    <field name="fix_date"/>
+                    <field name="delivery_date"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_car_fix" model="ir.actions.act_window">
+            <field name="name">Car Fix</field>
+            <field name="res_model">car.fix</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="menu_car_fix_menu"
+                  name="Cars Fix"
+                  action="action_car_fix"
+                  parent="menu_cars_root_menu"
+                  sequence="10"
+                  groups="sales_policy.sales_policy_group"
+        />
+
+
+    </data>
+</odoo>
+
+
+

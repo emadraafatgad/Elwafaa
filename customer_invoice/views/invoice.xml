@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="invoice_tax_inherit_form_view" model="ir.ui.view">
+            <field name="name">invoice_tax_inherit_form_view</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="mm"/>
+                </xpath>
+                <xpath expr="//notebook/page[1]/group" position="before">
+<!--                    <div width="50%">-->
+                    <group>
+                        <group>
+                            <field name="total_accessories"/>
+                            <field name="total_service"/>
+                            <field name="total_steel"/>
+                        </group>
+<!--                    </div>-->
+<!--                    <div width="50%">-->
+                        <group>
+                            <field name="total_accessories_qty"/>
+                            <field name="total_service_qty"/>
+                            <field name="total_steel_qty"/>
+                        </group>
+                    </group>
+<!--                    </div>-->
+
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="product_product_wafa_form_view" model="ir.ui.view">
+            <field name="name">product_product_wafa_form_view</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[@class='oe_title']/div[@name='options']/div[2]" position="after">
+                    <div>
+                        <field name="accessories_ok"/>
+                        <label for="accessories_ok"/>
+                    </div>
+                    <div>
+                        <field name="service_ok"/>
+                        <label for="service_ok"/>
+                    </div>
+                    <div>
+                        <field name="steel_ok"/>
+                        <label for="steel_ok"/>
+                    </div>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="product_template_wafa_form_view" model="ir.ui.view">
+            <field name="name">product_template_wafa_form_view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[@class='oe_title']/div[@name='options']/div[2]" position="after">
+                    <div>
+                        <field name="accessories_ok"/>
+                        <label for="accessories_ok"/>
+                    </div>
+                    <div>
+                        <field name="service_ok"/>
+                        <label for="service_ok"/>
+                    </div>
+                    <div>
+                        <field name="steel_ok"/>
+                        <label for="steel_ok"/>
+                    </div>
+                </xpath>
+
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

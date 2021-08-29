@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Sales Policy",
+    'name': "Customer Invoice",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Elwafa""",
 
     'description': """
         Long description of module's purpose
@@ -20,20 +19,15 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail','sale_management'],
+    'depends': ['base','mail','stock','account','sale_management','sales_policy'],
 
     # always loaded
     'data': [
-        'security/contact.xml',
-        'security/ir.model.access.csv',
-        'views/pricelist_co.xml',
-        'views/customer.xml',
-        'views/cars.xml',
-        'views/area.xml',
-        'views/sales_quotation.xml',
-        'views/car_fix.xml',
-        'views/workshop.xml',
-        'reports/car_reception_detection.xml',
+        # 'security/contact.xml',
+        # 'security/ir.model.access.csv',
+        'views/invoice.xml',
+        'reports/customer_invoice_report.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [

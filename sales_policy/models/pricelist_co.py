@@ -7,13 +7,13 @@ class CompanyPriceList(models.Model):
     _rec_name = 'customer'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    customer=fields.Many2one('res.partner',string='Customer')
-    date=fields.Date(string='Date',default=fields.Date.today(),store=True,copy=True)
+    customer=fields.Many2one('res.partner',string='Customer',track_visibility='onchange')
+    date=fields.Date(string='Date',default=fields.Date.today(),store=True,copy=True,track_visibility='onchange')
     date2=fields.Date(string='Date',store=True,copy=True,track_visibility='onchange',compute='_compute_date_amount')
-    payment_term=fields.Many2one('payement.method',string='Payment Terms')
+    payment_term=fields.Many2one('payement.method',string='Payment Terms',track_visibility='onchange')
     no_of_days= fields.Integer('Number of days',related='payment_term.no_of_days')
-    categories = fields.Selection([('companies','Companies'),('individuals','Individuals'),('workshops','Workshops')],string='Categories')
-    pricelist_table=fields.One2many('company.price_bridge','bridge_inverse_price')
+    categories = fields.Selection([('companies','Companies'),('individuals','Individuals'),('workshops','Workshops')],string='Categories',track_visibility='onchange')
+    pricelist_table=fields.One2many('company.price_bridge','bridge_inverse_price',track_visibility='onchange')
 
     @api.one
     @api.depends('no_of_days')
@@ -56,11 +56,11 @@ class CompanyPriceList(models.Model):
 class CompanyPriceListBridge(models.Model):
     _name = 'company.price_bridge'
 
-    product=fields.Many2one('product.product',required=True)
-    price = fields.Float(string='Price')
-    price_percentage = fields.Float(string='Percentage')
-    sign = fields.Char(string='%',default='%',readonly=True)
-    total=fields.Float(string='Total',compute='_compute_final_amount')
+    product=fields.Many2one('product.product',required=True,track_visibility='onchange')
+    price = fields.Float(string='Price',track_visibility='onchange')
+    price_percentage = fields.Float(string='Percentage',track_visibility='onchange')
+    sign = fields.Char(string='%',default='%',readonly=True,track_visibility='onchange')
+    total=fields.Float(string='Total',compute='_compute_final_amount',track_visibility='onchange')
     customerr=fields.Many2one('res.partner',string='Customer',related='bridge_inverse_price.customer')
 
 

@@ -3,42 +3,42 @@ from odoo import models, fields, api, exceptions, _
 class ResPartnerModify(models.Model):
     _inherit = 'res.partner'
 
-    categories = fields.Selection([('company','Companies'),('individuals','Individuals'),('workshops','Workshops')],string='Categories',required=True,default='company')
+    categories = fields.Selection([('company','Companies'),('individuals','Individuals'),('workshops','Workshops')],string='Categories',required=True,default='company',track_visibility='onchange')
     company_activity=fields.Many2one('company.activity',string='Company Activity')
-    company_category = fields.Selection([('a','A'),('b','B'),('c','C'),('d','D'),('competitive','Competitive')],string='Company Category')
-    movement_responsible_name =fields.Char('Movement Responsible Name')
-    movement_responsible_phone = fields.Char('Movement Responsible Phone')
-    accounting_manager_name = fields.Char('Accounting Manager Name')
-    accounting_manager_phone = fields.Char('Accounting Manager Phone')
-    purchase_responsible_name = fields.Char('Purchase Responsible Name')
-    purchase_responsible_phone = fields.Char('Purchase Responsible Phone')
-    owner_name = fields.Char('Owner Name')
-    owner_phone = fields.Char('Owner Phone')
-    cars_no = fields.Char('Number of Cars')
-    car_type = fields.Many2one('car.type',string='Car Type')
-    salesperson = fields.Char('Salesperson')
-    dealing_way = fields.Selection([('work_order','Work Order'),('phone_call','Phone call'),('mail','E-mail')],string='Dealing Way')
+    company_category = fields.Selection([('a','A'),('b','B'),('c','C'),('d','D'),('competitive','Competitive')],string='Company Category',track_visibility='onchange')
+    movement_responsible_name =fields.Char('Movement Responsible Name',track_visibility='onchange')
+    movement_responsible_phone = fields.Char('Movement Responsible Phone',track_visibility='onchange')
+    accounting_manager_name = fields.Char('Accounting Manager Name',track_visibility='onchange')
+    accounting_manager_phone = fields.Char('Accounting Manager Phone',track_visibility='onchange')
+    purchase_responsible_name = fields.Char('Purchase Responsible Name',track_visibility='onchange')
+    purchase_responsible_phone = fields.Char('Purchase Responsible Phone',track_visibility='onchange')
+    owner_name = fields.Char('Owner Name',track_visibility='onchange')
+    owner_phone = fields.Char('Owner Phone',track_visibility='onchange')
+    cars_no = fields.Char('Number of Cars',track_visibility='onchange')
+    car_type = fields.Many2one('car.type',string='Car Type',track_visibility='onchange')
+    salesperson = fields.Char('Salesperson',track_visibility='onchange')
+    dealing_way = fields.Selection([('work_order','Work Order'),('phone_call','Phone call'),('mail','E-mail')],string='Dealing Way',track_visibility='onchange')
     payment_method = fields.Many2one('payement.method',string='Payment Method')
-    work_method = fields.Selection([('tax_invoice','Tax Invoice'),('statement','Statement'),('cash','Cash'),('later','Later')],string='Work Method')
-    Competitor_companies= fields.Many2one('competitive.company',string='Competitor Companies')
+    work_method = fields.Selection([('taxed_cash','Taxed Cash'),('Untaxed_cash','Untaxed Cash'),('taxed_accrual','Taxed Accrual'),('untaxed_accrual','Untaxed Accrual')],string='Work Method',default='taxed_cash',track_visibility='onchange')
+    attachment = fields.Binary('Attachments', attachment=True,track_visibility='onchange')
+    # attachment = fields.Many2many("ir.attachment",string='Upload Your Files',width='100%',length='100%',required=True)
 
-    previous_deal = fields.Char('Previous Deal')
+    Competitor_companies= fields.Many2one('competitive.company',string='Competitor Companies',track_visibility='onchange')
 
-    area=fields.Many2one('area.data',string='Area')
-    used_paper_type=fields.Char('Used Paper Type')
-    best_price_for_customer=fields.Float('Best Price For Customer')
-    average_customer_consumption = fields.Char('Average Customer Consumption')
-    cars= fields.One2many('car.data','customer',string='Cars')
+    previous_deal = fields.Char('Previous Deal',track_visibility='onchange')
+
+    area=fields.Many2one('area.data',string='Area',track_visibility='onchange')
+    used_paper_type=fields.Char('Used Paper Type',track_visibility='onchange')
+    best_price_for_customer=fields.Float('Best Price For Customer',track_visibility='onchange')
+    average_customer_consumption = fields.Char('Average Customer Consumption',track_visibility='onchange')
+    cars= fields.One2many('car.data','customer',string='Cars',track_visibility='onchange')
+    fix_cars = fields.One2many('car.fix', 'customer', string='Fixing Cars',track_visibility='onchange')
 
 
 class CompanyActivityClass(models.Model):
     _name = 'company.activity'
 
     name=fields.Char(string='Activity')
-
-
-
-
 
 
 class PayementMethodClass(models.Model):
@@ -55,7 +55,6 @@ class PayementMethodClass(models.Model):
         for line in self:
             if (line.no_of_days) < 0.0:
                 raise exceptions.ValidationError('Number of days should be equal or greater than zero!')
-
 
 class CompitiorCompaniesClass(models.Model):
     _name = 'competitive.company'
