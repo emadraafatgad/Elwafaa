@@ -38,7 +38,7 @@ class PricelistInfoClass(models.Model):
     @api.multi
     def action_approve(self):
         self.state = 'approve'
-        # self.approve_date = fields.date.today()
+        self.approve_date = fields.date.today()
         planned = (datetime.datetime.strptime(str(self.approve_date), '%Y-%m-%d') + datetime.timedelta(
             days=14)).strftime('%Y-%m-%d')
         self.end_date =planned

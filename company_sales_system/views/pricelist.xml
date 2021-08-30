@@ -10,7 +10,7 @@
                         <button name="action_request" string="Sent Request" states="draft"
                                 type="object" class="oe_highlight"/>
                         <button name="action_approve" string="Approve" states="request"
-                                type="object" class="oe_highlight"/>
+                                type="object" class="oe_highlight" groups="company_sales_system.company_sales_system_manager"/>
 
                         <button name="action_receive" string="Receive car" states="approve"
                                 type="object" class="oe_highlight"/>

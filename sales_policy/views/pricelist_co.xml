@@ -14,7 +14,7 @@
 
                         <button name="action_confirm" type="object"
                                 string="Confirm" class="btn-primary" states="draft"
-                                groups="sales_policy.sales_policy_group"
+                                groups="sales_policy.sales_policy_manager_group"
                         />
 
                         <!--                        <button name="action_high_approve" type="object"-->

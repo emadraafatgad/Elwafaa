@@ -2,10 +2,23 @@
     <data noupdate="0">
 
 
-
-        <record id="company_sales_system" model="res.groups">
+        <record id="company_sales_system_category" model="ir.module.category">
             <field name="name">Company Sales System</field>
         </record>
+
+        <record id="company_sales_system" model="res.groups">
+            <field name="name">Sales System</field>
+            <field name="category_id" ref="company_sales_system_category"/>
+        </record>
+
+
+        <record id="company_sales_system_manager" model="res.groups">
+            <field name="name">Sales System Manager</field>
+            <field name="category_id" ref="company_sales_system_category"/>
+        </record>
+
+
+
 
 
 

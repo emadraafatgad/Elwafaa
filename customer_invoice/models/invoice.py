@@ -44,6 +44,6 @@ class AccountInvoiceClass(models.Model):
 class ProducttemplateWafaClass(models.Model):
     _inherit="product.template"
 
-    accessories_ok = fields.Boolean(string='Accessories')
-    service_ok = fields.Boolean(string='Service')
-    steel_ok = fields.Boolean(string='Steel')
+    accessories_ok = fields.Boolean(string='Accessories',track_visibility='onchange')
+    service_ok = fields.Boolean(string='Service',track_visibility='onchange')
+    steel_ok = fields.Boolean(string='Steel',track_visibility='onchange')

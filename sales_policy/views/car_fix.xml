@@ -23,17 +23,17 @@
                     <header>
                         <button name="action_reserve" type="object"
                                 string="Check reserved quantities" states="confirmed" class="btn-primary"
-                                groups="sales_policy.modify_pricelist_group"
+                                groups="sales_policy.sales_policy_manager_group"
                         />
 
                         <button name="create_invoice_with_fix_data" type="object"
                                 string="Create Invoice" states="reserve" class="btn-primary"
-                                groups="sales_policy.modify_pricelist_group"
+                                groups="sales_policy.sales_policy_manager_group"
                         />
 
                         <button name="create_delivery_records_in_the_stock" type="object"
                                 string="Request from stock" class="btn-primary" states="draft"
-                                groups="sales_policy.sales_policy_group"
+                                groups="sales_policy.sales_policy_manager_group"
                         />
 
                         <field name="state" widget="statusbar"/>

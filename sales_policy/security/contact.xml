@@ -6,6 +6,11 @@
         </record>
 
 
+        <record id="sales_policy_manager_group" model="res.groups">
+            <field name="name">Sales Policy Manager</field>
+            <field name="category_id" ref="module_sales_policy_category"/>
+        </record>
+
         <record id="sales_policy_group" model="res.groups">
             <field name="name">Sales Policy Group</field>
             <field name="category_id" ref="module_sales_policy_category"/>
