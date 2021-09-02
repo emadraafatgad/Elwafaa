@@ -11,6 +11,8 @@
                     <group>
 
                         <field name="categories"/>
+                        <field name="customer_evaluation" attrs="{'invisible':[('customer', '=', False)]}"/>
+                         <field name="credit_limit" attrs="{'invisible':[('customer', '=', False)]}"/>
                         <field name="company_activity" attrs="{'invisible':['|',('customer', '=', False),('categories', '!=', 'company')]}"/>
                         <field name="company_category" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')]}"/>
                         <field name="movement_responsible_name"

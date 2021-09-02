@@ -5,30 +5,41 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//sheet/notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='price_subtotal']" position="after">
+                <xpath expr="//sheet/notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='price_subtotal']"
+                       position="after">
                     <!-- Add your fields or attributes here -->
-                  <field name="customer" invisible="1"/>
+                    <field name="customer" invisible="1"/>
 
 
                 </xpath>
 
-                <xpath expr="//sheet/notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='price_unit']" position="replace">
+                <xpath expr="//sheet/notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='price_unit']"
+                       position="replace">
                     <!-- Add your fields or attributes here -->
-                  <field name="price_unit" readonly="1"/>
+                    <field name="price_unit" readonly="1"/>
 
 
                 </xpath>
                 <xpath expr="//sheet/notebook/page[@name='other_information']" position="after">
-                        <page string="Cars" name="cars">
+                    <page string="Cars" name="cars">
 
-                                    <field name="cars" />
+                        <field name="cars"/>
 
-                        </page>
+                    </page>
 
 
+                </xpath>
+
+                <xpath expr="//field[@name='partner_id']" position="before">
+
+                    <field name="total_am_due" invisible="1"/>
+                    <field name="total_credit" invisible="1"/>
 
                 </xpath>
             </field>
         </record>
+
+
+
     </data>
 </odoo>

@@ -19,6 +19,12 @@ car_model_group_access,car_model_group_access,model_model_car,sales_policy_group
 worker_name_group_access,worker_name_group_access,model_worker_name,sales_policy_group,1,1,1,1
 car_fix_access,car_fix_access,model_car_fix,sales_policy_group,1,1,1,1
 car_parts_access,car_parts_access,model_car_part,sales_policy_group,1,1,1,1
+car_issue_access,car_issue_access,model_car_issue,sales_policy_group,1,1,1,1
+worker_service_access,worker_service_access,model_worker_service,sales_policy_group,1,1,1,1
+price_list_template_bridge_access,price_list_template_bridge_access,model_price_list_template_bridge,sales_policy_group,1,1,1,1
+temp_price_list_access,temp_price_list_access,model_temp_price_list,sales_policy_group,1,1,1,1
+team_target_access,team_target_access,model_team_target,sales_policy_group,1,1,1,1
+
 
 
 

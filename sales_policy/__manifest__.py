@@ -32,7 +32,8 @@
         'views/area.xml',
         'views/sales_quotation.xml',
         'views/car_fix.xml',
-        'views/workshop.xml',
+        'views/target.xml',
+        'views/area.xml',
         'reports/car_reception_detection.xml',
     ],
     # only loaded in demonstration mode

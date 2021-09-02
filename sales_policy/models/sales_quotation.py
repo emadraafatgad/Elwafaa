@@ -1,3 +1,5 @@
+import dp as dp
+
 from odoo import models, fields, api, exceptions, _
 
 class SalesQuotationLineInherit(models.Model):
@@ -98,4 +100,64 @@ class SalesQuotationInherit(models.Model):
 
 
     cars = fields.Many2many('car.data',string='Cars',domain="[('customer','=',partner_id)]")
+    total_am_due = fields.Float( string='Previous Amount Due',default=0,compute='_amount_due_credit_limit_validation')
+    total_credit = fields.Float(string='Previous Amount Due', default=0,compute='_amount_due_credit_limit_validation')
 
+    @api.multi
+    @api.depends('amount_total','partner_id')
+    def _amount_due_credit_limit_validation(self):
+     for line in self:
+        asd = line.env['account.invoice'].search([('partner_id', '=', line.partner_id.id)])
+        if asd:
+            for rec in asd:
+                print('hello'+str(rec.residual))
+                line.total_am_due += rec.residual
+                line.total_credit =line.total_am_due + line.amount_total
+
+        if line.total_credit > line.partner_id.credit_limit:
+                raise exceptions.ValidationError('You will exceed your credit limit of amount due!')
+
+
+
+
+class AccountInvoiceLineInheritKKLL(models.Model):
+    _inherit = 'account.invoice.line'
+
+    price_unit = fields.Float(string='Unit Price', required=True, compute='_onchange_uom_id')
+
+    @api.multi
+    @api.onchange('uom_id','product_id')
+    def _onchange_uom_id(self):
+        for rec in self:
+            asd = rec.env['company.price_bridge'].search(
+                [('customerr', '=', rec.partner_id.id), ('product', '=', rec.product_id.id)])
+            if asd:
+                rec.price_unit = asd.total
+        # warning = {}
+        result = {}
+        # if not self.uom_id:
+        #     self.price_unit = 0.0
+
+        # if self.product_id and self.uom_id:
+        #     self._set_taxes()
+        #     self.price_unit = self.product_id.uom_id._compute_price(self.price_unit, self.uom_id)
+
+        if rec.product_id.uom_id.category_id.id != rec.uom_id.category_id.id:
+                warning = {
+                    'title': _('Warning!'),
+                    'message': _(
+                        'The selected unit of measure has to be in the same category as the product unit of measure.'),
+                }
+                rec.uom_id = rec.product_id.uom_id.id
+                if warning:
+                   result['warning'] = warning
+        return result
+
+    # @api.multi
+    # @api.depends('product_id')
+    # def price_unit_calc(self):
+    #     for rec in self:
+    #         asd = rec.env['company.price_bridge'].search(
+    #             [('customerr', '=', rec.partner_id.id), ('product', '=', rec.product_id.id)])
+    #         if asd:
+    #             rec.price_unit = asd.total

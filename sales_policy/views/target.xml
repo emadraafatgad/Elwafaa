@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="team_target_form_view" model="ir.ui.view">
+            <field name="name">team_target_form_view</field>
+            <field name="model">team.target</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="target"/>
+                            </group>
+                            <group>
+
+                                <field name="team"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="team_target_tree_view" model="ir.ui.view">
+            <field name="name">team_target_tree_view</field>
+            <field name="model">team.target</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="team"/>
+                    <field name="target"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_team_target_view" model="ir.actions.act_window">
+            <field name="name">Team Target</field>
+            <field name="res_model">team.target</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="menu_team_target_menu"
+                  name="Team Target"
+                  action="action_team_target_view"
+                  parent="sale.sale_menu_root"
+                  sequence="15"
+                  groups="sales_policy.sales_policy_group"
+        />
+
+    </data>
+</odoo>

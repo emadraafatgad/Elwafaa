@@ -11,7 +11,7 @@
                 <br/>
                 <table>
 <!--                    <thead>-->
-                        <tr>
+                        <tr class="border-black o_subtotal" style="">
                             <th class="text-center">
                                 <strong>Total Accessories</strong>
                             </th>
@@ -26,7 +26,7 @@
 
 <!--                    </thead>-->
 <!--                    <tbody>-->
-                        <tr>
+                        <tr class="border-black o_subtotal" style="">
                             <td class="text-center">
                                 <span t-field="o.total_accessories"/>
 
@@ -43,7 +43,7 @@
 
                         </tr>
 <!--                    </tbody>-->
-                    <tr>
+                    <tr class="border-black o_subtotal" style="">
                         <th class="text-center">
                             <strong>Accessories Quantities</strong>
                         </th>
@@ -55,7 +55,7 @@
                         </th>
 
                     </tr>
-                    <tr>
+                    <tr class="border-black o_subtotal" style="">
                         <td class="text-center">
                             <span t-field="o.total_accessories_qty"/>
 

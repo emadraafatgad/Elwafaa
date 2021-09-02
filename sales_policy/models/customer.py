@@ -34,6 +34,10 @@ class ResPartnerModify(models.Model):
     cars= fields.One2many('car.data','customer',string='Cars',track_visibility='onchange')
     fix_cars = fields.One2many('car.fix', 'customer', string='Fixing Cars',track_visibility='onchange')
 
+    credit_limit = fields.Float(string='حد الائتمان')
+    customer_evaluation = fields.Selection([('bad','Bad'),('good','Good'),('very_good','Very Good')],string='Customer Evaluation',default='good',track_visibility='onchange')
+
+
 
 class CompanyActivityClass(models.Model):
     _name = 'company.activity'

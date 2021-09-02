@@ -36,33 +36,61 @@
                             <group>
                                 <field name="customer" attrs="{'readonly':[('state', 'in', ('confirmed','update'))]}"/>
                                 <field name="date" invisible="1"/>
-                                <field name="date2" />
+                                <field name="date2"/>
+                                <field name="pricelist_temp"/>
                             </group>
                             <group>
 
                                 <field name="payment_term"
                                        attrs="{'readonly':[('state', '=', 'confirmed')]}"/>
-                                <field name="categories" attrs="{'readonly':[('state', 'in', ('confirmed','update'))]}"/>
+                                <field name="categories"
+                                       attrs="{'readonly':[('state', 'in', ('confirmed','update'))]}"/>
 
+                            </group>
+                            <group>
+                                <label for="accessories_percentage"/>
+                                <div class="o_row" name="accessories_percentage">
+                                    <field name="accessories_percentage" nolabel="1" widget='monetary'/>
+                                    <span>%</span>
+                                </div>
+                                <label for="steel_percentage"/>
+                                <div class="o_row" name="steel_percentage">
+                                    <field name="steel_percentage" nolabel="1" widget='monetary'/>
+                                    <span>%</span>
+                                </div>
+                                <label for="service_percentage"/>
+                                <div class="o_row" name="service_percentage">
+                                    <field name="service_percentage" nolabel="1" widget='monetary'/>
+                                    <span>%</span>
+                                </div>
                             </group>
                         </group>
 
 
                         <notebook>
                             <page string="Price list" name="pricelist">
-<!--                                <group>-->
-                                    <field name="pricelist_table" widget="one2many_list" force_save="1"
-                                           attrs="{'readonly':[('state', '=', 'confirmed')]}">
-                                        <tree string="Price List Table" editable="bottom">
-                                            <field name="product" force_save="1"/>
-                                            <field name="price" force_save="1"/>
-                                            <field name="price_percentage" force_save="1"/>
-                                            <field name="sign" force_save="1"/>
-                                            <field name="total" force_save="1"/>
-                                            <field name="customerr" force_save="1"/>
-                                        </tree>
-                                    </field>
-<!--                                </group>-->
+                                <!--                                <group>-->
+                                <field name="pricelist_table" widget="one2many_list" force_save="1"
+                                       attrs="{'readonly':[('state', '=', 'confirmed')]}">
+                                    <tree string="Price List Table" editable="bottom">
+                                        <field name="product" force_save="1"/>
+                                        <field name="accessories_ok" force_save="1"/>
+                                        <field name="service_ok" force_save="1"/>
+                                        <field name="steel_ok" force_save="1"/>
+                                        <field name="price" force_save="1"/>
+                                        <field name="accessories_percentage" force_save="1" attrs="{'invisible':[('accessories_ok', '!=',True)]}"/>
+                                        <field name="sign" force_save="1"/>
+                                        <field name="steel_percentage" force_save="1" attrs="{'invisible':[('steel_ok', '!=',True)]}"/>
+                                        <field name="sign" force_save="1"/>
+                                        <field name="service_percentage" force_save="1" attrs="{'invisible':[('service_ok', '!=',True)]}"/>
+                                        <field name="sign" force_save="1"/>
+                                        <field name="price_percentage" force_save="1"/>
+                                        <field name="sign" force_save="1"/>
+                                        <field name="total" force_save="1"/>
+                                        <field name="customerr" force_save="1"/>
+                                    </tree>
+                                </field>
+                                <!--                                </group>-->
                             </page>
                         </notebook>
                     </sheet>
@@ -100,13 +128,76 @@
         </record>
 
 
-        <!--        <menuitem-->
-        <!--                id="menu_training_root"-->
-        <!--                name="Training"-->
-        <!--                web_icon="ommat_training_module,static/description/logoo.png"-->
+        <record id="temp_price_list_form_view" model="ir.ui.view">
+            <field name="name">temp_price_list_form_view</field>
+            <field name="model">temp.price_list</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
 
 
-        <!--        />-->
+                            <group>
+                                <field name="name"/>
+                            </group>
+
+                        </group>
+
+
+                        <notebook>
+                            <page string="Price list Lines" name="pricelist_temp">
+                                <!--                                <group>-->
+                                <field name="temp_price" widget="one2many_list" force_save="1">
+                                    <tree string="Price List Template" editable="bottom">
+                                        <field name="product" force_save="1"/>
+                                        <field name="price" force_save="1"/>
+                                        <field name="price_percentage" force_save="1"/>
+                                        <field name="sign" force_save="1"/>
+                                        <field name="total" force_save="1"/>
+                                        <!--                                            <field name="customerr" force_save="1"/>-->
+                                    </tree>
+                                </field>
+                                <!--                                </group>-->
+                            </page>
+                        </notebook>
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="temp_price_list_tree_view" model="ir.ui.view">
+            <field name="name">temp_price_list_tree_view</field>
+            <field name="model">temp.price_list</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_temp_price_list" model="ir.actions.act_window">
+            <field name="name">Temp Price List</field>
+            <field name="res_model">temp.price_list</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_temp_price_list_menu"
+                  name="Price List Template"
+                  action="action_temp_price_list"
+                  parent="sale.sale_menu_root"
+                  sequence="12"
+                  groups="sales_policy.sales_policy_group"
+        />
 
         <menuitem id="menu_company_price_menu"
                   name="Company Price List"

@@ -7,6 +7,10 @@
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="arch" type="xml">
 
+                <xpath expr="//header/button[@name='action_invoice_open']" position="replace">
+                    <button name="action_invoice_open" type="object" states="draft,wait" string="Validate" class="oe_highlight o_invoice_validate" groups="account.group_account_invoice"/>
+                </xpath>
+
                 <xpath expr="//field[@name='payment_term_id']" position="after">
                     <field name="mm"/>
                 </xpath>
@@ -29,6 +33,17 @@
 <!--                    </div>-->
 
                 </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='product_id']" position="after">
+                    <field name="method_pay"/>
+                </xpath>
+
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="replace">
+                   <field name="invoice_line_tax_ids" widget="many2many_tags" options="{'no_create': True}" context="{'type':parent.type, 'tree_view_ref': 'account.account_tax_view_tree', 'search_view_ref': 'account.account_tax_view_search'}"
+                     attrs="{'required': [('method_pay', 'in', ('taxed_cash', 'taxed_accrual'))]}"                   domain="[('type_tax_use','=','sale'),('company_id', '=', parent.company_id)]"/>
+
+                </xpath>
+
+
 
             </field>
         </record>
@@ -40,6 +55,7 @@
             <field name="arch" type="xml">
 
                 <xpath expr="//div[@class='oe_title']/div[@name='options']/div[2]" position="after">
+
                     <div>
                         <field name="accessories_ok"/>
                         <label for="accessories_ok"/>
