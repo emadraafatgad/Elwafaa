@@ -8,7 +8,6 @@ class CarsFixClass(models.Model):
     _rec_name = 'customer'
 
 
-
     state = fields.Selection([
         ('draft', "Draft"),
         ('confirmed', "Confirmed"),
@@ -79,6 +78,14 @@ class CarsFixClass(models.Model):
     def create_invoice_with_fix_data(self):
         inv = self.env['account.invoice'].create({
             'partner_id': self.customer.id,
+            'car': self.car.id,
+            'plate_number': self.plate_number,
+            'chassis_number': self.chassis_number,
+            'car_model': self.car_model.id,
+            'driver_name': self.driver_name,
+            'supervisor_name': self.supervisor_name,
+            'technician_name': self.technician_name,
+
         })
         for line in self.parts:
             for l in inv:
@@ -89,6 +96,8 @@ class CarsFixClass(models.Model):
                         'name': str(line.product.name),
                         'price_unit': line.price_unit,
                         'account_id': line.account_id.id,
+                        'car_type': line.car_type.id,
+                        'car_model': line.car_model.id,
 
                     })]
                 })
@@ -246,7 +255,9 @@ class CarsPartsClass(models.Model):
         ('line_section', "Section"),
         ('line_note', "Note")], default=False, help="Technical field for UX purpose.")
 
-    product = fields.Many2one('product.product', string='Product',track_visibility='onchange')
+    product = fields.Many2one('product.product', string='Product',track_visibility='onchange',domain="[('car_model','=',car_model)]")
+    car_type = fields.Many2one('car.data', string='Car',compute='cal_car_type_parts_inv_car',store=True)
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,compute='cal_car_type_parts_inv_car')
     quantity = fields.Float(string='Quantity',track_visibility='onchange')
     quantity_done = fields.Float(string='Reserved Quantity',readonly=True,track_visibility='onchange')
     product_uom = fields.Many2one('uom.uom', string='Unit of measure',track_visibility='onchange',related='product.uom_id')
@@ -265,14 +276,21 @@ class CarsPartsClass(models.Model):
 
     car_parts_inv = fields.Many2one('car.fix')
 
+    @api.multi
+    @api.onchange('product','car_parts_inv')
+    def cal_car_type_parts_inv_car(self):
+        for rec in self:
+           rec.car_type = rec.car_parts_inv.car
+           rec.car_model = rec.car_parts_inv.car_model
+
     price_unit = fields.Float('Price', compute='check_product_company_priclist')
 
     @api.multi
-    @api.depends('product', 'customer')
+    @api.depends('product', 'customer','car_model','car_type')
     def check_product_company_priclist(self):
         for rec in self:
             asd = rec.env['company.price_bridge'].search(
-                [('customerr', '=', rec.customer.id), ('product', '=', rec.product.id)])
+                [('customerr', '=', rec.customer.id), ('product', '=', rec.product.id),('car_model', '=', rec.car_model.id), ('car_type', '=', rec.car_type.id)])
             if asd:
                 rec.price_unit = asd.total
 

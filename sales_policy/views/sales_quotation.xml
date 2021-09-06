@@ -8,9 +8,38 @@
                 <xpath expr="//sheet/notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='price_subtotal']"
                        position="after">
                     <!-- Add your fields or attributes here -->
-                    <field name="customer" invisible="1"/>
+                    <field name="customer"/>
 
 
+                </xpath>
+                <xpath expr="//sheet/notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='product_id']"
+                       position="before">
+                    <field name="car_type"/>
+                    <field name="car_model"/>
+
+
+                </xpath>
+
+                <xpath expr="//sheet/notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='product_id']"
+                       position="replace">
+                    <field
+                            name="product_id"
+                            attrs="{
+                                            'readonly': [('product_updatable', '=', False)],
+                                            'required': [('display_type', '=', False)],
+                                        }"
+                            force_save="1"
+                            context="{
+                                            'partner_id': parent.partner_id,
+                                            'quantity': product_uom_qty,
+                                            'pricelist': parent.pricelist_id,
+                                            'uom':product_uom,
+                                            'company_id': parent.company_id,
+                                            'default_lst_price': price_unit,
+                                            'default_description_sale': name
+                                        }"
+                            domain="[('sale_ok','=',True),('car_model','=',car_model)]"
+                    />
                 </xpath>
 
                 <xpath expr="//sheet/notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='price_unit']"
@@ -38,7 +67,6 @@
                 </xpath>
             </field>
         </record>
-
 
 
     </data>

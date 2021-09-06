@@ -5,8 +5,15 @@ from odoo import models, fields, api, exceptions, _
 class SalesQuotationLineInherit(models.Model):
     _inherit = 'sale.order.line'
 
+    @api.multi
+    @api.depends('product_id', 'order_id')
+    def cal_customer_relation(self):
+        for rec in self:
+            rec.customer = rec.order_id.partner_id
+    customer=fields.Many2one('res.partner',string='Customer',compute='cal_customer_relation',copy=True,store=True)
+    car_type = fields.Many2one('car.data', string='Car',domain="[('customer','=',customer)]", store=True)
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True, domain="[('car_type','=',car_type)]")
 
-    customer=fields.Many2one('res.partner',string='Customer',related='order_id.partner_id')
     price_unit = fields.Float('Unit Price', required=True,readonly=True, compute='product_uom_change')
 
     @api.multi
@@ -68,10 +75,10 @@ class SalesQuotationLineInherit(models.Model):
         return result
 
     @api.multi
-    @api.depends('product_id','customer')
+    @api.depends('product_id','customer','car_model','car_type')
     def product_uom_change(self):
       for rec in self:
-        asd = rec.env['company.price_bridge'].search([('customerr', '=', rec.customer.id),('product', '=', rec.product_id.id)])
+        asd = rec.env['company.price_bridge'].search([('customerr', '=', rec.customer.id),('product', '=', rec.product_id.id),('car_model', '=', rec.car_model.id), ('car_type', '=', rec.car_type.id)])
         if asd:
           rec.price_unit=asd.total
         # else:
@@ -120,44 +127,6 @@ class SalesQuotationInherit(models.Model):
 
 
 
-class AccountInvoiceLineInheritKKLL(models.Model):
-    _inherit = 'account.invoice.line'
+# class AccountInvoiceLineInheritKKLL(models.Model):
+#     _inherit = 'account.invoice.line'
 
-    price_unit = fields.Float(string='Unit Price', required=True, compute='_onchange_uom_id')
-
-    @api.multi
-    @api.onchange('uom_id','product_id')
-    def _onchange_uom_id(self):
-        for rec in self:
-            asd = rec.env['company.price_bridge'].search(
-                [('customerr', '=', rec.partner_id.id), ('product', '=', rec.product_id.id)])
-            if asd:
-                rec.price_unit = asd.total
-        # warning = {}
-        result = {}
-        # if not self.uom_id:
-        #     self.price_unit = 0.0
-
-        # if self.product_id and self.uom_id:
-        #     self._set_taxes()
-        #     self.price_unit = self.product_id.uom_id._compute_price(self.price_unit, self.uom_id)
-
-        if rec.product_id.uom_id.category_id.id != rec.uom_id.category_id.id:
-                warning = {
-                    'title': _('Warning!'),
-                    'message': _(
-                        'The selected unit of measure has to be in the same category as the product unit of measure.'),
-                }
-                rec.uom_id = rec.product_id.uom_id.id
-                if warning:
-                   result['warning'] = warning
-        return result
-
-    # @api.multi
-    # @api.depends('product_id')
-    # def price_unit_calc(self):
-    #     for rec in self:
-    #         asd = rec.env['company.price_bridge'].search(
-    #             [('customerr', '=', rec.partner_id.id), ('product', '=', rec.product_id.id)])
-    #         if asd:
-    #             rec.price_unit = asd.total

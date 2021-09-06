@@ -13,6 +13,16 @@ class AccountInvoiceClass(models.Model):
     total_steel_qty = fields.Float(string='Total Steel Quantities', track_visibility='onchange',compute='action_compute_total_accessories')
     mm = fields.Selection([('taxed_cash','Taxed Cash'),('Untaxed_cash','Untaxed Cash'),('taxed_accrual','Taxed Accrual'),('untaxed_accrual','Untaxed Accrual')],string='Work Method',default='taxed_cash',related='partner_id.work_method',track_visibility='onchange')
 
+    car = fields.Many2one('car.data', string='Car', track_visibility='onchange',domain="[('customer','=',partner_id)]")
+    plate_number = fields.Char(string='Plate Number', track_visibility='onchange')
+    chassis_number = fields.Char(string='Chassis Number',track_visibility='onchange')
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,domain="[('car_type','=',car)]")
+    driver_name = fields.Char(string='Driver Name')
+    supervisor_name = fields.Char('اسم المشرف', track_visibility='onchange')
+    technician_name = fields.Char('اسم الفني ', track_visibility='onchange')
+
+
+
     state = fields.Selection([
         ('draft', 'Draft'),
         ('wait', 'Waiting'),
@@ -65,16 +75,69 @@ class ProducttemplateWafaClass(models.Model):
     accessories_ok = fields.Boolean(string='Accessories',track_visibility='onchange')
     service_ok = fields.Boolean(string='Service',track_visibility='onchange')
     steel_ok = fields.Boolean(string='Steel',track_visibility='onchange')
+    car_model = fields.Many2one('model.car',string='Car Model',store=True,copy=True)
+    car_type = fields.Many2one('car.type', string='Car',track_visibility='onchange',related='car_model.car_type')
 
 
+class ProductProductWafaClass(models.Model):
+    _inherit="product.product"
 
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True)
+    car_type = fields.Many2one('car.type', string='Car', track_visibility='onchange', related='car_model.car_type')
 
 
 class AccountInvoiceLineInheritWafa(models.Model):
     _inherit = 'account.invoice.line'
 
+    product_id = fields.Many2one('product.product', string='Product',ondelete='restrict', index=True,domain="[('car_model','=',car_model)]")
     method_pay = fields.Selection([('taxed_cash','Taxed Cash'),('Untaxed_cash','Untaxed Cash'),('taxed_accrual','Taxed Accrual'),('untaxed_accrual','Untaxed Accrual')],string='Work Method',default='taxed_cash',related='invoice_id.mm',track_visibility='onchange')
+    price_unit = fields.Float(string='Unit Price', required=True, compute='_onchange_uom_id')
+    car_type = fields.Many2one('car.data', string='Car', compute='cal_type_car', store=True)
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,compute='cal_type_car')
 
+
+    @api.multi
+    @api.depends('product_id', 'invoice_id')
+    def cal_type_car(self):
+        for rec in self:
+            rec.car_type = rec.invoice_id.car
+            rec.car_model = rec.invoice_id.car_model
+    @api.multi
+    @api.onchange('uom_id', 'product_id','car_model','car_type')
+    def _onchange_uom_id(self):
+        for rec in self:
+            asd = rec.env['company.price_bridge'].search(
+                [('customerr', '=', rec.partner_id.id), ('product', '=', rec.product_id.id),('car_model', '=', rec.car_model.id), ('car_type', '=', rec.car_type.id)])
+            if asd:
+                rec.price_unit = asd.total
+        # warning = {}
+        result = {}
+        # if not self.uom_id:
+        #     self.price_unit = 0.0
+
+        # if self.product_id and self.uom_id:
+        #     self._set_taxes()
+        #     self.price_unit = self.product_id.uom_id._compute_price(self.price_unit, self.uom_id)
+
+        if rec.product_id.uom_id.category_id.id != rec.uom_id.category_id.id:
+            warning = {
+                'title': _('Warning!'),
+                'message': _(
+                    'The selected unit of measure has to be in the same category as the product unit of measure.'),
+            }
+            rec.uom_id = rec.product_id.uom_id.id
+            if warning:
+                result['warning'] = warning
+        return result
+
+    # @api.multi
+    # @api.depends('product_id')
+    # def price_unit_calc(self):
+    #     for rec in self:
+    #         asd = rec.env['company.price_bridge'].search(
+    #             [('customerr', '=', rec.partner_id.id), ('product', '=', rec.product_id.id)])
+    #         if asd:
+    #             rec.price_unit = asd.total
 
 
 

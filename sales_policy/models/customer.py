@@ -15,7 +15,7 @@ class ResPartnerModify(models.Model):
     owner_name = fields.Char('Owner Name',track_visibility='onchange')
     owner_phone = fields.Char('Owner Phone',track_visibility='onchange')
     cars_no = fields.Char('Number of Cars',track_visibility='onchange')
-    car_type = fields.Many2one('car.type',string='Car Type',track_visibility='onchange')
+    car_type = fields.Many2many('car.type',string='Car Type',track_visibility='onchange')
     salesperson = fields.Char('Salesperson',track_visibility='onchange')
     dealing_way = fields.Selection([('work_order','Work Order'),('phone_call','Phone call'),('mail','E-mail')],string='Dealing Way',track_visibility='onchange')
     payment_method = fields.Many2one('payement.method',string='Payment Method')

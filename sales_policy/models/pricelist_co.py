@@ -7,7 +7,10 @@ class CompanyPriceList(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     customer=fields.Many2one('res.partner',string='Customer',track_visibility='onchange')
-    pricelist_temp=fields.Many2one('temp.price_list',string='Price List Template',track_visibility='onchange')
+    car = fields.Many2one('car.data', string='Car', domain="[('customer','=',customer)]",track_visibility='onchange',store=True, copy=True,)
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True, related='car.car_model')
+    is_service = fields.Boolean('Is Service?')
+    pricelist_temp=fields.Many2one('temp.price_list',string='Price List Template',track_visibility='onchange',domain="[('car_model','=',car_model)]")
     date=fields.Date(string='Date',default=fields.Date.today(),store=True,copy=True,track_visibility='onchange')
     date2=fields.Date(string='Date',store=True,copy=True,track_visibility='onchange',compute='_compute_date_amount')
     payment_term=fields.Many2one('payement.method',string='Payment Terms',track_visibility='onchange')
@@ -31,6 +34,8 @@ class CompanyPriceList(models.Model):
                             'price_percentage': rec.price_percentage,
                             'sign':rec.sign,
                             'total':rec.total,
+                            'car_type': rec.car_type,
+                            'car_model': rec.car_model,
 
                   })
               self.pricelist_table = l
@@ -85,7 +90,7 @@ class CompanyPriceList(models.Model):
 class CompanyPriceListBridge(models.Model):
     _name = 'company.price_bridge'
 
-    product=fields.Many2one('product.product',required=True,track_visibility='onchange')
+    product=fields.Many2one('product.product',required=True,track_visibility='onchange',domain="[('car_model','=',car_model)]")
     price = fields.Float(string='Price',track_visibility='onchange')
     price_percentage = fields.Float(string='Percentage',track_visibility='onchange')
     sign = fields.Char(string='%',default='%',readonly=True,track_visibility='onchange')
@@ -97,6 +102,15 @@ class CompanyPriceListBridge(models.Model):
     accessories_percentage = fields.Float(string='Accessories Percentage',related='bridge_inverse_price.accessories_percentage')
     steel_percentage = fields.Float(string='Steel Percentage',related='bridge_inverse_price.steel_percentage')
     service_percentage = fields.Float(string='Service Percentage',related='bridge_inverse_price.service_percentage')
+    car_type = fields.Many2one('car.data', string='Car', compute='cal_car_type_inv', store=True,copy=True)
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,compute='cal_car_type_inv')
+
+    @api.multi
+    @api.depends('product', 'bridge_inverse_price')
+    def cal_car_type_inv(self):
+        for rec in self:
+            rec.car_type = rec.bridge_inverse_price.car
+            rec.car_model = rec.bridge_inverse_price.car_model
 
     @api.one
     @api.depends('product')
@@ -159,22 +173,37 @@ class CompanyPriceListTemplate(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name=fields.Char(string='Template',track_visibility='onchange',store=True,copy=True)
+    car = fields.Many2one('car.data', string='Car',track_visibility='onchange')
+    is_service = fields.Boolean('Is Service?')
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True, domain="[('car_type','=',car)]")
+
+
     temp_price = fields.One2many('price_list.template_bridge','bridge_inverse_price_temp',string='Lines',store=True,copy=True)
 
     _sql_constraints = [
-        ('name_uniq', 'unique (name)', 'Name must be unique!'),
+        ('name_uniq', 'unique (name,car_model)', 'Name,Car Model must be unique!'),
     ]
 
 class CompanyPriceListtTemplateBridge(models.Model):
     _name = 'price_list.template_bridge'
     _rec_name = 'product'
 
-    product=fields.Many2one('product.product',required=True,track_visibility='onchange',store=True,copy=True)
+    product=fields.Many2one('product.product',required=True,track_visibility='onchange',store=True,copy=True,domain="[('car_model','=',car_model)]")
     price = fields.Float(string='Price',track_visibility='onchange',store=True,copy=True)
     price_percentage = fields.Float(string='Percentage',track_visibility='onchange',store=True,copy=True)
     sign = fields.Char(string='%',default='%',readonly=True,track_visibility='onchange',store=True,copy=True)
     total=fields.Float(string='Total',compute='_compute_final_amount',track_visibility='onchange',store=True,copy=True)
     # customerr=fields.Many2one('res.partner',string='Customer',related='bridge_inverse_price.customer')
+
+    car_type = fields.Many2one('car.data', string='Car', compute='cal_type_inv', store=True)
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,compute='cal_type_inv')
+
+    @api.multi
+    @api.onchange('product', 'bridge_inverse_price_temp')
+    def cal_type_inv(self):
+        for rec in self:
+            rec.car_type = rec.bridge_inverse_price_temp.car
+            rec.car_model = rec.bridge_inverse_price_temp.car_model
 
 
     @api.one
