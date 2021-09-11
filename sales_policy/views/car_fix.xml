@@ -162,14 +162,14 @@
 
 
         <record id="action_car_fix" model="ir.actions.act_window">
-            <field name="name">Car Fix</field>
+            <field name="name">Car Maintenance</field>
             <field name="res_model">car.fix</field>
             <field name="view_mode">tree,form</field>
         </record>
 
 
         <menuitem id="menu_car_fix_menu"
-                  name="Cars Fix"
+                  name="Cars Maintenance"
                   action="action_car_fix"
                   parent="sale.sale_menu_root"
                   sequence="8"
