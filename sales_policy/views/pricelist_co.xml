@@ -68,7 +68,9 @@
                                 <field name="is_service" />
                                 <field name="car" attrs="{'invisible':[('is_service', '=',True)]}"/>
                                 <field name="car_model" attrs="{'required':[('is_service', '!=',True)],'invisible':[('is_service', '=',True)]}"/>
-                                <field name="pricelist_temp"/>
+                                <field name="company_category"/>
+                                <field name="pricelist_temp" domain="[('company_category','=',company_category),('car_model','=',car_model)]"/>
+
                             </group>
                         </group>
 
@@ -86,15 +88,15 @@
                                         <field name="service_ok" force_save="1"/>
                                         <field name="steel_ok" force_save="1"/>
                                         <field name="price" force_save="1"/>
-                                        <field name="accessories_percentage" force_save="1"
+                                        <field name="accessories_percentage" force_save="1" invisible="1"
                                                attrs="{'invisible':[('accessories_ok', '!=',True)]}"/>
-                                        <field name="sign" force_save="1"/>
-                                        <field name="steel_percentage" force_save="1"
+                                        <field name="sign" force_save="1" invisible="1"/>
+                                        <field name="steel_percentage" force_save="1" invisible="1"
                                                attrs="{'invisible':[('steel_ok', '!=',True)]}"/>
-                                        <field name="sign" force_save="1"/>
-                                        <field name="service_percentage" force_save="1"
+                                        <field name="sign" force_save="1" invisible="1"/>
+                                        <field name="service_percentage" force_save="1" invisible="1"
                                                attrs="{'invisible':[('service_ok', '!=',True)]}"/>
-                                        <field name="sign" force_save="1"/>
+                                        <field name="sign" force_save="1" invisible="1"/>
                                         <field name="price_percentage" force_save="1"/>
                                         <field name="sign" force_save="1"/>
                                         <field name="total" force_save="1"/>
@@ -151,10 +153,9 @@
                             <group>
                                 <field name="name" required="1"/>
                                 <field name="is_service" />
+                                <field name="company_category" />
                             </group>
                             <group>
-
-
                                 <field name="car" attrs="{'invisible':[('is_service', '=',True)]}"/>
                                 <field name="car_model" attrs="{'required':[('is_service', '!=',True)],'invisible':[('is_service', '=',True)]}"/>
                             </group>
@@ -171,8 +172,8 @@
                                         <field name="car_type" force_save="1"/>
                                         <field name="car_model" force_save="1"/>
                                         <field name="price" force_save="1"/>
-                                        <field name="price_percentage" force_save="1"/>
-                                        <field name="sign" force_save="1"/>
+<!--                                        <field name="price_percentage" force_save="1"/>-->
+<!--                                        <field name="sign" force_save="1"/>-->
                                         <field name="total" force_save="1"/>
                                         <!--                                            <field name="customerr" force_save="1"/>-->
                                     </tree>

@@ -1,0 +1,482 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* customer_invoice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-14 10:07+0000\n"
+"PO-Revision-Date: 2021-09-14 10:07+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: customer_invoice
+#: model:ir.model.fields,help:customer_invoice.field_account_invoice__state
+msgid " * The 'Draft' status is used when a user is encoding a new and unconfirmed Invoice.\n"
+" * The 'Open' status is used when user creates invoice, an invoice number is generated. It stays in the open status till the user pays the invoice.\n"
+" * The 'In Payment' status is used when payments have been registered for the entirety of the invoice in a journal configured to post entries at bank reconciliation only, and some of them haven't been reconciled with a bank statement line yet.\n"
+" * The 'Paid' status is set automatically when the invoice is paid. Its related journal entries may or may not be reconciled.\n"
+" * The 'Cancelled' status is used when user cancel invoice."
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_without_tax_temp
+msgid "&amp;nbsp;"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.report_customer_invoice_inherit
+msgid "<strong>Accessories Quantities</strong>"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.report_customer_invoice_inherit
+msgid "<strong>Service Quantities</strong>"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.report_customer_invoice_inherit
+msgid "<strong>Steel Quantities</strong>"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.report_customer_invoice_inherit
+msgid "<strong>Total Accessories</strong>"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.report_customer_invoice_inherit
+msgid "<strong>Total Service\n"
+"                                </strong>"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.report_customer_invoice_inherit
+msgid "<strong>Total Steel</strong>"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_product_product__accessories_ok
+#: model:ir.model.fields,field_description:customer_invoice.field_product_template__accessories_ok
+msgid "Accessories"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
+msgid "Add a line"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
+msgid "Add a note"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
+msgid "Add a section"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice_tax__amount_total
+msgid "Amount Total"
+msgstr ""
+
+#. module: customer_invoice
+#: selection:account.invoice,state:0
+msgid "Cancelled"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__car
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice_line__car_type
+#: model:ir.model.fields,field_description:customer_invoice.field_product_product__car_type
+#: model:ir.model.fields,field_description:customer_invoice.field_product_template__car_type
+msgid "Car"
+msgstr "السيارة"
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__car_model
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice_line__car_model
+#: model:ir.model.fields,field_description:customer_invoice.field_product_product__car_model
+#: model:ir.model.fields,field_description:customer_invoice.field_product_template__car_model
+#: model_terms:ir.ui.view,arch_db:customer_invoice.product_product_wafa_form_view
+#: model_terms:ir.ui.view,arch_db:customer_invoice.product_template_wafa_form_view
+msgid "Car Model"
+msgstr "مودل السيارة"
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.product_product_wafa_form_view
+#: model_terms:ir.ui.view,arch_db:customer_invoice.product_template_wafa_form_view
+msgid "Car Type"
+msgstr "نوع السيارة"
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__chassis_number
+msgid "Chassis Number"
+msgstr "رقم الشاسيه"
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
+msgid "Disc (%)"
+msgstr ""
+
+#. module: customer_invoice
+#: code:addons/customer_invoice/models/invoice.py:216
+#, python-format
+msgid "Down Payment"
+msgstr ""
+
+#. module: customer_invoice
+#: code:addons/customer_invoice/models/invoice.py:213
+#, python-format
+msgid "Down payment of %s%%"
+msgstr ""
+
+#. module: customer_invoice
+#: selection:account.invoice,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__driver_name
+msgid "Driver Name"
+msgstr ""
+
+#. module: customer_invoice
+#: selection:account.invoice,state:0
+msgid "In Payment"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model,name:customer_invoice.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model,name:customer_invoice.model_account_invoice_line
+msgid "Invoice Line"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__invoice_line_ids
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
+msgid "Invoice Lines"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model,name:customer_invoice.model_account_invoice_tax
+msgid "Invoice Tax"
+msgstr ""
+
+#. module: customer_invoice
+#: code:addons/customer_invoice/models/invoice.py:40
+#, python-format
+msgid "Invoice must be in draft or waiting state in order to validate it."
+msgstr ""
+
+#. module: customer_invoice
+#: code:addons/customer_invoice/models/invoice.py:47
+#, python-format
+msgid "No account was found to create the invoice, be sure you have installed a chart of account."
+msgstr ""
+
+#. module: customer_invoice
+#: selection:account.invoice,state:0
+msgid "Open"
+msgstr ""
+
+#. module: customer_invoice
+#: selection:account.invoice,state:0
+msgid "Paid"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__plate_number
+msgid "Plate Number"
+msgstr "رقم اللوحة"
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
+msgid "Price"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model,name:customer_invoice.model_product_product
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice_line__product_id
+msgid "Product"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model,name:customer_invoice.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
+msgid "Quantity:"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model,name:customer_invoice.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_product_product__service_ok
+#: model:ir.model.fields,field_description:customer_invoice.field_product_template__service_ok
+msgid "Service"
+msgstr "خدمة"
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__state
+msgid "Status"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_product_product__steel_ok
+#: model:ir.model.fields,field_description:customer_invoice.field_product_template__steel_ok
+msgid "Steel"
+msgstr "حديد"
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
+msgid "Subtotal"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice_tax__name
+msgid "Tax Description"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__tax_line_ids
+msgid "Tax Lines"
+msgstr ""
+
+#. module: customer_invoice
+#: code:addons/customer_invoice/models/invoice.py:38
+#, python-format
+msgid "The field Vendor is required, please complete it to validate the Vendor Bill."
+msgstr ""
+
+#. module: customer_invoice
+#: code:addons/customer_invoice/models/invoice.py:169
+#, python-format
+msgid "The selected unit of measure has to be in the same category as the product unit of measure."
+msgstr ""
+
+#. module: customer_invoice
+#: code:addons/customer_invoice/models/invoice.py:209
+#, python-format
+msgid "The value of the down payment amount must be positive."
+msgstr ""
+
+#. module: customer_invoice
+#: code:addons/customer_invoice/models/invoice.py:205
+#, python-format
+msgid "There is no income account defined for this product: \"%s\". You may have to install a chart of account from Accounting app, settings menu."
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
+msgid "Total"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_accessories
+msgid "Total Accessories"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_accessories_qty
+msgid "Total Accessories Quantities"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_service
+msgid "Total Service"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_service_qty
+msgid "Total Service Quantities"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_steel
+msgid "Total Steel"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_steel_qty
+msgid "Total Steel Quantities"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_other_tax
+msgid "Total other Taxes"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice_line__price_unit
+msgid "Unit Price"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
+msgid "Unit Price:"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
+msgid "Validate"
+msgstr ""
+
+#. module: customer_invoice
+#: selection:account.invoice,state:0
+msgid "Waiting"
+msgstr ""
+
+#. module: customer_invoice
+#: code:addons/customer_invoice/models/invoice.py:168
+#, python-format
+msgid "Warning!"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__mm
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice_line__method_pay
+msgid "Work Method"
+msgstr ""
+
+#. module: customer_invoice
+#: code:addons/customer_invoice/models/invoice.py:44
+#, python-format
+msgid "You cannot validate an invoice with a negative total amount. You should create a credit note instead."
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+msgid "logo"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__technician_name
+msgid "اسم الفني "
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_without_tax_temp
+msgid "اسم المسئول:"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__supervisor_name
+msgid "اسم المشرف"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+msgid "الاجمالي بعد الضريبة"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_without_tax_temp
+msgid "الاجمالي:"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_without_tax_temp
+msgid "السادة شركة:"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_without_tax_temp
+msgid "الكمية"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_without_tax_temp
+msgid "المبلغ"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+msgid "المجموع"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_without_tax_temp
+msgid "الوصف"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_without_tax_temp
+msgid "رقم السيارة:"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_without_tax_temp
+msgid "رقم الفاتورة:"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_without_tax_temp
+msgid "سعر الوحدة"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_without_tax_temp
+msgid "فاتورة\n"
+"                                    &amp;nbsp;"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.actions.report,name:customer_invoice.account_invoice_with_tax
+msgid "فاتورة بالضريبة"
+msgstr ""
+
+#. module: customer_invoice
+#: model:ir.actions.report,name:customer_invoice.account_invoice_without_tax
+msgid "فاتورة بدون ضريبة"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_without_tax_temp
+msgid "مودل السيارة:"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_without_tax_temp
+msgid "نوع السيارة:"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_without_tax_temp
+msgid "هام لسيادتكم :"
+msgstr ""
+
+#. module: customer_invoice
+#: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
+msgid "وصف الضريبة"
+msgstr ""
+

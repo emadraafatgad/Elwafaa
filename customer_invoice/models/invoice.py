@@ -1,5 +1,6 @@
 from odoo import models, fields, api, exceptions, _
 from odoo.exceptions import UserError
+from odoo.tools import float_compare
 
 
 class AccountInvoiceClass(models.Model):
@@ -13,14 +14,47 @@ class AccountInvoiceClass(models.Model):
     total_steel_qty = fields.Float(string='Total Steel Quantities', track_visibility='onchange',compute='action_compute_total_accessories')
     mm = fields.Selection([('taxed_cash','Taxed Cash'),('Untaxed_cash','Untaxed Cash'),('taxed_accrual','Taxed Accrual'),('untaxed_accrual','Untaxed Accrual')],string='Work Method',default='taxed_cash',related='partner_id.work_method',track_visibility='onchange')
 
-    car = fields.Many2one('car.data', string='Car', track_visibility='onchange',domain="[('customer','=',partner_id)]")
-    plate_number = fields.Char(string='Plate Number', track_visibility='onchange')
-    chassis_number = fields.Char(string='Chassis Number',track_visibility='onchange')
-    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,domain="[('car_type','=',car)]")
+    car = fields.Many2one('car.data', string='Car', track_visibility='onchange',domain="[('customer','=',partner_id)]",required=True)
+    plate_number = fields.Char(string='Plate Number', track_visibility='onchange',related='car.plate_number')
+    chassis_number = fields.Char(string='Chassis Number',track_visibility='onchange',related='car.chassis_number')
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,domain="[('car_type','=',car)]",required=True)
     driver_name = fields.Char(string='Driver Name')
     supervisor_name = fields.Char('اسم المشرف', track_visibility='onchange')
     technician_name = fields.Char('اسم الفني ', track_visibility='onchange')
+    invoice_line_ids = fields.One2many('account.invoice.line', 'invoice_id', string='Invoice Lines',
+                                       oldname='invoice_line',
+                                       states={'draft,wait': [('readonly', False)]}, copy=True)
+    tax_line_ids = fields.One2many('account.invoice.tax', 'invoice_id', string='Tax Lines', oldname='tax_line',
+                                  store=True, states={'draft,wait': [('readonly', False)]}, copy=True)
 
+    total_other_tax = fields.Float(string='Total other Taxes', track_visibility='onchange',compute='total_other_taxes')
+    # total_after_tax = fields.Float(string='Total after Taxes', track_visibility='onchange',compute='total_other_taxes')
+
+    @api.multi
+    def action_invoice_open(self):
+        # lots of duplicate calls to action_invoice_open, so we remove those already open
+        to_open_invoices = self.filtered(lambda inv: inv.state != 'open')
+        if to_open_invoices.filtered(lambda inv: not inv.partner_id):
+            raise UserError(_("The field Vendor is required, please complete it to validate the Vendor Bill."))
+        if to_open_invoices.filtered(lambda inv: inv.state not in ('draft','wait')):
+            raise UserError(_("Invoice must be in draft or waiting state in order to validate it."))
+        if to_open_invoices.filtered(
+                lambda inv: float_compare(inv.amount_total, 0.0, precision_rounding=inv.currency_id.rounding) == -1):
+            raise UserError(
+                _("You cannot validate an invoice with a negative total amount. You should create a credit note instead."))
+        if to_open_invoices.filtered(lambda inv: not inv.account_id):
+            raise UserError(
+                _('No account was found to create the invoice, be sure you have installed a chart of account.'))
+        to_open_invoices.action_date_assign()
+        to_open_invoices.action_move_create()
+        return to_open_invoices.invoice_validate()
+
+    @api.multi
+    @api.depends('tax_line_ids')
+    def total_other_taxes(self):
+     for line in self:
+      for rec in line.tax_line_ids:
+           line.total_other_tax =line.total_other_tax +rec.amount_total
 
 
     state = fields.Selection([
@@ -58,6 +92,15 @@ class AccountInvoiceClass(models.Model):
     # @api.multi
     # def action_accept(self):
     #     self.state_workflow = 'accept'
+
+
+class AccountInvoiceTaxaClass(models.Model):
+    _inherit="account.invoice.tax"
+
+    amount_total = fields.Monetary(string="Amount Total", store=True,compute='_compute_amount_total')
+    name = fields.Char(string='Tax Description', required=True,store=True)
+
+
 
 # class ProductProudctWafaClass(models.Model):
 #     _inherit="product.product"
@@ -109,7 +152,8 @@ class AccountInvoiceLineInheritWafa(models.Model):
             asd = rec.env['company.price_bridge'].search(
                 [('customerr', '=', rec.partner_id.id), ('product', '=', rec.product_id.id),('car_model', '=', rec.car_model.id), ('car_type', '=', rec.car_type.id)])
             if asd:
-                rec.price_unit = asd.total
+              for line in asd:
+                rec.price_unit = line.total
         # warning = {}
         result = {}
         # if not self.uom_id:

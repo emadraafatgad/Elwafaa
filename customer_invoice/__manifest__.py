@@ -27,10 +27,12 @@
         # 'security/ir.model.access.csv',
         'views/invoice.xml',
         'reports/customer_invoice_report.xml',
+        'reports/invoice_with_tax.xml',
+        'reports/invoice_without_tax.xml',
 
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        # 'demo/demo.xml',
     ],
 }

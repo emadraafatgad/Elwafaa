@@ -80,7 +80,8 @@ class SalesQuotationLineInherit(models.Model):
       for rec in self:
         asd = rec.env['company.price_bridge'].search([('customerr', '=', rec.customer.id),('product', '=', rec.product_id.id),('car_model', '=', rec.car_model.id), ('car_type', '=', rec.car_type.id)])
         if asd:
-          rec.price_unit=asd.total
+            for m in asd:
+             rec.price_unit=m.total
         # else:
         #
         #     if not self.product_uom or not self.product_id:

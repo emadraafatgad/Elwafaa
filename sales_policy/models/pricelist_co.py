@@ -20,6 +20,8 @@ class CompanyPriceList(models.Model):
     accessories_percentage= fields.Float(string='Accessories Percentage')
     steel_percentage= fields.Float(string='Steel Percentage')
     service_percentage= fields.Float(string='Service Percentage')
+    company_category = fields.Selection([('a','A'),('b','B'),('c','C'),('d','D'),('competitive','Competitive')],string='Company Category',track_visibility='onchange',related='customer.company_category')
+
 
     @api.one
     @api.depends('pricelist_temp')
@@ -31,8 +33,8 @@ class CompanyPriceList(models.Model):
               for rec in asd.temp_price:
                   l.append({'product':rec.product.id,
                             'price': rec.price,
-                            'price_percentage': rec.price_percentage,
-                            'sign':rec.sign,
+                            # 'price_percentage': rec.price_percentage,
+                            # 'sign':rec.sign,
                             'total':rec.total,
                             'car_type': rec.car_type,
                             'car_model': rec.car_model,
@@ -176,12 +178,13 @@ class CompanyPriceListTemplate(models.Model):
     car = fields.Many2one('car.data', string='Car',track_visibility='onchange')
     is_service = fields.Boolean('Is Service?')
     car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True, domain="[('car_type','=',car)]")
+    company_category = fields.Selection([('a','A'),('b','B'),('c','C'),('d','D'),('competitive','Competitive')],string='Company Category',track_visibility='onchange')
 
 
     temp_price = fields.One2many('price_list.template_bridge','bridge_inverse_price_temp',string='Lines',store=True,copy=True)
 
     _sql_constraints = [
-        ('name_uniq', 'unique (name,car_model)', 'Name,Car Model must be unique!'),
+        ('name_uniq', 'unique (name)', 'Name must be unique!'),
     ]
 
 class CompanyPriceListtTemplateBridge(models.Model):
@@ -190,8 +193,8 @@ class CompanyPriceListtTemplateBridge(models.Model):
 
     product=fields.Many2one('product.product',required=True,track_visibility='onchange',store=True,copy=True,domain="[('car_model','=',car_model)]")
     price = fields.Float(string='Price',track_visibility='onchange',store=True,copy=True)
-    price_percentage = fields.Float(string='Percentage',track_visibility='onchange',store=True,copy=True)
-    sign = fields.Char(string='%',default='%',readonly=True,track_visibility='onchange',store=True,copy=True)
+    # price_percentage = fields.Float(string='Percentage',track_visibility='onchange',store=True,copy=True)
+    # sign = fields.Char(string='%',default='%',readonly=True,track_visibility='onchange',store=True,copy=True)
     total=fields.Float(string='Total',compute='_compute_final_amount',track_visibility='onchange',store=True,copy=True)
     # customerr=fields.Many2one('res.partner',string='Customer',related='bridge_inverse_price.customer')
 
@@ -207,10 +210,11 @@ class CompanyPriceListtTemplateBridge(models.Model):
 
 
     @api.one
-    @api.depends('price', 'price_percentage')
+    @api.depends('price')
     def _compute_final_amount(self):
         for rec in self:
-            rec.total =rec.price+((rec.price_percentage/100)*rec.price)
+            # rec.total =rec.price+((rec.price_percentage/100)*rec.price)
+            rec.total = rec.price
 
     @api.multi
     @api.constrains('price')
