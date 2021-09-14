@@ -212,19 +212,23 @@
             <field name="view_mode">tree,form</field>
         </record>
 
+         <menuitem id="menu_cars_main_root_menu"
+                  name="Cars"
+        />
+
         <menuitem id="menu_temp_price_list_menu"
                   name="Price List Template"
                   action="action_temp_price_list"
-                  parent="sale.sale_menu_root"
-                  sequence="12"
+                  parent="menu_cars_root_menu"
+                  sequence="3"
                   groups="sales_policy.sales_policy_group"
         />
 
         <menuitem id="menu_company_price_menu"
                   name="Company Price List"
                   action="action_company_price"
-                  parent="sale.sale_menu_root"
-                  sequence="9"
+                  parent="menu_cars_main_root_menu"
+                  sequence="2"
                   groups="sales_policy.sales_policy_group"
         />
 

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="mrp_operation_form_view" model="ir.ui.view">
+            <field name="name">mrp_operation_form_view</field>
+            <field name="model">mrp.operation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+
+                        </group>
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="mrp_operation_tree_view" model="ir.ui.view">
+            <field name="name">mrp_operation_tree_view</field>
+            <field name="model">mrp.operation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_mrp_operation" model="ir.actions.act_window">
+            <field name="name">Operation</field>
+            <field name="res_model">mrp.operation</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_configuration_menu"
+                  name="Configuration"
+                  parent="menu_mrp_root_menu"
+                  sequence="10"
+
+        />
+
+        <menuitem id="menu_operation_menu"
+                  name="Operation"
+                  action="action_mrp_operation"
+                  parent="menu_configuration_menu"
+                  sequence="1"
+
+        />
+
+        <record id="work_center_form_view" model="ir.ui.view">
+            <field name="name">work_center_form_view</field>
+            <field name="model">work.center</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+
+                        </group>
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="work_center_tree_view" model="ir.ui.view">
+            <field name="name">work_center_tree_view</field>
+            <field name="model">work.center</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_work_center" model="ir.actions.act_window">
+            <field name="name">Work Center</field>
+            <field name="res_model">work.center</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+       <menuitem id="menu_work_center_menu"
+                  name="Work Center"
+                  action="action_work_center"
+                  parent="menu_configuration_menu"
+                  sequence="2"
+
+        />
+
+    </data>
+</odoo>
+
+
+

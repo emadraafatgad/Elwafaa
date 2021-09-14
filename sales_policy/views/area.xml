@@ -134,15 +134,24 @@
             <field name="view_mode">tree,form</field>
         </record>
 
+        <menuitem id="menu_cars_main_root_menu"
+                  name="Cars"
+        />
+        <menuitem id="menu_cars_root_menu"
+                  name="Configuration"
+                  parent="menu_cars_main_root_menu"
+                  sequence="15"
+                  groups="sales_policy.sales_policy_group"
+        />
 
          <menuitem id="menu_area_menu_root"
                   name="Area"
-                  parent="sale.sale_menu_root"
-                  sequence="12"
+                  parent="menu_cars_root_menu"
+                  sequence="10"
                   groups="sales_policy.sales_policy_group"
         />
         <menuitem id="menu_area_record_menu"
-                  name="Area Record"
+                  name="Area Data"
                   action="action_area_record"
                   parent="menu_area_menu_root"
                   sequence="1"
@@ -152,10 +161,10 @@
 
 
          <menuitem id="menu_area_menu"
-                  name="Area Data"
+                      name="Area Report"
                   action="action_area_data"
                   parent="menu_area_menu_root"
-                  sequence="12"
+                  sequence="5"
                   groups="sales_policy.sales_policy_group"
         />
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Sales Policy",
+    'name': "Manfucturing",
 
     'summary': """
         Elwafa""",
@@ -19,25 +19,21 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail','sale_management','stock'],
+    'depends': ['base','mail','stock'],
 
     # always loaded
     'data': [
         'security/contact.xml',
         'security/ir.model.access.csv',
-        'views/area.xml',
-        'views/pricelist_co.xml',
-        'views/customer.xml',
-        'views/cars.xml',
-        'views/sales_quotation.xml',
-        'views/car_fix.xml',
-        'views/target.xml',
-        'views/area.xml',
-        'views/workshop.xml',
-        'reports/car_reception_detection.xml',
+        'views/mrp_request.xml',
+        'views/bom_template.xml',
+        'views/operation.xml',
+        'views/manfucturing_steps.xml',
+        'views/mrp_order.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [
-        # 'demo/demo.xml',
+        'demo/demo.xml',
     ],
 }

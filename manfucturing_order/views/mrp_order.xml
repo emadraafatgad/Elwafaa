@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="mrp_order_form_view" model="ir.ui.view">
+            <field name="name">mrp_order_form_view</field>
+            <field name="model">mrp.order</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="product"/>
+                                <label for="quantity"/>
+                                <div class="o_row">
+                                    <field name="quantity" class="oe_inline"/>
+                                    <field name="product_uom" class="oe_inline"/>
+                                </div>
+                                <field name="routing"/>
+                                <field name="bill_of_materials"/>
+                            </group>
+                            <group>
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                                <field name="source"/>
+                                <field name="responsible_user"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Lines" name="mrp_order_lines">
+                                <field name="transfer_lines" widget="one2many_list" force_save="1">
+                                    <tree editable="bottom" >
+                                        <field name="product" force_save="1"/>
+                                        <field name="product_uom" force_save="1"/>
+                                        <field name="to_consume" force_save="1"/>
+                                        <field name="to_reserve" force_save="1"/>
+                                        <field name="consumed" force_save="1"/>
+                                        <field name="operation" force_save="1"/>
+                                    </tree>
+                                </field>
+<!--                                <button name="action_update" type="object" string="Update"/>-->
+                            </page>
+                            <page string="MRP steps Lines" name="man_step_lines">
+                                <field name="man_step_lines" widget="one2many_list" force_save="1">
+                                    <tree editable="bottom" force_save="1">
+                                        <field name="operation" force_save="1"/>
+                                        <field name="work_center" force_save="1"/>
+                                        <field name="date_start" force_save="1"/>
+                                        <field name="date_end" force_save="1"/>
+                                        <field name="expected" force_save="1"/>
+                                        <field name="real_duration" force_save="1"/>
+<!--                                        <button name="get_lot_list" type="object" string="Start"  class="oe_highlight"/>-->
+<!--                                        <button name="get_lot_list" type="object" string="Pause"  class="oe_highlight"/>-->
+<!--                                        <button name="get_lot_list" type="object" string="Stop"   class="oe_highlight"/>-->
+<!--                                        <button name="get_lot_list" type="object" string="Stop" icon="fa-list" class="oe_highlight"/>-->
+
+
+
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+
+                </form>
+            </field>
+        </record>
+        <record id="mrp_order_tree_view" model="ir.ui.view">
+            <field name="name">mrp_order_tree_view</field>
+            <field name="model">mrp.order</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product"/>
+                    <field name="quantity"/>
+                    <field name="product_uom"/>
+                    <field name="routing"/>
+                    <field name="bill_of_materials"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="source"/>
+                    <field name="responsible_user"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_mrp_order" model="ir.actions.act_window">
+            <field name="name">Manfucturing Order</field>
+            <field name="res_model">mrp.order</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="menu_mrp_order_menu"
+                  name="Manfucturing Order"
+                  action="action_mrp_order"
+                  parent="menu_mrp_root_menu"
+                  sequence="4"
+
+        />
+    </data>
+</odoo>
+

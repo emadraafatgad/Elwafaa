@@ -157,12 +157,15 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="menu_cars_root_menu"
-                  name="Cars"
-                  parent="sale.sale_menu_root"
-                  sequence="10"
-                  groups="sales_policy.sales_policy_group"
-        />
+<!--        <menuitem id="menu_cars_main_root_menu"-->
+<!--                  name="Cars"-->
+<!--        />-->
+<!--        <menuitem id="menu_cars_root_menu"-->
+<!--                  name="Configuration"-->
+<!--                  parent="menu_cars_main_root_menu"-->
+<!--                  sequence="15"-->
+<!--                  groups="sales_policy.sales_policy_group"-->
+<!--        />-->
 
         <menuitem id="menu_car_data_menu"
                   name="Cars Data"

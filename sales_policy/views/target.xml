@@ -54,8 +54,8 @@
         <menuitem id="menu_team_target_menu"
                   name="Team Target"
                   action="action_team_target_view"
-                  parent="sale.sale_menu_root"
-                  sequence="15"
+                  parent="menu_cars_main_root_menu"
+                  sequence="5"
                   groups="sales_policy.sales_policy_group"
         />
 

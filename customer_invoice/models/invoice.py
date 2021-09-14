@@ -21,14 +21,19 @@ class AccountInvoiceClass(models.Model):
     driver_name = fields.Char(string='Driver Name')
     supervisor_name = fields.Char('اسم المشرف', track_visibility='onchange')
     technician_name = fields.Char('اسم الفني ', track_visibility='onchange')
-    invoice_line_ids = fields.One2many('account.invoice.line', 'invoice_id', string='Invoice Lines',
-                                       oldname='invoice_line',
-                                       states={'draft,wait': [('readonly', False)]}, copy=True)
-    tax_line_ids = fields.One2many('account.invoice.tax', 'invoice_id', string='Tax Lines', oldname='tax_line',
-                                  store=True, states={'draft,wait': [('readonly', False)]}, copy=True)
+    # invoice_line_ids = fields.One2many('account.invoice.line', 'invoice_id', string='Invoice Lines',
+    #                                    oldname='invoice_line',
+    #                                    states={'draft,wait': [('readonly', False)]}, copy=True)
+    # tax_line_ids = fields.One2many('account.invoice.tax', 'invoice_id', string='Tax Lines', oldname='tax_line',
+    #                               store=True, states={'draft,wait': [('readonly', False)]}, copy=True)
 
     total_other_tax = fields.Float(string='Total other Taxes', track_visibility='onchange',compute='total_other_taxes')
     # total_after_tax = fields.Float(string='Total after Taxes', track_visibility='onchange',compute='total_other_taxes')
+
+    @api.multi
+    def action_draft(self):
+        self.state= 'draft'
+
 
     @api.multi
     def action_invoice_open(self):
@@ -94,11 +99,11 @@ class AccountInvoiceClass(models.Model):
     #     self.state_workflow = 'accept'
 
 
-class AccountInvoiceTaxaClass(models.Model):
-    _inherit="account.invoice.tax"
-
-    amount_total = fields.Monetary(string="Amount Total", store=True,compute='_compute_amount_total')
-    name = fields.Char(string='Tax Description', required=True,store=True)
+# class AccountInvoiceTaxaClass(models.Model):
+#     _inherit="account.invoice.tax"
+#
+#     amount_total = fields.Monetary(string="Amount Total", store=True,compute='_compute_amount_total')
+#     name = fields.Char(string='Tax Description', required=True,store=True)
 
 
 

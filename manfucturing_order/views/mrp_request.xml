@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="mrp_request_form_view" model="ir.ui.view">
+            <field name="name">mrp_request_form_view</field>
+            <field name="model">mrp.request</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!--                    <header>-->
+                    <!--                        <button name="action_update" type="object"-->
+                    <!--                                string="Update" states="confirmed" class="btn-primary"-->
+                    <!--                                groups="sales_policy.modify_pricelist_group"-->
+                    <!--                        />-->
+
+                    <!--                        <button name="action_confirm" type="object"-->
+                    <!--                                string="Confirm" class="btn-primary" states="draft"-->
+                    <!--                                groups="sales_policy.sales_policy_manager_group"-->
+                    <!--                        />-->
+
+                    <!--                        &lt;!&ndash;                        <button name="action_high_approve" type="object"&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                                string="HR Manager Approve" states="confirmed" class="btn-primary"&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                                groups="ommat_training_module.training_dept_manager_group"/>&ndash;&gt;-->
+
+                    <!--                        &lt;!&ndash;                        <button name="action_approve" type="object"&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                                string="General Manager Approve" states="high_approve" class="btn-primary"&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;                                groups="ommat_training_module.training_general_manager_group"/>&ndash;&gt;-->
+
+
+                    <!--                        <field name="state" widget="statusbar"/>-->
+
+                    <!--                    </header>-->
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="customer" required="1"/>
+                                <field name="product"/>
+                                <label for="quantity"/>
+                                <div class="o_row">
+                                    <field name="quantity" class="oe_inline"/>
+                                    <field name="product_uom" class="oe_inline"/>
+                                </div>
+                                <field name="bom_template"/>
+                            </group>
+                            <group>
+
+                                <field name="attachment"/>
+                                <field name="delivery_date"/>
+                                <field name="source"/>
+                            </group>
+                        </group>
+                        <notebook>
+                                                    <page string="Lines" name="mrp_request_lines">
+                                                        <field name="mrp_request_table" widget="one2many_list" force_save="1">
+                                                            <tree editable="bottom">
+                                                                <field name="product" force_save="1"/>
+                                                                <field name="quantity" force_save="1"/>
+                                                                <field name="product_uom" force_save="1"/>
+                                                                <field name="total_quantity" force_save="1"/>
+
+
+                                                            </tree>
+                                                        </field>
+                                                    </page>
+                                                </notebook>
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="mrp_request_tree_view" model="ir.ui.view">
+            <field name="name">mrp_request_tree_view</field>
+            <field name="model">mrp.request</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="customer"/>
+                    <field name="product"/>
+                    <field name="quantity"/>
+                    <field name="product_uom"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_mrp_request" model="ir.actions.act_window">
+            <field name="name">Manfucturing Request</field>
+            <field name="res_model">mrp.request</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="menu_mrp_root_menu"
+                  name="Manfucturing"
+        />
+
+        <menuitem id="menu_mrp_request_menu"
+                  name="Manfucturing Request"
+                  action="action_mrp_request"
+                  parent="menu_mrp_root_menu"
+                  sequence="1"
+
+        />
+
+
+    </data>
+</odoo>
+
+
+

@@ -58,13 +58,8 @@
         </record>
 
 
-        <menuitem id="menu_workshop_menu"
-                  name="Workshop Data"
-                  action="action_workshop_data"
-                  parent="sale.sale_menu_root"
-                  sequence="14"
-                  groups="sales_policy.sales_policy_group"
-        />
+
+
 
 
         <record id="merchants_data_form_view" model="ir.ui.view">
@@ -122,11 +117,28 @@
         </record>
 
 
+         <menuitem id="menu_area_menu_root"
+                  name="Area"
+                  parent="menu_cars_main_root_menu"
+                  sequence="7"
+                  groups="sales_policy.sales_policy_group"
+        />
+
+
         <menuitem id="menu_merchants_menu"
                   name="Merchants Data"
                   action="action_merchants_data"
-                  parent="sale.sale_menu_root"
-                  sequence="15"
+                  parent="menu_area_menu_root"
+                  sequence="3"
+                  groups="sales_policy.sales_policy_group"
+        />
+
+
+         <menuitem id="menu_workshop_menu"
+                  name="Workshop Data"
+                  action="action_workshop_data"
+                  parent="menu_area_menu_root"
+                  sequence="4"
                   groups="sales_policy.sales_policy_group"
         />
 

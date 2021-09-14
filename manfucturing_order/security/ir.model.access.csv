@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mrp_request_access,mrp_request_access,model_mrp_request,manfucturing_group,1,1,1,1
+mrp_request_bridge_access,mrp_request_bridge_access,model_mrp_request_bridge,manfucturing_group,1,1,1,1
+temp_bom_bridge_access,temp_bom_bridge_access,model_temp_bom_bridge,manfucturing_group,1,1,1,1
+temp_bom_access,temp_bom_access,model_temp_bom,manfucturing_group,1,1,1,1
+mrp_operation_access,mrp_operation_access,model_mrp_operation,manfucturing_group,1,1,1,1
+work_center_access,work_center_access,model_work_center,manfucturing_group,1,1,1,1
+manfucturing_steps_access,manfucturing_steps_access,model_manfucturing_steps,manfucturing_group,1,1,1,1
+manfucturing_steps_bridge_access,manfucturing_steps_bridge_access,model_manfucturing_steps_bridge,manfucturing_group,1,1,1,1
+mrp_order_access,mrp_order_access,model_mrp_order,manfucturing_group,1,1,1,1
+mrp_order_bridge_steps_access,mrp_order_bridge_steps_access,model_mrp_order_bridge_steps,manfucturing_group,1,1,1,1
+mrp_order_bridge_access,mrp_order_bridge_access,model_mrp_order_bridge,manfucturing_group,1,1,1,1
+
+

@@ -171,8 +171,8 @@
         <menuitem id="menu_car_fix_menu"
                   name="Cars Maintenance"
                   action="action_car_fix"
-                  parent="sale.sale_menu_root"
-                  sequence="8"
+                  parent="menu_cars_main_root_menu"
+                  sequence="1"
                   groups="sales_policy.sales_policy_group"
         />
 
