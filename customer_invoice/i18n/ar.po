@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-14 10:07+0000\n"
-"PO-Revision-Date: 2021-09-14 10:07+0000\n"
+"POT-Creation-Date: 2021-09-14 10:46+0000\n"
+"PO-Revision-Date: 2021-09-14 10:46+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -33,64 +33,64 @@ msgstr ""
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.report_customer_invoice_inherit
 msgid "<strong>Accessories Quantities</strong>"
-msgstr ""
+msgstr "عدد الاكسسوارات"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.report_customer_invoice_inherit
 msgid "<strong>Service Quantities</strong>"
-msgstr ""
+msgstr "عدد الخدمات"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.report_customer_invoice_inherit
 msgid "<strong>Steel Quantities</strong>"
-msgstr ""
+msgstr "عدد الصلب/ الحدايد"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.report_customer_invoice_inherit
 msgid "<strong>Total Accessories</strong>"
-msgstr ""
+msgstr "اجمالي الاكسسوارات"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.report_customer_invoice_inherit
 msgid "<strong>Total Service\n"
 "                                </strong>"
-msgstr ""
+msgstr "إجمالي الخدمات"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.report_customer_invoice_inherit
 msgid "<strong>Total Steel</strong>"
-msgstr ""
+msgstr "اجمالي الصلب\ الحدايد "
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_product_product__accessories_ok
 #: model:ir.model.fields,field_description:customer_invoice.field_product_template__accessories_ok
 msgid "Accessories"
-msgstr ""
+msgstr "الاكسسوارات"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
 msgid "Add a line"
-msgstr ""
+msgstr "أضف بندا"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
 msgid "Add a note"
-msgstr ""
+msgstr "أضف ملاحظة"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
 msgid "Add a section"
-msgstr ""
+msgstr "أضف مقطع"
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice_tax__amount_total
 msgid "Amount Total"
-msgstr ""
+msgstr "المبلغ الإجمالي"
 
 #. module: customer_invoice
 #: selection:account.invoice,state:0
 msgid "Cancelled"
-msgstr ""
+msgstr "تم الالغاء"
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__car
@@ -98,7 +98,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:customer_invoice.field_product_product__car_type
 #: model:ir.model.fields,field_description:customer_invoice.field_product_template__car_type
 msgid "Car"
-msgstr "السيارة"
+msgstr "سيارة"
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__car_model
@@ -108,7 +108,7 @@ msgstr "السيارة"
 #: model_terms:ir.ui.view,arch_db:customer_invoice.product_product_wafa_form_view
 #: model_terms:ir.ui.view,arch_db:customer_invoice.product_template_wafa_form_view
 msgid "Car Model"
-msgstr "مودل السيارة"
+msgstr "موديل السيارة"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.product_product_wafa_form_view
@@ -119,113 +119,115 @@ msgstr "نوع السيارة"
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__chassis_number
 msgid "Chassis Number"
-msgstr "رقم الشاسيه"
+msgstr "رقم الشاسية"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
 msgid "Disc (%)"
-msgstr ""
+msgstr "قرص"
 
 #. module: customer_invoice
 #: code:addons/customer_invoice/models/invoice.py:216
 #, python-format
 msgid "Down Payment"
-msgstr ""
+msgstr "دفعة مقدمة"
 
 #. module: customer_invoice
 #: code:addons/customer_invoice/models/invoice.py:213
 #, python-format
 msgid "Down payment of %s%%"
-msgstr ""
+msgstr "الدفعة مقدمة من"
 
 #. module: customer_invoice
 #: selection:account.invoice,state:0
 msgid "Draft"
-msgstr ""
+msgstr "مسودة"
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__driver_name
 msgid "Driver Name"
-msgstr ""
+msgstr "اسم السائق"
+
 
 #. module: customer_invoice
 #: selection:account.invoice,state:0
 msgid "In Payment"
-msgstr ""
+msgstr "في حالة الدفع"
 
 #. module: customer_invoice
 #: model:ir.model,name:customer_invoice.model_account_invoice
 msgid "Invoice"
-msgstr ""
+msgstr "فاتورة"
 
 #. module: customer_invoice
 #: model:ir.model,name:customer_invoice.model_account_invoice_line
 msgid "Invoice Line"
-msgstr ""
+msgstr "بند الفاتورة"
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__invoice_line_ids
 #: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
 msgid "Invoice Lines"
-msgstr ""
+msgstr "بنود الفاتورة"
 
 #. module: customer_invoice
 #: model:ir.model,name:customer_invoice.model_account_invoice_tax
 msgid "Invoice Tax"
-msgstr ""
+msgstr "فاتورة ضربية"
 
 #. module: customer_invoice
 #: code:addons/customer_invoice/models/invoice.py:40
 #, python-format
 msgid "Invoice must be in draft or waiting state in order to validate it."
-msgstr ""
+msgstr ".يجب أن تكون الفاتورة في حالة مسودة أو الانتظار لكي يتم تاكيدها"
 
 #. module: customer_invoice
 #: code:addons/customer_invoice/models/invoice.py:47
 #, python-format
 msgid "No account was found to create the invoice, be sure you have installed a chart of account."
-msgstr ""
+msgstr ".لم يتم العثور على حساب لإنشاء الفاتورة ، تأكد من وجود شجرة الحسابات"
 
 #. module: customer_invoice
 #: selection:account.invoice,state:0
 msgid "Open"
-msgstr ""
+msgstr "افتح"
 
 #. module: customer_invoice
 #: selection:account.invoice,state:0
 msgid "Paid"
-msgstr ""
+msgstr "مدفوع"
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__plate_number
 msgid "Plate Number"
-msgstr "رقم اللوحة"
+msgstr "رقم الوحة"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
 msgid "Price"
-msgstr ""
+msgstr "سعر"
 
 #. module: customer_invoice
 #: model:ir.model,name:customer_invoice.model_product_product
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice_line__product_id
 msgid "Product"
-msgstr ""
+msgstr "المنتجات"
 
 #. module: customer_invoice
 #: model:ir.model,name:customer_invoice.model_product_template
 msgid "Product Template"
-msgstr ""
+msgstr "المنتجات"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
 msgid "Quantity:"
-msgstr ""
+msgstr "كمية"
 
 #. module: customer_invoice
 #: model:ir.model,name:customer_invoice.model_sale_advance_payment_inv
 msgid "Sales Advance Payment Invoice"
-msgstr ""
+msgstr "فاتورة الدفع المسبق للمبيعات"
+
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_product_product__service_ok
@@ -236,140 +238,146 @@ msgstr "خدمة"
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__state
 msgid "Status"
-msgstr ""
+msgstr "حالة"
+
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_product_product__steel_ok
 #: model:ir.model.fields,field_description:customer_invoice.field_product_template__steel_ok
 msgid "Steel"
-msgstr "حديد"
+msgstr "صلب/الحدايد"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
 msgid "Subtotal"
-msgstr ""
+msgstr "المجموع الفرعي"
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice_tax__name
 msgid "Tax Description"
-msgstr ""
+msgstr "وصف الضريبة"
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__tax_line_ids
 msgid "Tax Lines"
-msgstr ""
+msgstr "بنود الضريبة"
 
 #. module: customer_invoice
 #: code:addons/customer_invoice/models/invoice.py:38
 #, python-format
 msgid "The field Vendor is required, please complete it to validate the Vendor Bill."
-msgstr ""
+msgstr ".حقل البائع مطلوب ، يرجى إكماله لتاكيد فاتورة البائع"
 
 #. module: customer_invoice
 #: code:addons/customer_invoice/models/invoice.py:169
 #, python-format
 msgid "The selected unit of measure has to be in the same category as the product unit of measure."
-msgstr ""
-
+msgstr "يجب أن تكون وحدة القياس المحددة في نفس فئة وحدة قياس المنتجات"
 #. module: customer_invoice
 #: code:addons/customer_invoice/models/invoice.py:209
 #, python-format
 msgid "The value of the down payment amount must be positive."
-msgstr ""
+msgstr ".قيمة مبلغ الدفعة المقدمة يجب أن تكون موجبة"
 
 #. module: customer_invoice
 #: code:addons/customer_invoice/models/invoice.py:205
 #, python-format
 msgid "There is no income account defined for this product: \"%s\". You may have to install a chart of account from Accounting app, settings menu."
-msgstr ""
+msgstr ".لا يوجد حساب دخل محدد لهذا المنتج  .يجب عليك تثبيت شجرة الحسابات الموجودة في تطبيق الحسابات من قائمة الاعدادات"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
 msgid "Total"
-msgstr ""
+msgstr "المجموع"
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_accessories
 msgid "Total Accessories"
-msgstr ""
+msgstr "إجمالي الاكسسوارات"
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_accessories_qty
 msgid "Total Accessories Quantities"
-msgstr ""
+msgstr "إجمالي عدد الاكسسوارات"
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_service
 msgid "Total Service"
-msgstr ""
+msgstr "إجمالي الخدمات
+
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_service_qty
 msgid "Total Service Quantities"
-msgstr ""
+msgstr "إجمالي عدد الخدمات"
+
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_steel
 msgid "Total Steel"
-msgstr ""
+msgstr "إجمالي الصلب /الحدايد"
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_steel_qty
 msgid "Total Steel Quantities"
-msgstr ""
+msgstr "إجمالي عدد الصلب"
+
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_other_tax
 msgid "Total other Taxes"
-msgstr ""
+msgstr "مجموع الضرائب الأخرى"
+
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice_line__price_unit
 msgid "Unit Price"
-msgstr ""
+msgstr "سعر الوحدة"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
 msgid "Unit Price:"
-msgstr ""
+msgstr "سعر الوحدة"
+
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_tax_inherit_form_view
 msgid "Validate"
-msgstr ""
+msgstr "تحقق"
 
 #. module: customer_invoice
 #: selection:account.invoice,state:0
 msgid "Waiting"
-msgstr ""
+msgstr "انتظار"
 
 #. module: customer_invoice
 #: code:addons/customer_invoice/models/invoice.py:168
 #, python-format
 msgid "Warning!"
-msgstr ""
+msgstr "انتبه"
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__mm
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice_line__method_pay
 msgid "Work Method"
-msgstr ""
+msgstr "طريقة العمل"
 
 #. module: customer_invoice
 #: code:addons/customer_invoice/models/invoice.py:44
 #, python-format
 msgid "You cannot validate an invoice with a negative total amount. You should create a credit note instead."
-msgstr ""
+msgstr ".لا يمكنك تاكيد فاتورة بمبلغ اجمالي ثابت. يجب عليك إنشاء رصيد دائم"
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
 msgid "logo"
-msgstr ""
+msgstr "شعار"
 
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__technician_name
 msgid "اسم الفني "
-msgstr ""
+msgstr "ِ"
+
 
 #. module: customer_invoice
 #: model_terms:ir.ui.view,arch_db:customer_invoice.invoice_taxed_temp
