@@ -1,0 +1,169 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* invoice_payment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-14 10:47+0000\n"
+"PO-Revision-Date: 2021-09-14 10:47+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: invoice_payment
+#: model:ir.model.fields,field_description:invoice_payment.field_account_payment__receiver_name
+msgid " Receiver Name"
+msgstr "اسم المستلم"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "&amp;nbsp;  customer signature &amp;nbsp;"
+msgstr "توقيع العميل"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "&amp;nbsp;  treasury signature &amp;nbsp;"
+msgstr "توقيع الخزينة"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "&amp;nbsp; Specialist's signature &amp;nbsp;"
+msgstr "توقيع المختص"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "&amp;nbsp; receiver name &amp;nbsp;"
+msgstr "اسم المستلم"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "&amp;nbsp; representative signature &amp;nbsp;"
+msgstr "توقيع المندوب"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "&amp;nbsp;...................&amp;nbsp;"
+msgstr ""
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "<br/>\n"
+"                    <strong>City :</strong>"
+msgstr "مدينة"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "<br/>\n"
+"                    <strong>Collection Representative:</strong>"
+msgstr "مندوب التحصيل"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "<br/>\n"
+"                    <strong>Country :</strong>"
+msgstr "دولة"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "<br/>\n"
+"                    <strong>Governorate:</strong>"
+msgstr "محافظة"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "<br/>\n"
+"                    <strong>National ID :</strong>"
+msgstr "الرقم القومي"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "<br/>\n"
+"                    <strong>Phone :</strong>"
+msgstr "الهاتف"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "<br/>\n"
+"                    <strong>Sub Street :</strong>"
+msgstr "شارع فرعي"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "<strong>Amount Reason:</strong>"
+msgstr "سبب المبلغ"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "<strong>Main Street:</strong>"
+msgstr "شارع رئيسي"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "<strong>Receiver Name:</strong>"
+msgstr "اسم المستلم"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.report_wafa_payment_receipt
+msgid "Address"
+msgstr "عنوان"
+
+#. module: invoice_payment
+#: model:ir.model.fields,field_description:invoice_payment.field_account_payment__amount_for
+msgid "Amount Reason"
+msgstr "سبب المبلغ"
+
+#. module: invoice_payment
+#: model:ir.model.fields,field_description:invoice_payment.field_account_payment__city
+msgid "City"
+msgstr "مدينة"
+
+#. module: invoice_payment
+#: model:ir.model.fields,field_description:invoice_payment.field_account_payment__collection_representative
+msgid "Collection Representative"
+msgstr "مندوب التحصيل"
+
+#. module: invoice_payment
+#: model:ir.model.fields,field_description:invoice_payment.field_account_payment__country_name
+msgid "Country"
+msgstr "دولة"
+
+#. module: invoice_payment
+#: model:ir.model.fields,field_description:invoice_payment.field_account_payment__governorate
+msgid "Governorate"
+msgstr "محافظة"
+
+#. module: invoice_payment
+#: model:ir.model.fields,field_description:invoice_payment.field_account_payment__main_street
+msgid "Main Street"
+msgstr "شارع رئيسي"
+
+#. module: invoice_payment
+#: model:ir.model.fields,field_description:invoice_payment.field_account_payment__national_id
+msgid "National ID"
+msgstr "الرقم القومي"
+
+#. module: invoice_payment
+#: model_terms:ir.ui.view,arch_db:invoice_payment.account_payment_wafa_inherit_form_view
+msgid "Partner Address"
+msgstr "عنوان العميل"
+
+#. module: invoice_payment
+#: model:ir.model,name:invoice_payment.model_account_payment
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: invoice_payment
+#: model:ir.model.fields,field_description:invoice_payment.field_account_payment__phone
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: invoice_payment
+#: model:ir.model.fields,field_description:invoice_payment.field_account_payment__sub_street
+msgid "Sub Street"
+msgstr "شارع فرعي"
+

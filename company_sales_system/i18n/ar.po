@@ -1,0 +1,631 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* company_sales_system
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-14 10:46+0000\n"
+"PO-Revision-Date: 2021-09-14 10:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__meeting_count
+msgid "# Meetings"
+msgstr "الاجتماعات"
+
+#. module: company_sales_system
+#: model:mail.template,body_html:company_sales_system.lead_dates_email
+msgid "<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear ${object.sales_person.name} ,<br/><br/>\n"
+"                        We inform you that (${object.company})<br/>\n"
+"                        has exceeded the period specified (final date)On ${object.end_date}<br/>\n"
+"                        which ended yesterday and did not do the necessary or send us any notification.<br/><br/>\n"
+"\n"
+"                        ... So do what you have to do about this customer.<br/><br/>\n"
+"                        Thanks\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Do not hesitate to contact us if you have any question.\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: company_sales_system
+#: model_terms:ir.ui.view,arch_db:company_sales_system.pipeline_data_form_view
+msgid "<span class=\"o_stat_text\" attrs=\"{'invisible': [('meeting_count', '&lt;', 2)]}\"> Meetings</span>\n"
+"                                    <span class=\"o_stat_text\" attrs=\"{'invisible': [('meeting_count', '&gt;', 1)]}\"> Meeting</span>"
+msgstr ""
+
+#. module: company_sales_system
+#: model:mail.template,subject:company_sales_system.lead_dates_email
+msgid "About ${object.company} company late dates"
+msgstr "عن المواعيد المتأخرة للشركة"
+
+#. module: company_sales_system
+#: selection:calendar.event,state_workflow:0
+#: selection:pipeline.data,state:0
+msgid "Accepted"
+msgstr "تمت الموافقة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__message_needaction
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__activity_ids
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__activity_ids
+msgid "Activities"
+msgstr "أنشطة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__activity_state
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: company_sales_system
+#: model_terms:ir.ui.view,arch_db:company_sales_system.pipeline_data_form_view
+msgid "Address"
+msgstr "عنوان"
+
+#. module: company_sales_system
+#: model_terms:ir.ui.view,arch_db:company_sales_system.pricelist_info_form_view
+msgid "Approve"
+msgstr "موافقة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__approve_date
+msgid "Approve Date"
+msgstr "تاريخ الموافقة"
+
+#. module: company_sales_system
+#: selection:pricelist.info,state:0
+msgid "Approved"
+msgstr "تمت الموافقة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__message_attachment_count
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: company_sales_system
+#: selection:pricelist.info,state:0
+msgid "Car Received"
+msgstr "تم استلام السيارة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__city
+msgid "City"
+msgstr "مدينة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_calendar_event__company
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__company
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__company
+msgid "Company Name"
+msgstr "اسم الشركة"
+
+#. module: company_sales_system
+#: model:ir.module.category,name:company_sales_system.company_sales_system_category
+msgid "Company Sales System"
+msgstr "نظام مبيعات الشركة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__counter
+msgid "Counter"
+msgstr "عداد"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__country_name
+msgid "Country"
+msgstr "دولة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__create_uid
+#: model:ir.model.fields,field_description:company_sales_system.field_price_offer__create_uid
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__create_date
+#: model:ir.model.fields,field_description:company_sales_system.field_price_offer__create_date
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها في"
+
+#. module: company_sales_system
+#: model_terms:ir.actions.act_window,help:company_sales_system.crm_lost_reason_action
+msgid "Define a new lost reason"
+msgstr "حدد سبب جديد للخسارة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__display_name
+#: model:ir.model.fields,field_description:company_sales_system.field_price_offer__display_name
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: company_sales_system
+#: selection:calendar.event,state_workflow:0
+#: selection:pipeline.data,state:0
+#: selection:pricelist.info,state:0
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: company_sales_system
+#: model:ir.model,name:company_sales_system.model_calendar_event
+msgid "Event"
+msgstr "حدث"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__end_date
+msgid "Final Date"
+msgstr "التاريخ النهائي"
+
+#. module: company_sales_system
+#: model:ir.actions.server,name:company_sales_system.cron_job_end_date_ir_actions_server
+#: model:ir.cron,cron_name:company_sales_system.cron_job_end_date
+#: model:ir.cron,name:company_sales_system.cron_job_end_date
+msgid "Final Date Notification"
+msgstr "اشعار التاريخ النهائي"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__message_follower_ids
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__message_channel_ids
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__message_partner_ids
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: company_sales_system
+#: model:ir.model,name:company_sales_system.model_crm_lead_lost
+msgid "Get Lost Reason"
+msgstr "سبب الخسارة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__governorate
+msgid "Governorate"
+msgstr "محافظة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__have_m
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__have_meetings
+msgid "Have a meeting?"
+msgstr "تم تحديد اجتماع؟"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__id
+#: model:ir.model.fields,field_description:company_sales_system.field_price_offer__id
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__id
+msgid "ID"
+msgstr "الرقم القومي"
+
+#. module: company_sales_system
+#: model:ir.model.fields,help:company_sales_system.field_pipeline_data__message_unread
+#: model:ir.model.fields,help:company_sales_system.field_pricelist_info__message_unread
+msgid "If checked new messages require your attention."
+msgstr ".إذا تم تحديد رسائل جديدة تتطلب انتباهك"
+
+#. module: company_sales_system
+#: model:ir.model.fields,help:company_sales_system.field_pipeline_data__message_needaction
+#: model:ir.model.fields,help:company_sales_system.field_pricelist_info__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ".إذا تم تحديد رسائل جديدة تتطلب انتباهك"
+
+#. module: company_sales_system
+#: model:ir.model.fields,help:company_sales_system.field_pipeline_data__message_has_error
+#: model:ir.model.fields,help:company_sales_system.field_pricelist_info__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ".إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_price_offer__inverse_price_offer
+msgid "Inverse Price Offer"
+msgstr ""
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__message_is_follower
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data____last_update
+#: model:ir.model.fields,field_description:company_sales_system.field_price_offer____last_update
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__write_uid
+#: model:ir.model.fields,field_description:company_sales_system.field_price_offer__write_uid
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__write_date
+#: model:ir.model.fields,field_description:company_sales_system.field_price_offer__write_date
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: company_sales_system
+#: model_terms:ir.ui.view,arch_db:company_sales_system.pipeline_data_form_view
+msgid "Lost"
+msgstr "خسر"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_calendar_event__lost_reason
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__lost_reason
+#: model_terms:ir.ui.view,arch_db:company_sales_system.calendar_meetings_inherit_form_view
+msgid "Lost Reason"
+msgstr "سبب الخسارة"
+
+#. module: company_sales_system
+#: model:ir.actions.act_window,name:company_sales_system.crm_lost_reason_action
+#: model:ir.ui.menu,name:company_sales_system.menu_lost_reasons_menu
+msgid "Lost Reasons"
+msgstr "اسباب الخسارة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__mail
+msgid "Mail"
+msgstr "البريد الالكتروني"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__message_main_attachment_id
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__main_street
+msgid "Main Street"
+msgstr "شارع رئيسي"
+
+#. module: company_sales_system
+#: model_terms:ir.ui.view,arch_db:company_sales_system.calendar_meetings_inherit_form_view
+#: model_terms:ir.ui.view,arch_db:company_sales_system.pipeline_data_form_view
+msgid "Mark Lost"
+msgstr "تحديده كخاسر"
+
+#. module: company_sales_system
+#: model_terms:ir.ui.view,arch_db:company_sales_system.calendar_meetings_inherit_form_view
+#: model_terms:ir.ui.view,arch_db:company_sales_system.pipeline_data_form_view
+msgid "Mark Won"
+msgstr "تحديده كفائز"
+
+#. module: company_sales_system
+#: model:ir.actions.act_window,name:company_sales_system.action_calendar_event
+#: model:ir.ui.menu,name:company_sales_system.menu_meetings_calendar_menu
+msgid "Meetings"
+msgstr "الاجتماعات"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__message_has_error
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__message_ids
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__activity_date_deadline
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__activity_summary
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__activity_type_id
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: company_sales_system
+#: selection:pipeline.data,have_m:0
+msgid "No"
+msgstr "لا"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__message_needaction_counter
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__message_has_error_counter
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__message_has_error_counter
+msgid "Number of error"
+msgstr "رقم الخطأ"
+
+#. module: company_sales_system
+#: model:ir.model.fields,help:company_sales_system.field_pipeline_data__message_needaction_counter
+#: model:ir.model.fields,help:company_sales_system.field_pricelist_info__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: company_sales_system
+#: model:ir.model.fields,help:company_sales_system.field_pipeline_data__message_has_error_counter
+#: model:ir.model.fields,help:company_sales_system.field_pricelist_info__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: company_sales_system
+#: model:ir.model.fields,help:company_sales_system.field_pipeline_data__message_unread_counter
+#: model:ir.model.fields,help:company_sales_system.field_pricelist_info__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: company_sales_system
+#: selection:pipeline.data,activity_state:0
+#: selection:pricelist.info,activity_state:0
+msgid "Overdue"
+msgstr "متأخر"
+
+#. module: company_sales_system
+#: model_terms:ir.ui.view,arch_db:company_sales_system.view_pipeline_data_search
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_price_offer__price_percentage
+msgid "Percentage"
+msgstr "النسبة المئوية"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_calendar_event__phone
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__phone
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: company_sales_system
+#: model:ir.ui.menu,name:company_sales_system.menu_pipeline_data_menu
+msgid "Pipeline"
+msgstr "دورة المبيعات"
+
+#. module: company_sales_system
+#: model:ir.actions.act_window,name:company_sales_system.action_pipeline_data
+msgid "Pipeline Data"
+msgstr "بيانات دورة المبيعات"
+
+#. module: company_sales_system
+#: selection:pipeline.data,activity_state:0
+#: selection:pricelist.info,activity_state:0
+msgid "Planned"
+msgstr "مخطط"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_price_offer__price
+msgid "Price"
+msgstr "السعر"
+
+#. module: company_sales_system
+#: model:ir.actions.act_window,name:company_sales_system.action_pricelist_data
+#: model:ir.model.fields,field_description:company_sales_system.field_calendar_event__priclist
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__pricelist
+#: model:ir.ui.menu,name:company_sales_system.menu_pricelist_data_menu
+#: model_terms:ir.ui.view,arch_db:company_sales_system.calendar_meetings_inherit_form_view
+msgid "Price List"
+msgstr "قائمة الاسعار"
+
+#. module: company_sales_system
+#: model_terms:ir.ui.view,arch_db:company_sales_system.pricelist_info_form_view
+msgid "Price List Table"
+msgstr "جدول قائمة الأسعار"
+
+#. module: company_sales_system
+#: model_terms:ir.ui.view,arch_db:company_sales_system.pricelist_info_form_view
+msgid "Price list"
+msgstr "قائمة الاسعار"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_price_offer__product
+msgid "Product"
+msgstr "المنتجات"
+
+#. module: company_sales_system
+#: model_terms:ir.ui.view,arch_db:company_sales_system.pricelist_info_form_view
+msgid "Receive car"
+msgstr "استلام السيارة"
+
+#. module: company_sales_system
+#: selection:calendar.event,state_workflow:0
+#: selection:pipeline.data,state:0
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: company_sales_system
+#: selection:pricelist.info,state:0
+msgid "Request Sent"
+msgstr "تم ارسال الطلب"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__activity_user_id
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: company_sales_system
+#: model:ir.ui.menu,name:company_sales_system.menu_pipeline_root_menu
+#: model:res.groups,name:company_sales_system.company_sales_system
+msgid "Sales System"
+msgstr "نظام المبيعات"
+
+#. module: company_sales_system
+#: model:res.groups,name:company_sales_system.company_sales_system_manager
+msgid "Sales System Manager"
+msgstr "مدير نظام المبيعات"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_calendar_event__employee_user
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__employee
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__sales_person
+msgid "SalesPerson"
+msgstr "مندوب مبيعات"
+
+#. module: company_sales_system
+#: model_terms:ir.actions.act_window,help:company_sales_system.action_calendar_event
+msgid "Schedule a new meeting"
+msgstr "تحديد اجتماع جديد"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__sending_date
+msgid "Sending Date"
+msgstr "تاريخ الإرسال"
+
+#. module: company_sales_system
+#: model_terms:ir.ui.view,arch_db:company_sales_system.pricelist_info_form_view
+msgid "Sent Request"
+msgstr "ارسال طلب"
+
+#. module: company_sales_system
+#: model_terms:ir.actions.act_window,help:company_sales_system.crm_lost_reason_action
+msgid "Some examples of lost reasons: \"We don't have people/skill\", \"Price too high\""
+msgstr "بعض الأمثلة على الأسباب المفقودة
+ليس لدينا أشخاص / مهارة السعر مرتفع للغاية"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__state
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__state
+msgid "State"
+msgstr "حالة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_calendar_event__state_workflow
+msgid "State Workflow"
+msgstr "حالة سير عمل "
+
+#. module: company_sales_system
+#: model:ir.model.fields,help:company_sales_system.field_pipeline_data__activity_state
+#: model:ir.model.fields,help:company_sales_system.field_pricelist_info__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "
+الحالة على أساس الأنشطة "
+"متأخر: تاريخ الاستحقاق فات بالفعل"
+"اليوم: تاريخ النشاط هو اليوم"
+".مخطط له: الأنشطة المستقبلية"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__sub_street
+msgid "Sub Street"
+msgstr "شارع فرعي"
+
+#. module: company_sales_system
+#: model_terms:ir.actions.act_window,help:company_sales_system.action_calendar_event
+msgid "The calendar is shared between employees and fully integrated with\n"
+"                    other applications such as the employee leaves or the business\n"
+"                    opportunities."
+msgstr ".التقويم مشترك بين الموظفين ومتكامل بشكل كامل مع التطبيقات الأخرى مثل إجازات الموظف أو فرص العمل"
+
+#. module: company_sales_system
+#: selection:pipeline.data,activity_state:0
+#: selection:pricelist.info,activity_state:0
+msgid "Today"
+msgstr "اليوم"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_price_offer__total
+msgid "Total"
+msgstr "الاجمالي"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__message_unread
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__message_unread_counter
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+#. module: company_sales_system
+#: model_terms:ir.actions.act_window,help:company_sales_system.crm_lost_reason_action
+msgid "Use lost reasons to explain why an opportunity is lost."
+msgstr ".استخدم اسباب الخسارة لشرح سبب ضياع الفرصة"
+
+#. module: company_sales_system
+#: model:ir.model.fields,help:company_sales_system.field_pricelist_info__mail
+msgid "Used to log into the system"
+msgstr "تستخدم لتسجيل الدخول إلى النظام"
+
+#. module: company_sales_system
+#: model:ir.model.fields,field_description:company_sales_system.field_pipeline_data__website_message_ids
+#: model:ir.model.fields,field_description:company_sales_system.field_pricelist_info__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: company_sales_system
+#: model:ir.model.fields,help:company_sales_system.field_pipeline_data__website_message_ids
+#: model:ir.model.fields,help:company_sales_system.field_pricelist_info__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصال الموقع"
+
+#. module: company_sales_system
+#: model_terms:ir.ui.view,arch_db:company_sales_system.pipeline_data_form_view
+msgid "Won"
+msgstr "فائز"
+
+#. module: company_sales_system
+#: selection:pipeline.data,have_m:0
+msgid "Yes"
+msgstr "نعم"
+
+#. module: company_sales_system
+#: model:ir.model,name:company_sales_system.model_pipeline_data
+msgid "pipeline.data"
+msgstr "دورة المبيعات"
+
+#. module: company_sales_system
+#: model:ir.model,name:company_sales_system.model_price_offer
+msgid "price.offer"
+msgstr "عرض السعر "
+
+#. module: company_sales_system
+#: model:ir.model,name:company_sales_system.model_pricelist_info
+msgid "pricelist.info"
+msgstr "معلومات قائمة الأسعار"
+

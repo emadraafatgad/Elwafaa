@@ -1,0 +1,1924 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sales_policy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-14 10:46+0000\n"
+"PO-Revision-Date: 2021-09-14 10:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sales_policy
+#: selection:car.data,fuel_tank:0
+msgid "1/3"
+msgstr ""
+
+#. module: sales_policy
+#: selection:car.data,fuel_tank:0
+msgid "1/4"
+msgstr ""
+
+#. module: sales_policy
+#: selection:car.data,fuel_tank:0
+msgid "3/4"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__accessories_ok
+msgid "Accessories"
+msgstr "الاكسسوارات"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__accessories_percentage
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__accessories_percentage
+msgid "Accessories Percentage"
+msgstr "نسبة الاكسسوارات"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__account_id
+#: model:ir.model.fields,field_description:sales_policy.field_worker_service__account_id
+msgid "Account"
+msgstr "حساب"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__accounting_manager_name
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__accounting_manager_name
+msgid "Accounting Manager Name"
+msgstr "اسم مدير الحسابات"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__accounting_manager_phone
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__accounting_manager_phone
+msgid "Accounting Manager Phone"
+msgstr "هاتف مدير الحسابات"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__message_needaction
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__message_needaction
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__message_needaction
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__message_needaction
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__message_needaction
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__message_needaction
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__message_needaction
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__message_needaction
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_needaction
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_needaction
+msgid "Action Needed"
+msgstr "يلزم إجراء"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__activity_ids
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__activity_ids
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__activity_ids
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__activity_ids
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__activity_ids
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__activity_ids
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__activity_ids
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__activity_ids
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__activity_ids
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__activity_ids
+msgid "Activities"
+msgstr "أنشطة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_activity__name
+msgid "Activity"
+msgstr "نشاط"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__activity_state
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__activity_state
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__activity_state
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__activity_state
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__activity_state
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__activity_state
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__activity_state
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__activity_state
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__activity_state
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__name
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__name
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__area
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__area
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__area
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__area
+#: model:ir.ui.menu,name:sales_policy.menu_area_menu_root
+msgid "Area"
+msgstr "منطقة"
+
+#. module: sales_policy
+#: model:ir.actions.act_window,name:sales_policy.action_area_data
+#: model:ir.ui.menu,name:sales_policy.menu_area_menu
+msgid "Area Data"
+msgstr "بيانات المنطقة"
+
+#. module: sales_policy
+#: model:ir.actions.act_window,name:sales_policy.action_area_record
+#: model:ir.ui.menu,name:sales_policy.menu_area_record_menu
+msgid "Area Record"
+msgstr "سجل المنطقة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__message_attachment_count
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__message_attachment_count
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__message_attachment_count
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__message_attachment_count
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__message_attachment_count
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__message_attachment_count
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__message_attachment_count
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__message_attachment_count
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_attachment_count
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقين"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__attachment
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__attachment
+msgid "Attachments"
+msgstr "المرفقين"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__authority
+msgid "Authority"
+msgstr "سلطة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__average_customer_consumption
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__average_customer_consumption
+msgid "Average Customer Consumption"
+msgstr "متوسط ​​استهلاك العميل"
+
+#. module: sales_policy
+#: selection:res.partner,customer_evaluation:0
+msgid "Bad"
+msgstr "سيء"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__best_price_for_customer
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__best_price_for_customer
+msgid "Best Price For Customer"
+msgstr "أفضل سعر للعميل"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__bridge_inverse_price
+msgid "Bridge Inverse Price"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__bridge_inverse_price_temp
+msgid "Bridge Inverse Price Temp"
+msgstr " نموذج اسعار"
+
+#. module: sales_policy
+#: selection:car.part,state:0
+msgid "Cancelled"
+msgstr "تم الالغاء"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__car
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__car_type
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__car
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__car_type
+#: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__car_type
+#: model:ir.model.fields,field_description:sales_policy.field_sale_order_line__car_type
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__car
+msgid "Car"
+msgstr "سيارة"
+
+#. module: sales_policy
+#: model:ir.actions.act_window,name:sales_policy.action_car_data
+msgid "Car Data"
+msgstr "بيانات السيارة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__car_issue
+msgid "Car Issue"
+msgstr "مشكلة السيارة"
+
+#. module: sales_policy
+#: model:ir.actions.act_window,name:sales_policy.action_car_fix
+msgid "Car Maintenance"
+msgstr "صيانة السيارة"
+
+#. module: sales_policy
+#: model:ir.actions.act_window,name:sales_policy.action_car_model
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__car_model
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__car_model
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__car_model
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__car_model
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__car_model
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__name
+#: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__car_model
+#: model:ir.model.fields,field_description:sales_policy.field_sale_order_line__car_model
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__car_model
+msgid "Car Model"
+msgstr "موديل السيارة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__parts
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_fix_form_view
+msgid "Car Parts"
+msgstr "قطع غيار السيارات"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__car_parts_inv
+msgid "Car Parts Inv"
+msgstr "قطع غيار السيارات"
+
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__car_type
+#: model:ir.model.fields,field_description:sales_policy.field_car_type__name
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__car_type
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__car_type
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__car_type
+msgid "Car Type"
+msgstr "نوع السيارة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__cars
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__cars
+#: model:ir.model.fields,field_description:sales_policy.field_sale_order__cars
+#: model:ir.ui.menu,name:sales_policy.menu_cars_root_menu
+#: model_terms:ir.ui.view,arch_db:sales_policy.res_partnert_inherit_form_view
+#: model_terms:ir.ui.view,arch_db:sales_policy.sale_order_inherit_form_view
+msgid "Cars"
+msgstr "السيارات"
+
+#. module: sales_policy
+#: model:ir.ui.menu,name:sales_policy.menu_car_data_menu
+msgid "Cars Data"
+msgstr "بيانات السيارات"
+
+#. module: sales_policy
+#: model:ir.ui.menu,name:sales_policy.menu_car_fix_menu
+msgid "Cars Maintenance"
+msgstr "صيانة السيارات"
+
+#. module: sales_policy
+#: model:ir.ui.menu,name:sales_policy.menu_car_type_menu
+msgid "Cars Model"
+msgstr "موديل السيارات"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_fix_form_view
+msgid "Cars Parts"
+msgstr "قطع غيار السيارات"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__categories
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__categories
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__categories
+msgid "Categories"
+msgstr "فئات"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__center
+msgid "Center"
+msgstr "مركز"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__chassis_number
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__chassis_number
+msgid "Chassis Number"
+msgstr "رقم الشاسيه"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_fix_form_view
+msgid "Check Availability"
+msgstr "التحقق من إتاحتها"
+
+#. module: sales_policy
+#: selection:company.price,categories:0
+#: selection:res.partner,categories:0
+msgid "Companies"
+msgstr "شركات"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__company_activity
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__company_activity
+msgid "Company Activity"
+msgstr "نشاط الشركه"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__company_category
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__company_category
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__company_category
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__company_category
+msgid "Company Category"
+msgstr "فئة الشركة"
+
+#. module: sales_policy
+#: model:ir.actions.act_window,name:sales_policy.action_company_price
+#: model:ir.ui.menu,name:sales_policy.menu_company_price_menu
+msgid "Company Price List"
+msgstr "قائمة أسعار الشركة"
+
+#. module: sales_policy
+#: selection:res.partner,company_category:0
+#: selection:temp.price_list,company_category:0
+msgid "Competitive"
+msgstr "تنافسي"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__Competitor_companies
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__Competitor_companies
+msgid "Competitor Companies"
+msgstr "الشركات المنافسة"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.company_price_form_view
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: sales_policy
+#: selection:car.fix,state:0
+#: selection:company.price,state:0
+msgid "Confirmed"
+msgstr "تم التأكيد"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_res_partner
+msgid "Contact"
+msgstr "وسيلة اتصال"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__country
+msgid "Country"
+msgstr ""دولة""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_fix_form_view
+msgid "Create Invoice"
+msgstr "إنشاء فاتورة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_car_issue__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_car_type__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_company_activity__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_competitive_company__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_table__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_payement_method__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_worker_name__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_worker_service__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__create_uid
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_table__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_car_issue__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_car_type__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_company_activity__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_competitive_company__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_table__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_payement_method__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_worker_name__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_worker_service__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__create_date
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_table__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها في"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__customer
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__customer
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__customerr
+#: model:ir.model.fields,field_description:sales_policy.field_sale_order_line__customer
+msgid "Customer"
+msgstr "عميل"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__customer_evaluation
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__customer_evaluation
+msgid "Customer Evaluation"
+msgstr "تقييم العميل"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__customer
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__customer
+#: model:ir.model.fields,field_description:sales_policy.field_worker_service__customer
+msgid "Customer/Company"
+msgstr "العميل / الشركة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__date
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__date2
+msgid "Date"
+msgstr "تاريخ"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__dealing_way
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__dealing_way
+msgid "Dealing Way"
+msgstr "طريقة التعامل"
+
+#. module: sales_policy
+#: model:ir.model.fields,help:sales_policy.field_car_part__product_uom
+msgid "Default unit of measure used for all stock operations."
+msgstr "وحدة القياس الافتراضية المستخدمة لجميع العمليات المخزنية."
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__delivery_date
+msgid "Delivery date"
+msgstr "تاريخ التسليم"
+
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__location_dest_id
+msgid "Destination Location"
+msgstr "موقع الاستلام"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_car_issue__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_car_type__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_company_activity__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_competitive_company__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_table__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_payement_method__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_worker_name__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_worker_service__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__display_name
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_table__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__display_type
+msgid "Display Type"
+msgstr "نوع العرض"
+
+#. module: sales_policy
+#: selection:car.part,state:0
+msgid "Done"
+msgstr "انتهي"
+
+#. module: sales_policy
+#: selection:car.fix,state:0
+#: selection:car.part,state:0
+#: selection:company.price,state:0
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__driver_name
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__driver_name
+msgid "Driver Name"
+msgstr "اسم السائق"
+
+#. module: sales_policy
+#: selection:res.partner,dealing_way:0
+msgid "E-mail"
+msgstr "بريد الالكتروني"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__entry_counter
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__entry_counter
+msgid "Entry Counter per KM"
+msgstr "عداد الدخول بالكيلومتر"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__entery_date
+msgid "Entry date"
+msgstr "موعد الدخول"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__exit_counter
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__exit_counter
+msgid "Exit Counter per KM"
+msgstr "عداد الخروج بالكيلومتر"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_fix_form_view
+msgid "Finish fixing"
+msgstr "انهاء الاصلاح "
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__fix_date
+msgid "Fix date"
+msgstr "تاريخ الإصلاح"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.res_partnert_inherit_form_view
+msgid "Fixing"
+msgstr "اصلاح"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__fix_cars
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__fix_cars
+#: model_terms:ir.ui.view,arch_db:sales_policy.res_partnert_inherit_form_view
+msgid "Fixing Cars"
+msgstr "إصلاح السيارات"
+
+#. module: sales_policy
+#: selection:car.fix,state:0
+msgid "Fixing Finished"
+msgstr "انتهى الإصلاح"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__message_follower_ids
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__message_follower_ids
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__message_follower_ids
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__message_follower_ids
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__message_follower_ids
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__message_follower_ids
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__message_follower_ids
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__message_follower_ids
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_follower_ids
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_follower_ids
+msgid "Followers"
+msgstr "متابعون"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__message_channel_ids
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__message_channel_ids
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__message_channel_ids
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__message_channel_ids
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__message_channel_ids
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__message_channel_ids
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__message_channel_ids
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__message_channel_ids
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_channel_ids
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__message_partner_ids
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__message_partner_ids
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__message_partner_ids
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__message_partner_ids
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__message_partner_ids
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__message_partner_ids
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__message_partner_ids
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__message_partner_ids
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_partner_ids
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (العملاء)"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__fuel_tank
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__fuel_tank
+msgid "Fuel Tank"
+msgstr "خزان الوقود"
+
+#. module: sales_policy
+#: selection:res.partner,customer_evaluation:0
+msgid "Good"
+msgstr "جيد"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__governorate
+msgid "Governorate"
+msgstr "محافظة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__id
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__id
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__id
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__id
+#: model:ir.model.fields,field_description:sales_policy.field_car_issue__id
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__id
+#: model:ir.model.fields,field_description:sales_policy.field_car_type__id
+#: model:ir.model.fields,field_description:sales_policy.field_company_activity__id
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__id
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__id
+#: model:ir.model.fields,field_description:sales_policy.field_competitive_company__id
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__id
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_table__id
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__id
+#: model:ir.model.fields,field_description:sales_policy.field_payement_method__id
+#: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__id
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__id
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__id
+#: model:ir.model.fields,field_description:sales_policy.field_worker_name__id
+#: model:ir.model.fields,field_description:sales_policy.field_worker_service__id
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__id
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_table__id
+msgid "ID"
+msgstr "الرقم القومي"
+
+#. module: sales_policy
+#: model:ir.model.fields,help:sales_policy.field_area_data__message_unread
+#: model:ir.model.fields,help:sales_policy.field_area_record__message_unread
+#: model:ir.model.fields,help:sales_policy.field_car_data__message_unread
+#: model:ir.model.fields,help:sales_policy.field_car_fix__message_unread
+#: model:ir.model.fields,help:sales_policy.field_company_price__message_unread
+#: model:ir.model.fields,help:sales_policy.field_merchants_data__message_unread
+#: model:ir.model.fields,help:sales_policy.field_model_car__message_unread
+#: model:ir.model.fields,help:sales_policy.field_team_target__message_unread
+#: model:ir.model.fields,help:sales_policy.field_temp_price_list__message_unread
+#: model:ir.model.fields,help:sales_policy.field_workshop_info__message_unread
+msgid "If checked new messages require your attention."
+msgstr ".إذا تم تحديد رسائل جديدة تتطلب انتباهك"
+
+#. module: sales_policy
+#: model:ir.model.fields,help:sales_policy.field_area_data__message_needaction
+#: model:ir.model.fields,help:sales_policy.field_area_record__message_needaction
+#: model:ir.model.fields,help:sales_policy.field_car_data__message_needaction
+#: model:ir.model.fields,help:sales_policy.field_car_fix__message_needaction
+#: model:ir.model.fields,help:sales_policy.field_company_price__message_needaction
+#: model:ir.model.fields,help:sales_policy.field_merchants_data__message_needaction
+#: model:ir.model.fields,help:sales_policy.field_model_car__message_needaction
+#: model:ir.model.fields,help:sales_policy.field_team_target__message_needaction
+#: model:ir.model.fields,help:sales_policy.field_temp_price_list__message_needaction
+#: model:ir.model.fields,help:sales_policy.field_workshop_info__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ".إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك"
+
+#. module: sales_policy
+#: model:ir.model.fields,help:sales_policy.field_area_data__message_has_error
+#: model:ir.model.fields,help:sales_policy.field_area_record__message_has_error
+#: model:ir.model.fields,help:sales_policy.field_car_data__message_has_error
+#: model:ir.model.fields,help:sales_policy.field_car_fix__message_has_error
+#: model:ir.model.fields,help:sales_policy.field_company_price__message_has_error
+#: model:ir.model.fields,help:sales_policy.field_merchants_data__message_has_error
+#: model:ir.model.fields,help:sales_policy.field_model_car__message_has_error
+#: model:ir.model.fields,help:sales_policy.field_team_target__message_has_error
+#: model:ir.model.fields,help:sales_policy.field_temp_price_list__message_has_error
+#: model:ir.model.fields,help:sales_policy.field_workshop_info__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ".إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم"
+
+#. module: sales_policy
+#: selection:company.price,categories:0
+#: selection:res.partner,categories:0
+msgid "Individuals"
+msgstr "افراد"
+
+#. module: sales_policy
+#: selection:car.fix,state:0
+msgid "Invoiced"
+msgstr "تم انشاء فاتورته"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__message_is_follower
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__message_is_follower
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__message_is_follower
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__message_is_follower
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__message_is_follower
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__message_is_follower
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__message_is_follower
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__message_is_follower
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_is_follower
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__is_service
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__is_service
+msgid "Is Service?"
+msgstr "خدمة؟"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_issue__name
+msgid "Issue"
+msgstr "مشكلة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_area_record____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_car_data____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_car_issue____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_car_part____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_car_type____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_company_activity____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_company_price____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_competitive_company____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_table____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_model_car____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_payement_method____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_team_target____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_worker_name____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_worker_service____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info____last_update
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_table____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_car_issue__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_car_type__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_company_activity__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_competitive_company__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_table__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_payement_method__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_worker_name__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_worker_service__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__write_uid
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_table__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_car_issue__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_car_type__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_company_activity__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_competitive_company__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_table__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_payement_method__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_worker_name__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_worker_service__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__write_date
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_table__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__temp_price
+msgid "Lines"
+msgstr "بنود"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__message_main_attachment_id
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__message_main_attachment_id
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__message_main_attachment_id
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__message_main_attachment_id
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__message_main_attachment_id
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__message_main_attachment_id
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__message_main_attachment_id
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__message_main_attachment_id
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_main_attachment_id
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "مرفق رئيسي"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_table__merchants_inverse
+msgid "Merchants Inverse"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__merchants_number
+msgid "Merchants Number"
+msgstr "عدد التجار"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__merchants_table
+#: model_terms:ir.ui.view,arch_db:sales_policy.area_data_form_view
+msgid "Merchants Table"
+msgstr "جدول التجار"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.area_data_form_view
+msgid "Merchants list"
+msgstr "قائمة التجار"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__message_has_error
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__message_has_error
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__message_has_error
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__message_has_error
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__message_has_error
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__message_has_error
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__message_has_error
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__message_has_error
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_has_error
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__movement_responsible_name
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__movement_responsible_name
+msgid "Movement Responsible Name"
+msgstr "اسم مسئول الحركة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__movement_responsible_phone
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__movement_responsible_phone
+msgid "Movement Responsible Phone"
+msgstr "تليفون مسؤول الحركة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_competitive_company__name
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__name
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_table__name
+#: model:ir.model.fields,field_description:sales_policy.field_worker_name__name
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__name
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_table__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: sales_policy
+#: sql_constraint:temp.price_list:0
+msgid "Name must be unique!"
+msgstr "! الاسم لا يجب أن يتكرر "
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__activity_date_deadline
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__activity_date_deadline
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__activity_date_deadline
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__activity_date_deadline
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__activity_date_deadline
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__activity_date_deadline
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__activity_date_deadline
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__activity_date_deadline
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__activity_date_deadline
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__activity_summary
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__activity_summary
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__activity_summary
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__activity_summary
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__activity_summary
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__activity_summary
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__activity_summary
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__activity_summary
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__activity_summary
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__activity_type_id
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__activity_type_id
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__activity_type_id
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__activity_type_id
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__activity_type_id
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__activity_type_id
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__activity_type_id
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__activity_type_id
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__activity_type_id
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: sales_policy
+#: selection:car.part,display_type:0
+msgid "Note"
+msgstr "ملحوظة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_worker_service__no_of_hours
+msgid "Number Of Hours"
+msgstr "عدد الساعات"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__message_needaction_counter
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__message_needaction_counter
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__message_needaction_counter
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__message_needaction_counter
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__message_needaction_counter
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__message_needaction_counter
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__message_needaction_counter
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__message_needaction_counter
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_needaction_counter
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__cars_no
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__cars_no
+msgid "Number of Cars"
+msgstr "عدد السيارات"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__no_of_days
+#: model:ir.model.fields,field_description:sales_policy.field_payement_method__no_of_days
+msgid "Number of days"
+msgstr "عدد الأيام"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__message_has_error_counter
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__message_has_error_counter
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__message_has_error_counter
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__message_has_error_counter
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__message_has_error_counter
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__message_has_error_counter
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__message_has_error_counter
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__message_has_error_counter
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_has_error_counter
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_has_error_counter
+msgid "Number of error"
+msgstr "عدد الاخطاء"
+
+#. module: sales_policy
+#: model:ir.model.fields,help:sales_policy.field_area_data__message_needaction_counter
+#: model:ir.model.fields,help:sales_policy.field_area_record__message_needaction_counter
+#: model:ir.model.fields,help:sales_policy.field_car_data__message_needaction_counter
+#: model:ir.model.fields,help:sales_policy.field_car_fix__message_needaction_counter
+#: model:ir.model.fields,help:sales_policy.field_company_price__message_needaction_counter
+#: model:ir.model.fields,help:sales_policy.field_merchants_data__message_needaction_counter
+#: model:ir.model.fields,help:sales_policy.field_model_car__message_needaction_counter
+#: model:ir.model.fields,help:sales_policy.field_team_target__message_needaction_counter
+#: model:ir.model.fields,help:sales_policy.field_temp_price_list__message_needaction_counter
+#: model:ir.model.fields,help:sales_policy.field_workshop_info__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: sales_policy
+#: model:ir.model.fields,help:sales_policy.field_area_data__message_has_error_counter
+#: model:ir.model.fields,help:sales_policy.field_area_record__message_has_error_counter
+#: model:ir.model.fields,help:sales_policy.field_car_data__message_has_error_counter
+#: model:ir.model.fields,help:sales_policy.field_car_fix__message_has_error_counter
+#: model:ir.model.fields,help:sales_policy.field_company_price__message_has_error_counter
+#: model:ir.model.fields,help:sales_policy.field_merchants_data__message_has_error_counter
+#: model:ir.model.fields,help:sales_policy.field_model_car__message_has_error_counter
+#: model:ir.model.fields,help:sales_policy.field_team_target__message_has_error_counter
+#: model:ir.model.fields,help:sales_policy.field_temp_price_list__message_has_error_counter
+#: model:ir.model.fields,help:sales_policy.field_workshop_info__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: sales_policy
+#: model:ir.model.fields,help:sales_policy.field_area_data__message_unread_counter
+#: model:ir.model.fields,help:sales_policy.field_area_record__message_unread_counter
+#: model:ir.model.fields,help:sales_policy.field_car_data__message_unread_counter
+#: model:ir.model.fields,help:sales_policy.field_car_fix__message_unread_counter
+#: model:ir.model.fields,help:sales_policy.field_company_price__message_unread_counter
+#: model:ir.model.fields,help:sales_policy.field_merchants_data__message_unread_counter
+#: model:ir.model.fields,help:sales_policy.field_model_car__message_unread_counter
+#: model:ir.model.fields,help:sales_policy.field_team_target__message_unread_counter
+#: model:ir.model.fields,help:sales_policy.field_temp_price_list__message_unread_counter
+#: model:ir.model.fields,help:sales_policy.field_workshop_info__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: sales_policy
+#: sql_constraint:car.type:0
+#: sql_constraint:model.car:0
+msgid "Only one value can be defined for each given usage!"
+msgstr "يمكن تحديد قيمة واحدة فقط لكل استخدام معي!"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__operation_type
+msgid "Operation Type"
+msgstr "نوع العملية"
+
+#. module: sales_policy
+#: selection:area.data,activity_state:0
+#: selection:area.record,activity_state:0
+#: selection:car.data,activity_state:0
+#: selection:car.fix,activity_state:0
+#: selection:company.price,activity_state:0
+#: selection:merchants.data,activity_state:0
+#: selection:model.car,activity_state:0
+#: selection:team.target,activity_state:0
+#: selection:temp.price_list,activity_state:0
+#: selection:workshop.info,activity_state:0
+msgid "Overdue"
+msgstr "متأخر"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__owner_name
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__owner_name
+msgid "Owner Name"
+msgstr "اسم المالك"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__owner_phone
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__owner_phone
+msgid "Owner Phone"
+msgstr "هاتف المالك"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_payement_method__payment_method
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__payment_method
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__payment_method
+msgid "Payment Method"
+msgstr "طريقة الدفع او السداد"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__payment_term
+msgid "Payment Terms"
+msgstr "شروط الدفع"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__price_percentage
+msgid "Percentage"
+msgstr "النسبة المئوية"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__phone
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_table__phone
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__phone
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_table__phone
+msgid "Phone"
+msgstr "هاتف"
+
+#. module: sales_policy
+#: selection:res.partner,dealing_way:0
+msgid "Phone call"
+msgstr "مكالمة هاتفية"
+
+#. module: sales_policy
+#: selection:area.data,activity_state:0
+#: selection:area.record,activity_state:0
+#: selection:car.data,activity_state:0
+#: selection:car.fix,activity_state:0
+#: selection:company.price,activity_state:0
+#: selection:merchants.data,activity_state:0
+#: selection:model.car,activity_state:0
+#: selection:team.target,activity_state:0
+#: selection:temp.price_list,activity_state:0
+#: selection:workshop.info,activity_state:0
+msgid "Planned"
+msgstr "مخطط"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__plate_number
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__plate_number
+#: model:ir.model.fields,field_description:sales_policy.field_stock_picking__plate_number
+msgid "Plate Number"
+msgstr "رقم الوحة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_sale_order__total_am_due
+#: model:ir.model.fields,field_description:sales_policy.field_sale_order__total_credit
+msgid "Previous Amount Due"
+msgstr "المبلغ السابق المستحق"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__previous_deal
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__previous_deal
+msgid "Previous Deal"
+msgstr "الصفقة السابقة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__price_unit
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__price
+#: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__price
+msgid "Price"
+msgstr "سعر"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.company_price_form_view
+msgid "Price List Table"
+msgstr "جدول قائمة الأسعار"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__pricelist_temp
+#: model:ir.ui.menu,name:sales_policy.menu_temp_price_list_menu
+#: model_terms:ir.ui.view,arch_db:sales_policy.temp_price_list_form_view
+msgid "Price List Template"
+msgstr "نموذج قائمة الأسعار"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.company_price_form_view
+msgid "Price list"
+msgstr "قائمة الاسعار"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.temp_price_list_form_view
+msgid "Price list Lines"
+msgstr "بنود قائمة الأسعار"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_worker_service__price_unit
+msgid "Price/Hour"
+msgstr "السعر / الساعة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__pricelist_table
+msgid "Pricelist Table"
+msgstr "جدول لائحة الأسعار"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__product
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__product
+#: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__product
+msgid "Product"
+msgstr "المنتجات"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__purchase_responsible_name
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__purchase_responsible_name
+msgid "Purchase Responsible Name"
+msgstr "اسم مسئول المشتريات"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__purchase_responsible_phone
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__purchase_responsible_phone
+msgid "Purchase Responsible Phone"
+msgstr "هاتف مسئول المشتريات"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__quantity
+msgid "Quantity"
+msgstr "كمية"
+
+#. module: sales_policy
+#: selection:car.part,state:0
+msgid "Ready"
+msgstr "مستعد"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_fix_form_view
+msgid "Request More Parts"
+msgstr "طلب المزيد من قطع الغيار"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_fix_form_view
+msgid "Request from stock"
+msgstr "طلب من المخزون "
+
+#. module: sales_policy
+#: selection:car.fix,state:0
+msgid "Reserved"
+msgstr "تم الحجز"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__quantity_done
+msgid "Reserved Quantity"
+msgstr "الكمية المحجوزة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__activity_user_id
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__activity_user_id
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__activity_user_id
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__activity_user_id
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__activity_user_id
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__activity_user_id
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__activity_user_id
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__activity_user_id
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__activity_user_id
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_sale_order
+msgid "Sale Order"
+msgstr "أمر البيع"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "بند أوامر المبيعات"
+
+#. module: sales_policy
+#: model:ir.module.category,name:sales_policy.module_sales_policy_category
+msgid "Sales Policy"
+msgstr "سياسة المبيعات"
+
+#. module: sales_policy
+#: model:res.groups,name:sales_policy.sales_policy_group
+msgid "Sales Policy Group"
+msgstr "مجموعة سياسة المبيعات"
+
+#. module: sales_policy
+#: model:res.groups,name:sales_policy.sales_policy_manager_group
+msgid "Sales Policy Manager"
+msgstr "مدير سياسة المبيعات"
+
+#. module: sales_policy
+#: model:ir.model.fields,help:sales_policy.field_team_target__team
+msgid "Sales Team the user is member of. Used to compute the members of a Sales Team through the inverse one2many"
+msgstr "فريق المبيعات الذي يعد المستخدم عضوًا فيه. يستخدم لحساب أعضاء فريق المبيعات من خلال"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__salesperson
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__salesperson
+msgid "Salesperson"
+msgstr "مندوب مبيعات"
+
+#. module: sales_policy
+#: selection:car.part,display_type:0
+msgid "Section"
+msgstr "مقطع"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__service
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__service_ok
+#: model:ir.model.fields,field_description:sales_policy.field_worker_service__product
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_fix_form_view
+msgid "Service"
+msgstr "خدمة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_worker_service__service_inv
+msgid "Service Inv"
+msgstr "فاتورة الخدمة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__service_percentage
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__service_percentage
+msgid "Service Percentage"
+msgstr "نسبة الخدمة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__location_id
+msgid "Source Location"
+msgstr "موقع المصدر"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__state
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__state
+msgid "State"
+msgstr "حالة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: sales_policy
+#: model:ir.model.fields,help:sales_policy.field_area_data__activity_state
+#: model:ir.model.fields,help:sales_policy.field_area_record__activity_state
+#: model:ir.model.fields,help:sales_policy.field_car_data__activity_state
+#: model:ir.model.fields,help:sales_policy.field_car_fix__activity_state
+#: model:ir.model.fields,help:sales_policy.field_company_price__activity_state
+#: model:ir.model.fields,help:sales_policy.field_merchants_data__activity_state
+#: model:ir.model.fields,help:sales_policy.field_model_car__activity_state
+#: model:ir.model.fields,help:sales_policy.field_team_target__activity_state
+#: model:ir.model.fields,help:sales_policy.field_temp_price_list__activity_state
+#: model:ir.model.fields,help:sales_policy.field_workshop_info__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr "الحالة على أساس الأنشطة"
+"متأخر: تاريخ الاستحقاق فات بالفعل"
+"اليوم: تاريخ النشاط هو اليوم"
+"مخطط له: الأنشطة المستقبلية"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__steel_ok
+msgid "Steel"
+msgstr "حدايد / صلب"
+
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__steel_percentage
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__steel_percentage
+msgid "Steel Percentage"
+msgstr "نسبة الصلب /الحدايد"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__stock
+msgid "Stock"
+msgstr " المخزن"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__target
+msgid "Target"
+msgstr "استهداف"
+
+#. module: sales_policy
+#: selection:res.partner,work_method:0
+msgid "Taxed Accrual"
+msgstr "الاستحقاق الخاضع للضريبة"
+
+#. module: sales_policy
+#: selection:res.partner,work_method:0
+msgid "Taxed Cash"
+msgstr "النقدية الخاضعة للضريبة"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__team
+msgid "Team"
+msgstr "فريق"
+
+#. module: sales_policy
+#: model:ir.actions.act_window,name:sales_policy.action_team_target_view
+#: model:ir.ui.menu,name:sales_policy.menu_team_target_menu
+msgid "Team Target"
+msgstr "هدف الفريق"
+
+#. module: sales_policy
+#: model:ir.model.fields,help:sales_policy.field_car_part__display_type
+msgid "Technical field for UX purpose."
+msgstr ".الحقل الفني لغرض تجربة المستخدم"
+
+#. module: sales_policy
+#: model:ir.actions.act_window,name:sales_policy.action_temp_price_list
+msgid "Temp Price List"
+msgstr "نموذج قائمة الأسعار "
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__name
+msgid "Template"
+msgstr "نموذج"
+
+#. module: sales_policy
+#: model:ir.model.fields,help:sales_policy.field_car_part__account_id
+#: model:ir.model.fields,help:sales_policy.field_worker_service__account_id
+msgid "The income or expense account related to the selected product."
+msgstr ".حساب الدخل أو المصروفات المتعلقة بالمنتج المحدد"
+
+#. module: sales_policy
+#: model:ir.model.fields,help:sales_policy.field_car_fix__location_dest_id
+msgid "This is the default destination location when you create a picking manually with this operation type. It is possible however to change it or that the routes put another location. If it is empty, it will check for the customer location on the partner. "
+msgstr " .هذا هو موقع التسليم الافتراضي عندما تقوم بإنشاء انتقاء يدويًا باستخدام نوع العملية هذا. ولكن من الممكن تغييره أو أن تضع المسارات لموقعًا آخر. إذا كان فارغًا ، فسوف يتحقق من موقع العميل على الشريك"
+
+#. module: sales_policy
+#: model:ir.model.fields,help:sales_policy.field_car_fix__location_id
+msgid "This is the default source location when you create a picking manually with this operation type. It is possible however to change it or that the routes put another location. If it is empty, it will check for the supplier location on the partner. "
+msgstr ".هذا هو موقع المصدر الافتراضي عندما تقوم بإنشاء انتقاء يدويًا باستخدام نوع العملية هذا. ولكن من الممكن تغييره أو أن تضع المسارات موقعًا آخر. إذا كان فارغًا ، فسوف يتحقق من موقع المورد على الشريك"
+
+#. module: sales_policy
+#: selection:area.data,activity_state:0
+#: selection:area.record,activity_state:0
+#: selection:car.data,activity_state:0
+#: selection:car.fix,activity_state:0
+#: selection:company.price,activity_state:0
+#: selection:merchants.data,activity_state:0
+#: selection:model.car,activity_state:0
+#: selection:team.target,activity_state:0
+#: selection:temp.price_list,activity_state:0
+#: selection:workshop.info,activity_state:0
+msgid "Today"
+msgstr "اليوم"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__total
+#: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__total
+msgid "Total"
+msgstr "المجموع"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_stock_picking
+msgid "Transfer"
+msgstr "تحويل"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_sale_order_line__price_unit
+msgid "Unit Price"
+msgstr "سعر الوحدة"
+
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__product_uom
+msgid "Unit of measure"
+msgstr "وحدة القياس"
+
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__message_unread
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__message_unread
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__message_unread
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__message_unread
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__message_unread
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__message_unread
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__message_unread
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__message_unread
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_unread
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__message_unread_counter
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__message_unread_counter
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__message_unread_counter
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__message_unread_counter
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__message_unread_counter
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__message_unread_counter
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__message_unread_counter
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__message_unread_counter
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_unread_counter
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عداد الرسائل غير المقروءة"
+
+
+#. module: sales_policy
+#: selection:res.partner,work_method:0
+msgid "Untaxed Accrual"
+msgstr "الاستحقاق غير الخاضع للضريبة"
+
+
+#. module: sales_policy
+#: selection:res.partner,work_method:0
+msgid "Untaxed Cash"
+msgstr "النقد غير الخاضع للضريبة"
+
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.company_price_form_view
+msgid "Update"
+msgstr "تحديث"
+
+#. module: sales_policy
+#: model:res.groups,name:sales_policy.modify_pricelist_group
+msgid "Update Sales Price List"
+msgstr "تحديث قائمة أسعار المبيعات"
+
+
+#. module: sales_policy
+#: selection:company.price,state:0
+msgid "Updated"
+msgstr "محدث"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__used_paper_type
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__used_paper_type
+msgid "Used Paper Type"
+msgstr "نوع الورق المستخدم"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__name
+msgid "User"
+msgstr "مستخدم"
+
+#. module: sales_policy
+#: selection:res.partner,customer_evaluation:0
+msgid "Very Good"
+msgstr "جيد جدا"
+
+#. module: sales_policy
+#: selection:car.part,state:0
+msgid "Waiting"
+msgstr "انتظار"
+
+#. module: sales_policy
+#: selection:car.part,state:0
+msgid "Waiting Another Operation"
+msgstr "في انتظار عملية أخرى"
+
+#. module: sales_policy
+#: code:addons/sales_policy/models/sales_quotation.py:67
+#, python-format
+msgid "Warning for %s"
+msgstr "تنبيه ل"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__website_message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_area_record__website_message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__website_message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__website_message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_company_price__website_message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_merchants_data__website_message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_model_car__website_message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_team_target__website_message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__website_message_ids
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_info__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل موقع الويب"
+
+#. module: sales_policy
+#: model:ir.model.fields,help:sales_policy.field_area_data__website_message_ids
+#: model:ir.model.fields,help:sales_policy.field_area_record__website_message_ids
+#: model:ir.model.fields,help:sales_policy.field_car_data__website_message_ids
+#: model:ir.model.fields,help:sales_policy.field_car_fix__website_message_ids
+#: model:ir.model.fields,help:sales_policy.field_company_price__website_message_ids
+#: model:ir.model.fields,help:sales_policy.field_merchants_data__website_message_ids
+#: model:ir.model.fields,help:sales_policy.field_model_car__website_message_ids
+#: model:ir.model.fields,help:sales_policy.field_team_target__website_message_ids
+#: model:ir.model.fields,help:sales_policy.field_temp_price_list__website_message_ids
+#: model:ir.model.fields,help:sales_policy.field_workshop_info__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصالات موقع الويب"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__work_method
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__work_method
+msgid "Work Method"
+msgstr "طريقة العمل"
+
+#. module: sales_policy
+#: selection:res.partner,dealing_way:0
+msgid "Work Order"
+msgstr "طلب العمل"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_worker_service__worker
+msgid "Worker"
+msgstr "عامل"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_workshop_table__workshop_inverse
+msgid "Workshop Inverse"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__workshop_table
+#: model_terms:ir.ui.view,arch_db:sales_policy.area_data_form_view
+msgid "Workshop Table"
+msgstr "جدول ورشة العمل"
+
+#. module: sales_policy
+#: selection:company.price,categories:0
+#: selection:res.partner,categories:0
+msgid "Workshops"
+msgstr "ورش عمل"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_area_data__workshop_number
+msgid "Workshops Number"
+msgstr "عدد ورش العمل"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.area_data_form_view
+msgid "Workshops list"
+msgstr "قائمة ورش العمل"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_area_data
+msgid "area.data"
+msgstr "بيانات المنطقة"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_area_record
+msgid "area.record"
+msgstr "سجل المنطقة"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "authority"
+msgstr "السلطة"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_car_data
+msgid "car.data"
+msgstr "بيانات السيارة"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_car_fix
+msgid "car.fix"
+msgstr "إصلاح السيارة"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_car_issue
+msgid "car.issue"
+msgstr "مشكلة السيارة"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_car_part
+msgid "car.part"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_car_type
+msgid "car.type"
+msgstr "نوع السيارة"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_company_activity
+msgid "company.activity"
+msgstr "نشاط الشركه"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_company_price
+msgid "company.price"
+msgstr "سعر الشركة"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_company_price_bridge
+msgid "company.price_bridge"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_competitive_company
+msgid "competitive.company"
+msgstr "شركة تنافسية"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "logo"
+msgstr "شعار"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_merchants_data
+msgid "merchants.data"
+msgstr "بيانات التجار"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_merchants_table
+msgid "merchants.table"
+msgstr "بيانات التجار"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_model_car
+msgid "model.car"
+msgstr "مودل السيارة"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_payement_method
+msgid "payement.method"
+msgstr "طريقة الدفع او السداد"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_price_list_template_bridge
+msgid "price_list.template_bridge"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_fix_form_view
+msgid "services"
+msgstr "خدمات"
+
+#. module: sales_policy
+#: code:addons/sales_policy/models/car_fix.py:71
+#: code:addons/sales_policy/models/car_fix.py:75
+#, python-format
+msgid "some product for this company/customer has no price list please create price list for them to continue"
+msgstr "بعض المنتجات لهذه الشركة / العميل ليس لديها قائمة أسعار يرجى إنشاء قائمة أسعار لهم للمتابعة"
+
+#. module: sales_policy
+#: code:addons/sales_policy/models/car_fix.py:218
+#, python-format
+msgid "some quantities not reserved yet please check your stock to complete process."
+msgstr ".بعض الكميات لم يتم حجزها بعد ، يرجى التحقق من مخزونك لإكمال العملية"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_team_target
+msgid "team.target"
+msgstr "هدف الفريق"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_temp_price_list
+msgid "temp.price_list"
+msgstr "قائمة الأسعار المؤقتة"
+
+#. module: sales_policy
+#: code:addons/sales_policy/models/car_fix.py:141
+#, python-format
+msgid "this quantities has requested before."
+msgstr ".طلبت هذه الكميات من قبل"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_worker_name
+msgid "worker.name"
+msgstr "اسم العامل"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_worker_service
+msgid "worker.service"
+msgstr "خدمة العامل"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_workshop_info
+msgid "workshop.info"
+msgstr "معلومات ورشة العمل"
+
+#. module: sales_policy
+#: model:ir.model,name:sales_policy.model_workshop_table
+msgid "workshop.table"
+msgstr "طاولة ورشة العمل"
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "اسم العامل"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "اسم العميل:"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "اسم الفني"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__technician_name
+msgid "اسم الفني "
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_stock_picking__technician_name
+msgid "اسم المتخصص "
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__supervisor_name
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__supervisor_name
+#: model:ir.model.fields,field_description:sales_policy.field_stock_picking__supervisor_name
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "اسم المشرف"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__worker_name
+msgid "العمال"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "امر تشغيل نقدا/أجل"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "تاريخ التسليم"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "تاريخ الدخول"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "تاريخ انتهاء الاصلاح"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "تليفون"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_res_partner__credit_limit
+#: model:ir.model.fields,field_description:sales_policy.field_res_users__credit_limit
+msgid "حد الائتمان"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__for_companies
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "خاص بالشركات"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "خزان الوقود: 0 -1/4 -1/3-3/4-1"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__danagel
+msgid "دناجل"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "دناجل:"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "رقم الشاسيه"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "رقم اللوحات"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "رقم بطاقة"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__sliders
+msgid "سوست"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "سوست:"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "شكوي العميل"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__customer_complain
+msgid "شكوي العميل "
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "عداد ال كم خروج"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "عداد ال كم دخول"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__traps
+msgid "عفشة"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "عفشة:"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "عنوان"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "قطاع عام/قطاع خاص"
+msgstr ""
+
+#. module: sales_policy
+#: model:ir.actions.report,name:sales_policy.car_reception_detection
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "كشف استقبال سيارة"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "مودل السيارة"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "مون ياي للصناعة والتجارة"
+msgstr ""
+
+#. module: sales_policy
+#: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
+msgid "نوع السيارة"
+msgstr ""
+
