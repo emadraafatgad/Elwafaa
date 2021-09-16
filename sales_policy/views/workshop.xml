@@ -52,7 +52,7 @@
 
 
         <record id="action_workshop_data" model="ir.actions.act_window">
-            <field name="name">Workshop Data</field>
+            <field name="name"> بيانات الورش</field>
             <field name="res_model">workshop.info</field>
             <field name="view_mode">tree,form</field>
         </record>
@@ -111,7 +111,7 @@
 
 
         <record id="action_merchants_data" model="ir.actions.act_window">
-            <field name="name">Merchants Data</field>
+            <field name="name">بيانات التجار</field>
             <field name="res_model">merchants.data</field>
             <field name="view_mode">tree,form</field>
         </record>
@@ -126,7 +126,7 @@
 
 
         <menuitem id="menu_merchants_menu"
-                  name="Merchants Data"
+                  name="بيانات التجار"
                   action="action_merchants_data"
                   parent="menu_area_menu_root"
                   sequence="3"
@@ -135,7 +135,7 @@
 
 
          <menuitem id="menu_workshop_menu"
-                  name="Workshop Data"
+                  name="بيانات الورش "
                   action="action_workshop_data"
                   parent="menu_area_menu_root"
                   sequence="4"

@@ -303,7 +303,7 @@ msgstr "إجمالي عدد الاكسسوارات"
 #. module: customer_invoice
 #: model:ir.model.fields,field_description:customer_invoice.field_account_invoice__total_service
 msgid "Total Service"
-msgstr "إجمالي الخدمات
+msgstr "إجمالي الخدمات"
 
 
 #. module: customer_invoice

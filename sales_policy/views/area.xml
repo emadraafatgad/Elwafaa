@@ -135,7 +135,7 @@
         </record>
 
         <menuitem id="menu_cars_main_root_menu"
-                  name="Cars"
+                  name="السيارات"
         />
         <menuitem id="menu_cars_root_menu"
                   name="Configuration"
