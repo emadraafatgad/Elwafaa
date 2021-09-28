@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data>
-
         <record id="area_data_form_view" model="ir.ui.view">
             <field name="name">area_data_form_view</field>
             <field name="model">area.data</field>
@@ -55,7 +54,6 @@
                 </form>
             </field>
         </record>
-
 
         <record id="area_data_tree_view" model="ir.ui.view">
             <field name="name">area_data_tree_view</field>
