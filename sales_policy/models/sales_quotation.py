@@ -5,17 +5,19 @@ from odoo import models, fields, api, exceptions, _
 class SalesQuotationLineInherit(models.Model):
     _inherit = 'sale.order.line'
 
+
+    customer=fields.Many2one('res.partner',string='Customer',compute='cal_customer_relation',copy=True,store=True)
+    # car_type = fields.Many2one('car.data', string='Car',domain="[('customer','=',customer)]", store=True)
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True)
+    # , related = 'product_id.car_model'
+
+    price_unit = fields.Float('Unit Price', required=True,readonly=True, compute='product_uom_change')
+
     @api.multi
     @api.depends('product_id', 'order_id')
     def cal_customer_relation(self):
         for rec in self:
             rec.customer = rec.order_id.partner_id
-    customer=fields.Many2one('res.partner',string='Customer',compute='cal_customer_relation',copy=True,store=True)
-    car_type = fields.Many2one('car.data', string='Car',domain="[('customer','=',customer)]", store=True)
-    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True, domain="[('car_type','=',car_type)]")
-
-    price_unit = fields.Float('Unit Price', required=True,readonly=True, compute='product_uom_change')
-
     @api.multi
     @api.onchange('product_id')
     def product_id_change(self):
@@ -75,10 +77,10 @@ class SalesQuotationLineInherit(models.Model):
         return result
 
     @api.multi
-    @api.depends('product_id','customer','car_model','car_type')
+    @api.depends('product_id','customer','car_model')
     def product_uom_change(self):
       for rec in self:
-        asd = rec.env['company.price_bridge'].search([('customerr', '=', rec.customer.id),('product', '=', rec.product_id.id),('car_model', '=', rec.car_model.id), ('car_type', '=', rec.car_type.id)])
+        asd = rec.env['company.price_bridge'].search([('customerr', '=', rec.customer.id),('product', '=', rec.product_id.id),('car_model', '=', rec.car_model.id)])
         if asd:
             for m in asd:
              rec.price_unit=m.total

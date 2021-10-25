@@ -8,7 +8,7 @@ class CompanyPriceList(models.Model):
 
     customer=fields.Many2one('res.partner',string='Customer',track_visibility='onchange')
     car = fields.Many2one('car.data', string='Car', domain="[('customer','=',customer)]",track_visibility='onchange',store=True, copy=True,)
-    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True, related='car.car_model')
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True)
     is_service = fields.Boolean('Is Service?')
     pricelist_temp=fields.Many2one('temp.price_list',string='Price List Template',track_visibility='onchange',domain="[('car_model','=',car_model)]")
     date=fields.Date(string='Date',default=fields.Date.today(),store=True,copy=True,track_visibility='onchange')
@@ -36,7 +36,7 @@ class CompanyPriceList(models.Model):
                             # 'price_percentage': rec.price_percentage,
                             # 'sign':rec.sign,
                             'total':rec.total,
-                            'car_type': rec.car_type,
+                            # 'car_type': rec.car_type,
                             'car_model': rec.car_model,
 
                   })
@@ -104,14 +104,14 @@ class CompanyPriceListBridge(models.Model):
     accessories_percentage = fields.Float(string='Accessories Percentage',related='bridge_inverse_price.accessories_percentage')
     steel_percentage = fields.Float(string='Steel Percentage',related='bridge_inverse_price.steel_percentage')
     service_percentage = fields.Float(string='Service Percentage',related='bridge_inverse_price.service_percentage')
-    car_type = fields.Many2one('car.data', string='Car', compute='cal_car_type_inv', store=True,copy=True)
+    # car_type = fields.Many2one('car.data', string='Car', compute='cal_car_type_inv', store=True,copy=True)
     car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,compute='cal_car_type_inv')
 
     @api.multi
     @api.depends('product', 'bridge_inverse_price')
     def cal_car_type_inv(self):
         for rec in self:
-            rec.car_type = rec.bridge_inverse_price.car
+            # rec.car_type = rec.bridge_inverse_price.car
             rec.car_model = rec.bridge_inverse_price.car_model
 
     @api.one
@@ -175,9 +175,9 @@ class CompanyPriceListTemplate(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name=fields.Char(string='Template',track_visibility='onchange',store=True,copy=True)
-    car = fields.Many2one('car.data', string='Car',track_visibility='onchange')
+    # car = fields.Many2one('car.data', string='Car',track_visibility='onchange')
     is_service = fields.Boolean('Is Service?')
-    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True, domain="[('car_type','=',car)]")
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True)
     company_category = fields.Selection([('a','A'),('b','B'),('c','C'),('d','D'),('competitive','Competitive')],string='Company Category',track_visibility='onchange')
 
 
@@ -187,11 +187,27 @@ class CompanyPriceListTemplate(models.Model):
         ('name_uniq', 'unique (name)', 'Name must be unique!'),
     ]
 
+    @api.multi
+    def action_filter(self):
+        for rec in self.temp_price:
+            asd = self.env['product.product'].search([('name', '=', rec.product.name),('car_model', '=', self.car_model.id)])
+            if asd:
+                # for m in asd:
+                #     if m.car_model ==self.car_model:
+                #         print(m.id)
+
+                            rec.product= asd.id
+
+
+
+
+
 class CompanyPriceListtTemplateBridge(models.Model):
     _name = 'price_list.template_bridge'
     _rec_name = 'product'
 
-    product=fields.Many2one('product.product',required=True,track_visibility='onchange',store=True,copy=True,domain="[('car_model','=',car_model)]")
+    product=fields.Many2one('product.product',required=True,track_visibility='onchange',store=True,copy=True, domain = "[('car_model','=',car_model)]")
+
     price = fields.Float(string='Price',track_visibility='onchange',store=True,copy=True)
     # price_percentage = fields.Float(string='Percentage',track_visibility='onchange',store=True,copy=True)
     # sign = fields.Char(string='%',default='%',readonly=True,track_visibility='onchange',store=True,copy=True)
@@ -205,7 +221,7 @@ class CompanyPriceListtTemplateBridge(models.Model):
     @api.onchange('product', 'bridge_inverse_price_temp')
     def cal_type_inv(self):
         for rec in self:
-            rec.car_type = rec.bridge_inverse_price_temp.car
+            # rec.car_type = rec.bridge_inverse_price_temp.car
             rec.car_model = rec.bridge_inverse_price_temp.car_model
 
 

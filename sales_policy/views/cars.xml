@@ -10,16 +10,17 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="car_type"/>
+                                <field name="car_model"/>
                                 <field name="plate_number"/>
                                 <field name="customer"/>
 
                             </group>
                             <group>
 
-                                <field name="car_model"/>
+<!--                                <field name="car_type"/>-->
                                 <field name="chassis_number"/>
                                 <field name="driver_name"/>
+                                 <field name="fuel_tank"/>
                             </group>
 <!--                            <group>-->
 
@@ -36,9 +37,9 @@
 <!--                                <field name="delivery_date"/>-->
 <!--                            </group>-->
                             <group>
-                                <field name="fuel_tank"/>
-                                <field name="entry_counter"/>
-                                <field name="exit_counter"/>
+<!--                                <field name="fuel_tank"/>-->
+<!--                                <field name="entry_counter"/>-->
+<!--                                <field name="exit_counter"/>-->
 
                             </group>
 <!--                            <group>-->
@@ -73,10 +74,10 @@
             <field name="model">car.data</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="car_type"/>
+<!--                    <field name="car_type"/>-->
+                    <field name="car_model"/>
                     <field name="plate_number"/>
                     <field name="chassis_number"/>
-                    <field name="car_model"/>
                     <field name="driver_name"/>
                     <field name="customer"/>
 <!--                    <field name="sliders"/>-->
@@ -86,8 +87,8 @@
 <!--                    <field name="fix_date"/>-->
 <!--                    <field name="delivery_date"/>-->
                     <field name="fuel_tank"/>
-                    <field name="entry_counter"/>
-                    <field name="exit_counter"/>
+<!--                    <field name="entry_counter"/>-->
+<!--                    <field name="exit_counter"/>-->
 <!--                    <field name="for_companies"/>-->
 <!--                    <field name="authority"/>-->
 <!--                    <field name="supervisor_name"/>-->
@@ -119,7 +120,7 @@
 
                             </group>
                             <group>
-                                <field name="car_type"/>
+<!--                                <field name="car_type"/>-->
 
                             </group>
 
@@ -144,7 +145,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="car_type"/>
+<!--                    <field name="car_type"/>-->
 
                 </tree>
             </field>

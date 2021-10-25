@@ -75,8 +75,8 @@
 <!--                                <field name="fix_date" force_save="1"/>-->
 <!--                                <field name="delivery_date" force_save="1"/>-->
                                 <field name="fuel_tank" force_save="1"/>
-                                <field name="entry_counter" force_save="1"/>
-                                <field name="exit_counter" force_save="1"/>
+<!--                                <field name="entry_counter" force_save="1"/>-->
+<!--                                <field name="exit_counter" force_save="1"/>-->
 <!--                                <field name="for_companies" force_save="1"/>-->
 <!--                                <field name="authority" force_save="1"/>-->
 <!--                                <field name="supervisor_name" force_save="1"/>-->

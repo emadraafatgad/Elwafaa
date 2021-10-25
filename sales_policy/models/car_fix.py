@@ -12,6 +12,7 @@ class CarsFixClass(models.Model):
         ('draft', "Draft"),
         ('confirmed', "Confirmed"),
         ('reserve', "Reserved"),
+        ('request', "Request Parts"),
         ('finish', "Fixing Finished"),
         ('invoice', "Invoiced"),
 
@@ -19,7 +20,7 @@ class CarsFixClass(models.Model):
 
     @api.multi
     def action_draft(self):
-        self.state = 'draft'
+        self.state = 'request'
 
     @api.multi
     def action_confirm(self):
@@ -31,16 +32,16 @@ class CarsFixClass(models.Model):
 
 
     customer = fields.Many2one('res.partner', string='Customer/Company',track_visibility='onchange',required=True)
-    car = fields.Many2one('car.data', string='Car', domain="[('customer','=',customer)]",track_visibility='onchange')
-    plate_number = fields.Char(string='Plate Number', related='car.plate_number',track_visibility='onchange')
-    chassis_number = fields.Char(string='Chassis Number', related='car.chassis_number',track_visibility='onchange')
-    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True, related='car.car_model')
-    driver_name = fields.Char(string='Driver Name', related='car.driver_name')
+    car = fields.Many2one('car.data', string='Car Information', domain="[('customer','=',customer)]",track_visibility='onchange',required=True)
+    plate_number = fields.Char(string='Plate Number',track_visibility='onchange',required=True,related='car.plate_number',readonly=False)
+    chassis_number = fields.Char(string='Chassis Number',track_visibility='onchange',required=True,related='car.chassis_number',readonly=False)
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,required=True,related='car.car_model',readonly=False)
+    driver_name = fields.Char(string='Driver Name',related='car.driver_name',readonly=False)
     fuel_tank = fields.Selection(
-        [('zero', '0'), ('quarter', '1/4'), ('one_th', '1/3'), ('th_fo', '3/4'), ('one', '1')], string='Fuel Tank',
-        related='car.fuel_tank')
-    entry_counter = fields.Char(string='Entry Counter per KM', related='car.entry_counter')
-    exit_counter = fields.Char(string='Exit Counter per KM', related='car.exit_counter')
+        [('zero', '0'), ('quarter', '1/4'), ('one_th', '1/3'), ('th_fo', '3/4'), ('one', '1')], string='Fuel Tank',related='car.fuel_tank',readonly=False
+       )
+    entry_counter = fields.Char(string='Entry Counter per KM')
+    exit_counter = fields.Char(string='Exit Counter per KM')
 
     sliders = fields.Boolean(string='سوست',track_visibility='onchange')
     traps = fields.Boolean(string='عفشة',track_visibility='onchange')
@@ -56,12 +57,13 @@ class CarsFixClass(models.Model):
     customer_complain = fields.Text(string='شكوي العميل ',track_visibility='onchange')
     car_issue=fields.Many2one('car.issue',string='Car Issue')
 
-    service = fields.One2many('worker.service', 'service_inv', string='Service',track_visibility='onchange',copy=True,store=True)
-    parts = fields.One2many('car.part', 'car_parts_inv', string='Car Parts',track_visibility='onchange',copy=True,store=True)
+    service = fields.One2many('worker.service', 'service_inv', string='Service',track_visibility='onchange',store=True)
+    parts = fields.One2many('car.part', 'car_parts_inv', string='Car Parts',track_visibility='onchange',store=True)
     operation_type = fields.Many2one('stock.picking.type', string='Operation Type',track_visibility='onchange')
     location_id = fields.Many2one('stock.location', string='Source Location	',track_visibility='onchange',related='operation_type.default_location_src_id')
     location_dest_id = fields.Many2one('stock.location', string='Destination Location',track_visibility='onchange',related='operation_type.default_location_dest_id')
 
+    counter = fields.Integer(default=1,store=True,copy=True)
     @api.multi
     @api.constrains('parts','service')
     def _check_price_unit(self):
@@ -96,7 +98,7 @@ class CarsFixClass(models.Model):
                         'name': str(line.product.name),
                         'price_unit': line.price_unit,
                         'account_id': line.account_id.id,
-                        'car_type': line.car_type.id,
+                        # 'car_type': line.car_type.id,
                         'car_model': line.car_model.id,
 
                     })]
@@ -135,6 +137,7 @@ class CarsFixClass(models.Model):
 
     @api.multi
     def create_delivery_records_in_the_stock(self):
+        self.counter = self.counter+1
         if len(self.parts) ==1:
             if self.parts.quantity_done >0:
                 raise ValidationError(
@@ -158,6 +161,8 @@ class CarsFixClass(models.Model):
             'supervisor_name': self.supervisor_name,
             'technician_name': self.technician_name,
             'plate_number': self.plate_number,
+            'car_id': self.id,
+            'counter': self.counter,
 
         })
         for line in self.parts:
@@ -176,7 +181,10 @@ class CarsFixClass(models.Model):
 
                     })]
                 })
+        # self.counter=extra_count +1
         self.state = 'confirmed'
+        employee.state='waiting'
+        employee.action_done()
 
         # for line in self.emp_comparison:
         #     for record in self.env['hr.employee'].search([('name', '=', line.emp_name.name)]):
@@ -202,22 +210,36 @@ class CarsFixClass(models.Model):
     def action_reserve(self):
         for line in self:
             asd = self.env['stock.picking'].search(
-                [('partner_id', '=', line.customer.id), ('supervisor_name', '=', line.supervisor_name),('technician_name', '=', line.technician_name),('plate_number', '=', line.plate_number)])
+                [('partner_id', '=', line.customer.id), ('supervisor_name', '=', line.supervisor_name),('technician_name', '=', line.technician_name),('plate_number', '=', line.plate_number),('car_id', '=', line.id),('counter', '=', line.counter)])
             if asd:
-                print(asd)
                 for rec in asd:
-                    if rec.state == 'done':
+                    if rec.state == 'assigned':
                         for m in rec.move_ids_without_package:
                             for record in line.parts:
                                  if m.product_id.id == record.product.id and m.product_uom_qty == record.quantity :
-                                     print('hello dear')
-                                     record.quantity_done = m.quantity_done
-                                     record.state = m.state
-            for k in line.parts:
-                if k.quantity_done <=0:
-                    raise ValidationError(_('some quantities not reserved yet please check your stock to complete process.'))
-                else:
-                        line.state = 'reserve'
+                                     if m.reserved_availability >0:
+                                         record.quantity_done = m.reserved_availability
+                                         record.done = m.quantity_done
+                                         record.state = m.state
+                                     else:
+                                         raise ValidationError(
+                                             _('some quantities not reserved yet please check your stock to complete process.'))
+
+
+                    elif rec.state == 'done':
+                        for m in rec.move_ids_without_package:
+                            for record in line.parts:
+                                 if m.product_id.id == record.product.id and m.product_uom_qty == record.quantity :
+                                     if m.quantity_done > 0:
+                                         record.done = m.quantity_done
+                                         record.state = m.state
+                                         self.state = 'reserve'
+                                     else:
+                                         raise ValidationError(
+                                             _('some quantities not done yet please check your stock to complete process.'))
+                    else:
+                        raise ValidationError(
+                            _('some quantities not reserved yet please check your stock to complete process.'))
 
 
 class CarsPartsClass(models.Model):
@@ -255,11 +277,12 @@ class CarsPartsClass(models.Model):
         ('line_section', "Section"),
         ('line_note', "Note")], default=False, help="Technical field for UX purpose.")
 
-    product = fields.Many2one('product.product', string='Product',track_visibility='onchange',domain="[('car_model','=',car_model)]")
+    product = fields.Many2one('product.product', string='Product',track_visibility='onchange',)
     car_type = fields.Many2one('car.data', string='Car',compute='cal_car_type_parts_inv_car',store=True)
-    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,compute='cal_car_type_parts_inv_car')
+    car_model = fields.Many2one('model.car', string='Car Model', store=True,compute='cal_car_type_parts_inv_car')
     quantity = fields.Float(string='Quantity',track_visibility='onchange')
-    quantity_done = fields.Float(string='Reserved Quantity',readonly=True,track_visibility='onchange')
+    quantity_done = fields.Float(string='Available Quantity',store=True,readonly=True,track_visibility='onchange')
+    done = fields.Float(string='Done Quantity',store=True, readonly=True, track_visibility='onchange')
     product_uom = fields.Many2one('uom.uom', string='Unit of measure',track_visibility='onchange',related='product.uom_id')
     customer = fields.Many2one('res.partner', string='Customer/Company',related='car_parts_inv.customer')
     supervisor_name = fields.Char('اسم المشرف',related='car_parts_inv.supervisor_name',track_visibility='onchange')
@@ -280,17 +303,17 @@ class CarsPartsClass(models.Model):
     @api.onchange('product','car_parts_inv')
     def cal_car_type_parts_inv_car(self):
         for rec in self:
-           rec.car_type = rec.car_parts_inv.car
+           # rec.car_type = rec.car_parts_inv.car
            rec.car_model = rec.car_parts_inv.car_model
 
     price_unit = fields.Float('Price', compute='check_product_company_priclist')
 
     @api.multi
-    @api.depends('product', 'customer','car_model','car_type')
+    @api.depends('product', 'customer','car_model')
     def check_product_company_priclist(self):
         for rec in self:
             asd = rec.env['company.price_bridge'].search(
-                [('customerr', '=', rec.customer.id), ('product', '=', rec.product.id),('car_model', '=', rec.car_model.id), ('car_type', '=', rec.car_type.id)])
+                [('customerr', '=', rec.customer.id), ('product', '=', rec.product.id),('car_model', '=', rec.car_model.id)])
             if asd:
                 rec.price_unit = asd.total
 
@@ -317,6 +340,8 @@ class StockPickingClass(models.Model):
     supervisor_name = fields.Char('اسم المشرف',track_visibility='onchange')
     technician_name = fields.Char('اسم المتخصص ',track_visibility='onchange')
     plate_number = fields.Char(string='Plate Number',track_visibility='onchange')
+    car_id = fields.Many2one('car.fix', track_visibility='onchange')
+    counter = fields.Integer(default=1,store=True,copy=True)
 
 
 

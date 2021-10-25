@@ -6,19 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-25 12:28+0000\n"
-"PO-Revision-Date: 2021-10-25 12:28+0000\n"
+"POT-Creation-Date: 2021-09-14 10:46+0000\n"
+"PO-Revision-Date: 2021-09-14 10:46+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-
-#. module: sales_policy
-#: model:ir.actions.act_window,name:sales_policy.action_workshop_data
-msgid " بيانات الورش"
-msgstr ""
 
 #. module: sales_policy
 #: selection:car.data,fuel_tank:0
@@ -50,7 +45,7 @@ msgstr "نسبة الاكسسوارات"
 #: model:ir.model.fields,field_description:sales_policy.field_car_part__account_id
 #: model:ir.model.fields,field_description:sales_policy.field_worker_service__account_id
 msgid "Account"
-msgstr "الحساب"
+msgstr "حساب"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_res_partner__accounting_manager_name
@@ -76,7 +71,7 @@ msgstr "هاتف مدير الحسابات"
 #: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_needaction
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_needaction
 msgid "Action Needed"
-msgstr "إجراء مطلوب"
+msgstr "يلزم إجراء"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_area_data__activity_ids
@@ -90,12 +85,12 @@ msgstr "إجراء مطلوب"
 #: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__activity_ids
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__activity_ids
 msgid "Activities"
-msgstr "الأنشطة"
+msgstr "أنشطة"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_company_activity__name
 msgid "Activity"
-msgstr "النشاط"
+msgstr "نشاط"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_area_data__activity_state
@@ -124,19 +119,15 @@ msgstr "منطقة"
 
 #. module: sales_policy
 #: model:ir.actions.act_window,name:sales_policy.action_area_data
-#: model:ir.ui.menu,name:sales_policy.menu_area_record_menu
+#: model:ir.ui.menu,name:sales_policy.menu_area_menu
 msgid "Area Data"
 msgstr "بيانات المنطقة"
 
 #. module: sales_policy
 #: model:ir.actions.act_window,name:sales_policy.action_area_record
+#: model:ir.ui.menu,name:sales_policy.menu_area_record_menu
 msgid "Area Record"
 msgstr "سجل المنطقة"
-
-#. module: sales_policy
-#: model:ir.ui.menu,name:sales_policy.menu_area_menu
-msgid "Area Report"
-msgstr "تقرير المنطقة"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_area_data__message_attachment_count
@@ -150,23 +141,18 @@ msgstr "تقرير المنطقة"
 #: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_attachment_count
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_attachment_count
 msgid "Attachment Count"
-msgstr "عدد المرفقات"
+msgstr "عدد المرفقين"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_res_partner__attachment
 #: model:ir.model.fields,field_description:sales_policy.field_res_users__attachment
 msgid "Attachments"
-msgstr "المُرفقات"
+msgstr "المرفقين"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_fix__authority
 msgid "Authority"
 msgstr "سلطة"
-
-#. module: sales_policy
-#: model:ir.model.fields,field_description:sales_policy.field_car_part__quantity_done
-msgid "Available Quantity"
-msgstr ""
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_res_partner__average_customer_consumption
@@ -201,10 +187,13 @@ msgid "Cancelled"
 msgstr "تم الالغاء"
 
 #. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_fix__car
 #: model:ir.model.fields,field_description:sales_policy.field_car_part__car_type
 #: model:ir.model.fields,field_description:sales_policy.field_company_price__car
+#: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__car_type
 #: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__car_type
-#: model:ir.model.fields,field_description:sales_policy.field_stock_picking__car_id
+#: model:ir.model.fields,field_description:sales_policy.field_sale_order_line__car_type
+#: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__car
 msgid "Car"
 msgstr "سيارة"
 
@@ -212,11 +201,6 @@ msgstr "سيارة"
 #: model:ir.actions.act_window,name:sales_policy.action_car_data
 msgid "Car Data"
 msgstr "بيانات السيارة"
-
-#. module: sales_policy
-#: model:ir.model.fields,field_description:sales_policy.field_car_fix__car
-msgid "Car Information"
-msgstr "معلومات السيارة"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_fix__car_issue
@@ -253,6 +237,7 @@ msgstr "قطع غيار السيارات"
 msgid "Car Parts Inv"
 msgstr "قطع غيار السيارات"
 
+
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_data__car_type
 #: model:ir.model.fields,field_description:sales_policy.field_car_type__name
@@ -266,6 +251,7 @@ msgstr "نوع السيارة"
 #: model:ir.model.fields,field_description:sales_policy.field_res_partner__cars
 #: model:ir.model.fields,field_description:sales_policy.field_res_users__cars
 #: model:ir.model.fields,field_description:sales_policy.field_sale_order__cars
+#: model:ir.ui.menu,name:sales_policy.menu_cars_root_menu
 #: model_terms:ir.ui.view,arch_db:sales_policy.res_partnert_inherit_form_view
 #: model_terms:ir.ui.view,arch_db:sales_policy.sale_order_inherit_form_view
 msgid "Cars"
@@ -312,7 +298,7 @@ msgstr "رقم الشاسيه"
 #. module: sales_policy
 #: model_terms:ir.ui.view,arch_db:sales_policy.car_fix_form_view
 msgid "Check Availability"
-msgstr "تحقق من توفر الكمية"
+msgstr "التحقق من إتاحتها"
 
 #. module: sales_policy
 #: selection:company.price,categories:0
@@ -353,11 +339,6 @@ msgid "Competitor Companies"
 msgstr "الشركات المنافسة"
 
 #. module: sales_policy
-#: model:ir.ui.menu,name:sales_policy.menu_cars_root_menu
-msgid "Configuration"
-msgstr "الإعدادات"
-
-#. module: sales_policy
 #: model_terms:ir.ui.view,arch_db:sales_policy.company_price_form_view
 msgid "Confirm"
 msgstr "تأكيد"
@@ -371,18 +352,12 @@ msgstr "تم التأكيد"
 #. module: sales_policy
 #: model:ir.model,name:sales_policy.model_res_partner
 msgid "Contact"
-msgstr "جهة الاتصال"
-
-#. module: sales_policy
-#: model:ir.model.fields,field_description:sales_policy.field_car_fix__counter
-#: model:ir.model.fields,field_description:sales_policy.field_stock_picking__counter
-msgid "Counter"
-msgstr ""
+msgstr "وسيلة اتصال"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_area_record__country
 msgid "Country"
-msgstr "دولة"
+msgstr ""دولة""
 
 #. module: sales_policy
 #: model_terms:ir.ui.view,arch_db:sales_policy.car_fix_form_view
@@ -413,7 +388,7 @@ msgstr "إنشاء فاتورة"
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__create_uid
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_table__create_uid
 msgid "Created by"
-msgstr "أنشئ بواسطة"
+msgstr "انشأ من قبل"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_area_data__create_date
@@ -439,7 +414,7 @@ msgstr "أنشئ بواسطة"
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__create_date
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_table__create_date
 msgid "Created on"
-msgstr "أنشئ في"
+msgstr "تم إنشاؤها في"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_data__customer
@@ -447,7 +422,7 @@ msgstr "أنشئ في"
 #: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__customerr
 #: model:ir.model.fields,field_description:sales_policy.field_sale_order_line__customer
 msgid "Customer"
-msgstr "العميل"
+msgstr "عميل"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_res_partner__customer_evaluation
@@ -466,7 +441,7 @@ msgstr "العميل / الشركة"
 #: model:ir.model.fields,field_description:sales_policy.field_company_price__date
 #: model:ir.model.fields,field_description:sales_policy.field_company_price__date2
 msgid "Date"
-msgstr "التاريخ"
+msgstr "تاريخ"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_res_partner__dealing_way
@@ -477,17 +452,18 @@ msgstr "طريقة التعامل"
 #. module: sales_policy
 #: model:ir.model.fields,help:sales_policy.field_car_part__product_uom
 msgid "Default unit of measure used for all stock operations."
-msgstr "وحده القياس الافتراضية المستخدمة لجميع عمليات المخزون."
+msgstr "وحدة القياس الافتراضية المستخدمة لجميع العمليات المخزنية."
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_fix__delivery_date
 msgid "Delivery date"
 msgstr "تاريخ التسليم"
 
+
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_fix__location_dest_id
 msgid "Destination Location"
-msgstr "الوجهة"
+msgstr "موقع الاستلام"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_area_data__display_name
@@ -513,7 +489,7 @@ msgstr "الوجهة"
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__display_name
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_table__display_name
 msgid "Display Name"
-msgstr "الاسم المعروض"
+msgstr "اسم العرض"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_part__display_type
@@ -522,14 +498,8 @@ msgstr "نوع العرض"
 
 #. module: sales_policy
 #: selection:car.part,state:0
-#: model_terms:ir.ui.view,arch_db:sales_policy.car_fix_form_view
 msgid "Done"
 msgstr "انتهي"
-
-#. module: sales_policy
-#: model:ir.model.fields,field_description:sales_policy.field_car_part__done
-msgid "Done Quantity"
-msgstr "الكميات التامة"
 
 #. module: sales_policy
 #: selection:car.fix,state:0
@@ -550,6 +520,7 @@ msgid "E-mail"
 msgstr "بريد الالكتروني"
 
 #. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__entry_counter
 #: model:ir.model.fields,field_description:sales_policy.field_car_fix__entry_counter
 msgid "Entry Counter per KM"
 msgstr "عداد الدخول بالكيلومتر"
@@ -560,14 +531,10 @@ msgid "Entry date"
 msgstr "موعد الدخول"
 
 #. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_data__exit_counter
 #: model:ir.model.fields,field_description:sales_policy.field_car_fix__exit_counter
 msgid "Exit Counter per KM"
 msgstr "عداد الخروج بالكيلومتر"
-
-#. module: sales_policy
-#: model_terms:ir.ui.view,arch_db:sales_policy.temp_price_list_form_view
-msgid "Filter"
-msgstr "تصفية النتائج"
 
 #. module: sales_policy
 #: model_terms:ir.ui.view,arch_db:sales_policy.car_fix_form_view
@@ -608,7 +575,7 @@ msgstr "انتهى الإصلاح"
 #: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_follower_ids
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_follower_ids
 msgid "Followers"
-msgstr "المتابعون"
+msgstr "متابعون"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_area_data__message_channel_ids
@@ -636,7 +603,7 @@ msgstr "المتابعون (القنوات)"
 #: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_partner_ids
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_partner_ids
 msgid "Followers (Partners)"
-msgstr "المتابعون (الشركاء)"
+msgstr "المتابعون (العملاء)"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_data__fuel_tank
@@ -678,7 +645,7 @@ msgstr "محافظة"
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__id
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_table__id
 msgid "ID"
-msgstr "المعرف"
+msgstr "الرقم القومي"
 
 #. module: sales_policy
 #: model:ir.model.fields,help:sales_policy.field_area_data__message_unread
@@ -692,7 +659,7 @@ msgstr "المعرف"
 #: model:ir.model.fields,help:sales_policy.field_temp_price_list__message_unread
 #: model:ir.model.fields,help:sales_policy.field_workshop_info__message_unread
 msgid "If checked new messages require your attention."
-msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+msgstr ".إذا تم تحديد رسائل جديدة تتطلب انتباهك"
 
 #. module: sales_policy
 #: model:ir.model.fields,help:sales_policy.field_area_data__message_needaction
@@ -706,7 +673,7 @@ msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج
 #: model:ir.model.fields,help:sales_policy.field_temp_price_list__message_needaction
 #: model:ir.model.fields,help:sales_policy.field_workshop_info__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج لرؤيتها."
+msgstr ".إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك"
 
 #. module: sales_policy
 #: model:ir.model.fields,help:sales_policy.field_area_data__message_has_error
@@ -720,7 +687,7 @@ msgstr "إذا كان محددًا، فهناك رسائل جديدة تحتاج
 #: model:ir.model.fields,help:sales_policy.field_temp_price_list__message_has_error
 #: model:ir.model.fields,help:sales_policy.field_workshop_info__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr "إذا كان محددًا، فقد حدث خطأ في تسليم بعض الرسائل."
+msgstr ".إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم"
 
 #. module: sales_policy
 #: selection:company.price,categories:0
@@ -782,7 +749,7 @@ msgstr "مشكلة"
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info____last_update
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_table____last_update
 msgid "Last Modified on"
-msgstr "آخر تعديل في"
+msgstr "تاريخ آخر تعديل"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_area_data__write_uid
@@ -839,7 +806,7 @@ msgstr "آخر تحديث في"
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__temp_price
 msgid "Lines"
-msgstr "البنود"
+msgstr "بنود"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_area_data__message_main_attachment_id
@@ -853,7 +820,7 @@ msgstr "البنود"
 #: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_main_attachment_id
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_main_attachment_id
 msgid "Main Attachment"
-msgstr "المرفق الرئيسي"
+msgstr "مرفق رئيسي"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_merchants_table__merchants_inverse
@@ -902,7 +869,7 @@ msgstr "خطأ في تسليم الرسائل"
 #: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_ids
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_ids
 msgid "Messages"
-msgstr "الرسائل"
+msgstr "رسائل"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_res_partner__movement_responsible_name
@@ -1021,7 +988,7 @@ msgstr "عدد الأيام"
 #: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_has_error_counter
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_has_error_counter
 msgid "Number of error"
-msgstr "عدد الأخطاء"
+msgstr "عدد الاخطاء"
 
 #. module: sales_policy
 #: model:ir.model.fields,help:sales_policy.field_area_data__message_needaction_counter
@@ -1035,7 +1002,7 @@ msgstr "عدد الأخطاء"
 #: model:ir.model.fields,help:sales_policy.field_temp_price_list__message_needaction_counter
 #: model:ir.model.fields,help:sales_policy.field_workshop_info__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr "عدد الرسائل التي تتطلب إجراء"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
 
 #. module: sales_policy
 #: model:ir.model.fields,help:sales_policy.field_area_data__message_has_error_counter
@@ -1049,7 +1016,7 @@ msgstr "عدد الرسائل التي تتطلب إجراء"
 #: model:ir.model.fields,help:sales_policy.field_temp_price_list__message_has_error_counter
 #: model:ir.model.fields,help:sales_policy.field_workshop_info__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
 
 #. module: sales_policy
 #: model:ir.model.fields,help:sales_policy.field_area_data__message_unread_counter
@@ -1063,7 +1030,13 @@ msgstr "عدد الرسائل الحادث بها خطأ في التسليم"
 #: model:ir.model.fields,help:sales_policy.field_temp_price_list__message_unread_counter
 #: model:ir.model.fields,help:sales_policy.field_workshop_info__message_unread_counter
 msgid "Number of unread messages"
-msgstr "عدد الرسائل الجديدة"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: sales_policy
+#: sql_constraint:car.type:0
+#: sql_constraint:model.car:0
+msgid "Only one value can be defined for each given usage!"
+msgstr "يمكن تحديد قيمة واحدة فقط لكل استخدام معي!"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_fix__operation_type
@@ -1101,17 +1074,17 @@ msgstr "هاتف المالك"
 #: model:ir.model.fields,field_description:sales_policy.field_res_partner__payment_method
 #: model:ir.model.fields,field_description:sales_policy.field_res_users__payment_method
 msgid "Payment Method"
-msgstr "طريقة السداد"
+msgstr "طريقة الدفع او السداد"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_company_price__payment_term
 msgid "Payment Terms"
-msgstr "شروط السداد"
+msgstr "شروط الدفع"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__price_percentage
 msgid "Percentage"
-msgstr "النسبة"
+msgstr "النسبة المئوية"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_merchants_data__phone
@@ -1119,7 +1092,7 @@ msgstr "النسبة"
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__phone
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_table__phone
 msgid "Phone"
-msgstr "رقم الهاتف"
+msgstr "هاتف"
 
 #. module: sales_policy
 #: selection:res.partner,dealing_way:0
@@ -1203,7 +1176,7 @@ msgstr "جدول لائحة الأسعار"
 #: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__product
 #: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__product
 msgid "Product"
-msgstr "المنتج"
+msgstr "المنتجات"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_res_partner__purchase_responsible_name
@@ -1220,7 +1193,7 @@ msgstr "هاتف مسئول المشتريات"
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_part__quantity
 msgid "Quantity"
-msgstr "الكمية"
+msgstr "كمية"
 
 #. module: sales_policy
 #: selection:car.part,state:0
@@ -1233,11 +1206,6 @@ msgid "Request More Parts"
 msgstr "طلب المزيد من قطع الغيار"
 
 #. module: sales_policy
-#: selection:car.fix,state:0
-msgid "Request Parts"
-msgstr ""
-
-#. module: sales_policy
 #: model_terms:ir.ui.view,arch_db:sales_policy.car_fix_form_view
 msgid "Request from stock"
 msgstr "طلب من المخزون "
@@ -1246,6 +1214,11 @@ msgstr "طلب من المخزون "
 #: selection:car.fix,state:0
 msgid "Reserved"
 msgstr "تم الحجز"
+
+#. module: sales_policy
+#: model:ir.model.fields,field_description:sales_policy.field_car_part__quantity_done
+msgid "Reserved Quantity"
+msgstr "الكمية المحجوزة"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_area_data__activity_user_id
@@ -1259,7 +1232,7 @@ msgstr "تم الحجز"
 #: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__activity_user_id
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__activity_user_id
 msgid "Responsible User"
-msgstr "المستخدم المسئول"
+msgstr "المستخدم المسؤول"
 
 #. module: sales_policy
 #: model:ir.model,name:sales_policy.model_sale_order
@@ -1269,7 +1242,7 @@ msgstr "أمر البيع"
 #. module: sales_policy
 #: model:ir.model,name:sales_policy.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "سطر أمر المبيعات"
+msgstr "بند أوامر المبيعات"
 
 #. module: sales_policy
 #: model:ir.module.category,name:sales_policy.module_sales_policy_category
@@ -1289,13 +1262,13 @@ msgstr "مدير سياسة المبيعات"
 #. module: sales_policy
 #: model:ir.model.fields,help:sales_policy.field_team_target__team
 msgid "Sales Team the user is member of. Used to compute the members of a Sales Team through the inverse one2many"
-msgstr "فريق المبيعات الذي ينتمي إليه العضو. يستخدم لحساب أعضاء فريق المبيعات من خلال علاقة واحد إلى متعدد العكسية"
+msgstr "فريق المبيعات الذي يعد المستخدم عضوًا فيه. يستخدم لحساب أعضاء فريق المبيعات من خلال"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_res_partner__salesperson
 #: model:ir.model.fields,field_description:sales_policy.field_res_users__salesperson
 msgid "Salesperson"
-msgstr "موظف المبيعات"
+msgstr "مندوب مبيعات"
 
 #. module: sales_policy
 #: selection:car.part,display_type:0
@@ -1323,14 +1296,14 @@ msgstr "نسبة الخدمة"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_fix__location_id
-msgid "Source Location	"
+msgid "Source Location"
 msgstr "موقع المصدر"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_fix__state
 #: model:ir.model.fields,field_description:sales_policy.field_company_price__state
 msgid "State"
-msgstr "الحالة"
+msgstr "حالة"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_part__state
@@ -1352,15 +1325,16 @@ msgid "Status based on activities\n"
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
-msgstr "الحالة على أساس الأنشطة\n"
-"المتأخرة: تاريخ الاستحقاق مر\n"
-"اليوم: تاريخ النشاط هو اليوم\n"
-"المخطط: الأنشطة المستقبلية."
+msgstr "الحالة على أساس الأنشطة"
+"متأخر: تاريخ الاستحقاق فات بالفعل"
+"اليوم: تاريخ النشاط هو اليوم"
+"مخطط له: الأنشطة المستقبلية"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__steel_ok
 msgid "Steel"
 msgstr "حدايد / صلب"
+
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_company_price__steel_percentage
@@ -1402,7 +1376,7 @@ msgstr "هدف الفريق"
 #. module: sales_policy
 #: model:ir.model.fields,help:sales_policy.field_car_part__display_type
 msgid "Technical field for UX purpose."
-msgstr "حقل تقني يهدف لتحسين تجربة المستخدم."
+msgstr ".الحقل الفني لغرض تجربة المستخدم"
 
 #. module: sales_policy
 #: model:ir.actions.act_window,name:sales_policy.action_temp_price_list
@@ -1412,13 +1386,13 @@ msgstr "نموذج قائمة الأسعار "
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__name
 msgid "Template"
-msgstr "قالب"
+msgstr "نموذج"
 
 #. module: sales_policy
 #: model:ir.model.fields,help:sales_policy.field_car_part__account_id
 #: model:ir.model.fields,help:sales_policy.field_worker_service__account_id
 msgid "The income or expense account related to the selected product."
-msgstr "حساب الإيراد أو حساب المصروف المرتبط بالمنتج المُختار."
+msgstr ".حساب الدخل أو المصروفات المتعلقة بالمنتج المحدد"
 
 #. module: sales_policy
 #: model:ir.model.fields,help:sales_policy.field_car_fix__location_dest_id
@@ -1448,22 +1422,24 @@ msgstr "اليوم"
 #: model:ir.model.fields,field_description:sales_policy.field_company_price_bridge__total
 #: model:ir.model.fields,field_description:sales_policy.field_price_list_template_bridge__total
 msgid "Total"
-msgstr "الإجمالي"
+msgstr "المجموع"
 
 #. module: sales_policy
 #: model:ir.model,name:sales_policy.model_stock_picking
 msgid "Transfer"
-msgstr "نقل"
+msgstr "تحويل"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_sale_order_line__price_unit
 msgid "Unit Price"
 msgstr "سعر الوحدة"
 
+
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_part__product_uom
 msgid "Unit of measure"
 msgstr "وحدة القياس"
+
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_area_data__message_unread
@@ -1477,7 +1453,8 @@ msgstr "وحدة القياس"
 #: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_unread
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_unread
 msgid "Unread Messages"
-msgstr "الرسائل الجديدة"
+msgstr "رسائل غير مقروءة"
+
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_area_data__message_unread_counter
@@ -1491,17 +1468,20 @@ msgstr "الرسائل الجديدة"
 #: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__message_unread_counter
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr "عدد الرسائل الجديدة"
+msgstr "عداد الرسائل غير المقروءة"
+
 
 #. module: sales_policy
 #: selection:res.partner,work_method:0
 msgid "Untaxed Accrual"
 msgstr "الاستحقاق غير الخاضع للضريبة"
 
+
 #. module: sales_policy
 #: selection:res.partner,work_method:0
 msgid "Untaxed Cash"
 msgstr "النقد غير الخاضع للضريبة"
+
 
 #. module: sales_policy
 #: model_terms:ir.ui.view,arch_db:sales_policy.company_price_form_view
@@ -1512,6 +1492,7 @@ msgstr "تحديث"
 #: model:res.groups,name:sales_policy.modify_pricelist_group
 msgid "Update Sales Price List"
 msgstr "تحديث قائمة أسعار المبيعات"
+
 
 #. module: sales_policy
 #: selection:company.price,state:0
@@ -1527,7 +1508,7 @@ msgstr "نوع الورق المستخدم"
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_team_target__name
 msgid "User"
-msgstr "المستخدم"
+msgstr "مستخدم"
 
 #. module: sales_policy
 #: selection:res.partner,customer_evaluation:0
@@ -1545,7 +1526,7 @@ msgid "Waiting Another Operation"
 msgstr "في انتظار عملية أخرى"
 
 #. module: sales_policy
-#: code:addons/sales_policy/models/sales_quotation.py:69
+#: code:addons/sales_policy/models/sales_quotation.py:67
 #, python-format
 msgid "Warning for %s"
 msgstr "تنبيه ل"
@@ -1562,7 +1543,7 @@ msgstr "تنبيه ل"
 #: model:ir.model.fields,field_description:sales_policy.field_temp_price_list__website_message_ids
 #: model:ir.model.fields,field_description:sales_policy.field_workshop_info__website_message_ids
 msgid "Website Messages"
-msgstr "رسائل الموقع"
+msgstr "رسائل موقع الويب"
 
 #. module: sales_policy
 #: model:ir.model.fields,help:sales_policy.field_area_data__website_message_ids
@@ -1576,7 +1557,7 @@ msgstr "رسائل الموقع"
 #: model:ir.model.fields,help:sales_policy.field_temp_price_list__website_message_ids
 #: model:ir.model.fields,help:sales_policy.field_workshop_info__website_message_ids
 msgid "Website communication history"
-msgstr "سجل تواصل الموقع"
+msgstr "سجل اتصالات موقع الويب"
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_res_partner__work_method
@@ -1717,21 +1698,14 @@ msgid "services"
 msgstr "خدمات"
 
 #. module: sales_policy
-#: code:addons/sales_policy/models/car_fix.py:73
-#: code:addons/sales_policy/models/car_fix.py:77
+#: code:addons/sales_policy/models/car_fix.py:71
+#: code:addons/sales_policy/models/car_fix.py:75
 #, python-format
 msgid "some product for this company/customer has no price list please create price list for them to continue"
 msgstr "بعض المنتجات لهذه الشركة / العميل ليس لديها قائمة أسعار يرجى إنشاء قائمة أسعار لهم للمتابعة"
 
 #. module: sales_policy
-#: code:addons/sales_policy/models/car_fix.py:239
-#, python-format
-msgid "some quantities not done yet please check your stock to complete process."
-msgstr "بعض الكميات لم تتم بعد  ، يرجى التحقق من مخزونك لإكمال العملية "
-
-#. module: sales_policy
-#: code:addons/sales_policy/models/car_fix.py:226
-#: code:addons/sales_policy/models/car_fix.py:242
+#: code:addons/sales_policy/models/car_fix.py:218
 #, python-format
 msgid "some quantities not reserved yet please check your stock to complete process."
 msgstr ".بعض الكميات لم يتم حجزها بعد ، يرجى التحقق من مخزونك لإكمال العملية"
@@ -1747,7 +1721,7 @@ msgid "temp.price_list"
 msgstr "قائمة الأسعار المؤقتة"
 
 #. module: sales_policy
-#: code:addons/sales_policy/models/car_fix.py:144
+#: code:addons/sales_policy/models/car_fix.py:141
 #, python-format
 msgid "this quantities has requested before."
 msgstr ".طلبت هذه الكميات من قبل"
@@ -1790,7 +1764,7 @@ msgstr ""
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_fix__technician_name
 msgid "اسم الفني "
-msgstr "ِ"
+msgstr ""
 
 #. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_stock_picking__technician_name
@@ -1806,11 +1780,6 @@ msgid "اسم المشرف"
 msgstr ""
 
 #. module: sales_policy
-#: model:ir.ui.menu,name:sales_policy.menu_cars_main_root_menu
-msgid "السيارات"
-msgstr ""
-
-#. module: sales_policy
 #: model:ir.model.fields,field_description:sales_policy.field_car_fix__worker_name
 msgid "العمال"
 msgstr ""
@@ -1818,17 +1787,6 @@ msgstr ""
 #. module: sales_policy
 #: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
 msgid "امر تشغيل نقدا/أجل"
-msgstr ""
-
-#. module: sales_policy
-#: model:ir.actions.act_window,name:sales_policy.action_merchants_data
-#: model:ir.ui.menu,name:sales_policy.menu_merchants_menu
-msgid "بيانات التجار"
-msgstr ""
-
-#. module: sales_policy
-#: model:ir.ui.menu,name:sales_policy.menu_workshop_menu
-msgid "بيانات الورش "
 msgstr ""
 
 #. module: sales_policy
@@ -1961,6 +1919,6 @@ msgstr ""
 
 #. module: sales_policy
 #: model_terms:ir.ui.view,arch_db:sales_policy.car_reception_detection_temp
-msgid "نوع العربية"
+msgid "نوع السيارة"
 msgstr ""
 

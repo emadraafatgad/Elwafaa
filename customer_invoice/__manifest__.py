@@ -23,7 +23,7 @@
 
     # always loaded
     'data': [
-        # 'security/contact.xml',
+        'security/contact.xml',
         # 'security/ir.model.access.csv',
         'views/invoice.xml',
         'reports/customer_invoice_report.xml',

@@ -14,11 +14,14 @@ class AccountInvoiceClass(models.Model):
     total_steel_qty = fields.Float(string='Total Steel Quantities', track_visibility='onchange',compute='action_compute_total_accessories')
     mm = fields.Selection([('taxed_cash','Taxed Cash'),('Untaxed_cash','Untaxed Cash'),('taxed_accrual','Taxed Accrual'),('untaxed_accrual','Untaxed Accrual')],string='Work Method',default='taxed_cash',related='partner_id.work_method',track_visibility='onchange')
 
-    car = fields.Many2one('car.data', string='Car', track_visibility='onchange',domain="[('customer','=',partner_id)]",required=True)
+    total_gain = fields.Float(string='Total Gain',track_visibility='onchange',compute='action_compute_total_gain')
+    total_cost = fields.Float(string='Total Cost',track_visibility='onchange',compute='action_compute_total_gain')
+
+    car = fields.Many2one('car.data', string='Car Information', track_visibility='onchange',domain="[('customer','=',partner_id)]",required=True)
     plate_number = fields.Char(string='Plate Number', track_visibility='onchange',related='car.plate_number')
     chassis_number = fields.Char(string='Chassis Number',track_visibility='onchange',related='car.chassis_number')
-    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,domain="[('car_type','=',car)]",required=True)
-    driver_name = fields.Char(string='Driver Name')
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,required=True,related='car.car_model')
+    driver_name = fields.Char(string='Driver Name',related='car.driver_name')
     supervisor_name = fields.Char('اسم المشرف', track_visibility='onchange')
     technician_name = fields.Char('اسم الفني ', track_visibility='onchange')
     # invoice_line_ids = fields.One2many('account.invoice.line', 'invoice_id', string='Invoice Lines',
@@ -92,6 +95,15 @@ class AccountInvoiceClass(models.Model):
               rec.total_steel += line.price_subtotal
               rec.total_steel_qty += line.quantity
 
+    @api.multi
+    @api.depends('invoice_line_ids','amount_untaxed','total_cost')
+    def action_compute_total_gain(self):
+        for rec in self.invoice_line_ids:
+            self.total_cost += rec.product_cost
+        self.total_gain = self.amount_untaxed - self.total_cost
+
+
+
 
 
     # @api.multi
@@ -124,14 +136,14 @@ class ProducttemplateWafaClass(models.Model):
     service_ok = fields.Boolean(string='Service',track_visibility='onchange')
     steel_ok = fields.Boolean(string='Steel',track_visibility='onchange')
     car_model = fields.Many2one('model.car',string='Car Model',store=True,copy=True)
-    car_type = fields.Many2one('car.type', string='Car',track_visibility='onchange',related='car_model.car_type')
+    # car_type = fields.Many2one('car.type', string='Car',track_visibility='onchange',related='car_model.car_type')
 
 
 class ProductProductWafaClass(models.Model):
     _inherit="product.product"
 
     car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True)
-    car_type = fields.Many2one('car.type', string='Car', track_visibility='onchange', related='car_model.car_type')
+    # car_type = fields.Many2one('car.type', string='Car', track_visibility='onchange', related='car_model.car_type')
 
 
 class AccountInvoiceLineInheritWafa(models.Model):
@@ -140,7 +152,9 @@ class AccountInvoiceLineInheritWafa(models.Model):
     product_id = fields.Many2one('product.product', string='Product',ondelete='restrict', index=True,domain="[('car_model','=',car_model)]")
     method_pay = fields.Selection([('taxed_cash','Taxed Cash'),('Untaxed_cash','Untaxed Cash'),('taxed_accrual','Taxed Accrual'),('untaxed_accrual','Untaxed Accrual')],string='Work Method',default='taxed_cash',related='invoice_id.mm',track_visibility='onchange')
     price_unit = fields.Float(string='Unit Price', required=True, compute='_onchange_uom_id')
-    car_type = fields.Many2one('car.data', string='Car', compute='cal_type_car', store=True)
+    product_cost = fields.Float(string='Cost',related='product_id.standard_price')
+
+    # car_type = fields.Many2one('car.data', string='Car', compute='cal_type_car', store=True)
     car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,compute='cal_type_car')
 
 
@@ -148,14 +162,14 @@ class AccountInvoiceLineInheritWafa(models.Model):
     @api.depends('product_id', 'invoice_id')
     def cal_type_car(self):
         for rec in self:
-            rec.car_type = rec.invoice_id.car
+            # rec.car_type = rec.invoice_id.car
             rec.car_model = rec.invoice_id.car_model
     @api.multi
-    @api.onchange('uom_id', 'product_id','car_model','car_type')
+    @api.onchange('uom_id', 'product_id','car_model')
     def _onchange_uom_id(self):
         for rec in self:
             asd = rec.env['company.price_bridge'].search(
-                [('customerr', '=', rec.partner_id.id), ('product', '=', rec.product_id.id),('car_model', '=', rec.car_model.id), ('car_type', '=', rec.car_type.id)])
+                [('customerr', '=', rec.partner_id.id), ('product', '=', rec.product_id.id),('car_model', '=', rec.car_model.id)])
             if asd:
               for line in asd:
                 rec.price_unit = line.total

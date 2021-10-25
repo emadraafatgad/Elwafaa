@@ -14,7 +14,7 @@
                 </xpath>
                 <xpath expr="//sheet/notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='product_id']"
                        position="before">
-                    <field name="car_type"/>
+<!--                    <field name="car_type"/>-->
                     <field name="car_model"/>
 
 

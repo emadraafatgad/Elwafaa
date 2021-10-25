@@ -3,8 +3,12 @@
 
 
 
-        <record id="company_sales_system" model="res.groups">
-            <field name="name">Company Sales System</field>
+<!--        <record id="company_sales_system" model="res.groups">-->
+<!--            <field name="name">Company Sales System</field>-->
+<!--        </record>-->
+
+         <record id="invoice_gain_cost" model="res.groups">
+            <field name="name">View Invoice Cost And Gain</field>
         </record>
 
 

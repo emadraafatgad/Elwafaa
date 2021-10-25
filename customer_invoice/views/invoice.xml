@@ -43,14 +43,22 @@
                             <field name="total_steel_qty"/>
                         </group>
                     </group>
+                     <group>
+                            <field name="total_cost" groups="customer_invoice.invoice_gain_cost"/>
+                            <field name="total_gain" groups="customer_invoice.invoice_gain_cost"/>
+                        </group>
                     <!--                    </div>-->
 
                 </xpath>
                 <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='product_id']" position="after">
                     <field name="method_pay"/>
-                    <field name="car_type"/>
+<!--                    <field name="car_type"/>-->
                     <field name="car_model"/>
+
                 </xpath>
+                 <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_unit']" position="after">
+                      <field name="product_cost" groups="customer_invoice.invoice_gain_cost"/>
+               </xpath>
                 <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='product_id']" position="replace">
                     <field name="product_id" domain="[('sale_ok','=',True),('car_model','=',car_model)]"/>
                 </xpath>
@@ -200,9 +208,9 @@
                         <group>
                             <field name="car_model" string="Car Model" />
                         </group>
-                        <group>
-                            <field name="car_type" string="Car Type"/>
-                        </group>
+<!--                        <group>-->
+<!--                            <field name="car_type" string="Car Type"/>-->
+<!--                        </group>-->
 
 
                     </group>
@@ -235,9 +243,9 @@
                         <group>
                             <field name="car_model" string="Car Model"/>
                         </group>
-                        <group>
-                            <field name="car_type" string="Car Type"/>
-                        </group>
+<!--                        <group>-->
+<!--                            <field name="car_type" string="Car Type"/>-->
+<!--                        </group>-->
 
 
                     </group>
