@@ -23,7 +23,7 @@ class ResPartnerModify(models.Model):
     attachment = fields.Binary('Attachments', attachment=True,track_visibility='onchange')
     # attachment = fields.Many2many("ir.attachment",string='Upload Your Files',width='100%',length='100%',required=True)
 
-    Competitor_companies= fields.Many2one('competitive.company',string='Competitor Companies',track_visibility='onchange')
+    Competitor_companies= fields.Many2many('competitive.company',string='Competitor Companies',track_visibility='onchange')
 
     previous_deal = fields.Char('Previous Deal',track_visibility='onchange')
 
