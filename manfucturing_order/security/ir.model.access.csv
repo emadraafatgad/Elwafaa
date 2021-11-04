@@ -11,4 +11,3 @@ mrp_order_access,mrp_order_access,model_mrp_order,manfucturing_group,1,1,1,1
 mrp_order_bridge_steps_access,mrp_order_bridge_steps_access,model_mrp_order_bridge_steps,manfucturing_group,1,1,1,1
 mrp_order_bridge_access,mrp_order_bridge_access,model_mrp_order_bridge,manfucturing_group,1,1,1,1
 
-

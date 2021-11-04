@@ -1,104 +1,136 @@
 from odoo import models, fields, api, exceptions, _
+from odoo.exceptions import ValidationError
+
 
 class MrpRequestClass(models.Model):
     _name = 'mrp.request'
     _rec_name = 'customer'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    customer=fields.Many2one('res.partner',string='Customer',track_visibility='onchange')
-    product=fields.Many2one('product.product',string='Product',track_visibility='onchange')
-    attachment = fields.Binary('Attachments', attachment=True,track_visibility='onchange')
-    quantity = fields.Float(string='Quantity', track_visibility='onchange')
-    product_uom = fields.Many2one('uom.uom', string='Unit of measure', track_visibility='onchange')
-    delivery_date=fields.Date(string='Delivery Date',default=fields.Date.today(),store=True,copy=True,track_visibility='onchange')
+    customer = fields.Many2one('res.partner', string='Customer', track_visibility='onchange', required=True)
+    product = fields.Many2one('product.product', string='Product', track_visibility='onchange', required=True)
+    attachment = fields.Binary('Attachments', attachment=True, track_visibility='onchange')
+    quantity = fields.Float(string='Quantity', track_visibility='onchange', required=True)
+    product_uom = fields.Many2one('uom.uom', string='Unit of measure', readonly=True, track_visibility='onchange',
+                                  related='product.uom_id')
+    delivery_date = fields.Date(string='Delivery Date', default=fields.Date.today(), store=True, copy=True,
+                                track_visibility='onchange')
     source = fields.Char(string='Source Origin', track_visibility='onchange')
-    bom_template = fields.Many2one('temp.bom',string='Bill of Material')
+    bom_template = fields.Many2one('temp.bom', string='Bill of Material', domain="[('product', '=', product)]",
+                                   required=True)
+    seq = fields.Char('Sequence')
+    state = fields.Selection([
+        ('draft', "Draft"),
+        ('confirmed', "Confirmed"),
+        ('in_progress', "In Progress"),
+        ('lock', "Locked"),
+        ('cancel', "Cancelled"),
+    ], default='draft')
 
+    mrp_request_table = fields.One2many('mrp.request_bridge', 'bridge_inverse_mrp', track_visibility='onchange',
+                                        store=True, copy=True, compute='create_bom_template_records')
 
-    mrp_request_table=fields.One2many('mrp.request_bridge','bridge_inverse_mrp',track_visibility='onchange',store=True,copy=True)
+    @api.model
+    def create(self, vals):
+        vals['seq'] = self.env['ir.sequence'].next_by_code('mrp_request_sequence')
+        return super(MrpRequestClass, self).create(vals)
 
-    # @api.one
-    # @api.depends('pricelist_temp')
-    # def create_price_template_records(self):
-    #   if self.pricelist_temp:
-    #       l=[]
-    #       asd = self.env['temp.price_list'].search([('name', '=', self.pricelist_temp.name)])
-    #       if asd:
-    #           for rec in asd.temp_price:
-    #               l.append({'product':rec.product.id,
-    #                         'price': rec.price,
-    #                         'price_percentage': rec.price_percentage,
-    #                         'sign':rec.sign,
-    #                         'total':rec.total,
-    #                         'car_type': rec.car_type,
-    #                         'car_model': rec.car_model,
-    #
-    #               })
-    #           self.pricelist_table = l
-    #       # for line in self.emp_comparison:
-    #       #   for l in asd:
-    #       #       l.write({
-    #       #           'emp_comparison': [(0, 0, {
-    #       #               'required_program': line.required_program.id,
-    #       #               'emp_name': line.emp_name.id,
-    #       #               'emp_code': line.emp_no,
-    #       #               'ommat': line.ommat,
-    #       #           })]
-    #       #       })
-    # @api.one
-    # @api.depends('no_of_days')
-    # def _compute_date_amount(self):
-    #     for line in self:
-    #         if line.no_of_days ==0:
-    #             line.date2 =line.date
-    #         else:
-    #             planned = (datetime.datetime.strptime(str(line.date),'%Y-%m-%d') + datetime.timedelta(days=line.no_of_days)).strftime('%Y-%m-%d')
-    #             line.date2 = planned
-    #             line.date= line.date2
-    #             # break
-    #             # @api.multi
-    #             # def _compute_days(self):
-    #             #     d1=datetime.strptime(str(self.check_date),'%Y-%m-%d')
-    #             #     self.will_collection= d1 + timedelta(days=10)
+    @api.multi
+    @api.constrains('quantity')
+    def _check_quantity(self):
+        for rec in self:
+            if rec.quantity < 1:
+                raise ValidationError(
+                    _('quantity can not be less than 1'))
+            # for line in self.mrp_request_table:
+            #     if 0.0 >=  line.quantity:
+            #         raise ValidationError(_('quantity can not be less than 1'))
 
+    @api.one
+    @api.depends('bom_template')
+    def create_bom_template_records(self):
+        if self.bom_template:
+            l = []
+            asd = self.env['temp.bom'].search([('name', '=', self.bom_template.name)])
+            if asd:
+                for rec in asd.lines:
+                    l.append({
+                        'product': rec.product.id,
+                        'quantity': rec.quantity,
+                        'operation': rec.operation.id,
 
-    # state = fields.Selection([
-    #     ('draft', "Draft"),
-    #     ('confirmed', "Confirmed"),
-    #     ('update', "Updated"),
-    #
-    # ], default='draft')
+                    })
+                self.mrp_request_table = l
 
-    # @api.multi
-    # def action_draft(self):
-    #     self.state = 'draft'
-    #
-    # @api.multi
-    # def action_confirm(self):
-    #     self.state = 'confirmed'
-    #
-    # @api.multi
-    # def action_update(self):
-    #     self.state = 'update'
+    mrb_order_id = fields.Many2one('mrp.order', string='Manufacturing Order',
+                                   readonly=True, index=True, ondelete='restrict', copy=False,
+                                   help="Link to the automatically generated Manufacturing Order.")
 
+    @api.multi
+    def action_confirm(self):
+        order = self.env['mrp.order'].create({
+            'customer': self.customer.id,
+            'product': self.product.id,
+            'quantity': self.quantity,
+            'bill_of_materials': self.bom_template.id,
+            'date_start': fields.Date.today(),
+            'date_end': fields.Date.today(),
+            'routing': self.bom_template.routing.id,
+            'source': self.source,
+        })
+        for line in self.mrp_request_table:
+            for l in order:
+                l.write({
+                    'transfer_lines': [(0, 0, {
+                        'product': line.product.id,
+                        'to_consume': line.total_quantity,
+                        'operation': line.operation.id,
+                        # 'date_start': fields.Datetime.now(),
+                        # 'date_end': fields.Datetime.now(),
+
+                    })]
+                })
+        vals = {
+            'mrb_order_id': order.id,
+
+        }
+        self.write(vals)
+        self.state = 'confirmed'
+
+    @api.multi
+    def action_lock(self):
+        self.state = 'lock'
+
+    @api.multi
+    def action_cancel(self):
+        self.state = 'cancel'
 
 
 class MrpRequestBridgeBridge(models.Model):
     _name = 'mrp.request_bridge'
     _rec_name = 'product'
 
-    product = fields.Many2one('product.product', string='Product',track_visibility='onchange')
-    quantity = fields.Float(string='Quantity', track_visibility='onchange')
-    product_uom = fields.Many2one('uom.uom', string='Unit of measure', track_visibility='onchange')
-    total_quantity = fields.Float(string='Total Quantity', track_visibility='onchange',compute='compute_total_quantity_all')
-    inverse_quantity = fields.Float(string='Inverse Quantity',related='bridge_inverse_mrp.quantity')
+    product = fields.Many2one('product.product', string='Product', track_visibility='onchange', required=True)
+    quantity = fields.Float(string='Quantity', track_visibility='onchange', required=True)
+    product_uom = fields.Many2one('uom.uom', string='Unit of measure', track_visibility='onchange',
+                                  related='product.uom_id', readonly=True)
+    total_quantity = fields.Float(string='Total Quantity', track_visibility='onchange',
+                                  compute='compute_total_quantity_all')
+    operation = fields.Many2one('mrp.operation', string='Operation')
+    inverse_quantity = fields.Float(string='Inverse Quantity', related='bridge_inverse_mrp.quantity')
 
     bridge_inverse_mrp = fields.Many2one('mrp.request')
 
+    @api.multi
+    @api.constrains('quantity')
+    def _check_quantity(self):
+        for rec in self:
+            if rec.quantity < 1:
+                raise ValidationError(
+                    _('quantity can not be less than 1'))
 
     @api.multi
     @api.depends('inverse_quantity', 'quantity')
     def compute_total_quantity_all(self):
         for rec in self:
             rec.total_quantity = rec.inverse_quantity * rec.quantity
-

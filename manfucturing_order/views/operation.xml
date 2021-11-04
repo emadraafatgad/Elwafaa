@@ -11,8 +11,14 @@
                             <group>
                                 <field name="name"/>
                             </group>
+                             <group>
+                                <field name="work_center"/>
+                            </group>
 
                         </group>
+                         <group>
+                                <field name="description"/>
+                            </group>
                     </sheet>
 
                     <div class="oe_chatter">
@@ -33,6 +39,8 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name" />
+                     <field name="work_center" />
+                     <field name="description" />
                 </tree>
             </field>
         </record>
@@ -69,6 +77,10 @@
                             <group>
                                 <field name="name"/>
                             </group>
+                            <group>
+                               <field name="description" />
+                            </group>
+
 
                         </group>
                     </sheet>

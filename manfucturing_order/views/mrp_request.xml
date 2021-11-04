@@ -1,67 +1,84 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <data>
+        <record id="mrp_request_sequence_id" model="ir.sequence">
+            <field name="name">MRP Request Sequence Code</field>
+            <field name="code">mrp_request_sequence</field>
+            <field name="prefix">RQ</field>
+            <field eval="4" name="padding"/>
+        </record>
+
         <record id="mrp_request_form_view" model="ir.ui.view">
             <field name="name">mrp_request_form_view</field>
             <field name="model">mrp.request</field>
             <field name="arch" type="xml">
                 <form>
-                    <!--                    <header>-->
-                    <!--                        <button name="action_update" type="object"-->
-                    <!--                                string="Update" states="confirmed" class="btn-primary"-->
-                    <!--                                groups="sales_policy.modify_pricelist_group"-->
-                    <!--                        />-->
+                    <header>
+                        <button name="action_lock" type="object"
+                                string="Lock" states="draft,cancel" class="btn-primary"
+                        />
 
-                    <!--                        <button name="action_confirm" type="object"-->
-                    <!--                                string="Confirm" class="btn-primary" states="draft"-->
-                    <!--                                groups="sales_policy.sales_policy_manager_group"-->
-                    <!--                        />-->
+                        <button name="action_cancel" type="object"
+                                string="Cancel" states="draft" class="btn-primary"
+                        />
 
-                    <!--                        &lt;!&ndash;                        <button name="action_high_approve" type="object"&ndash;&gt;-->
-                    <!--                        &lt;!&ndash;                                string="HR Manager Approve" states="confirmed" class="btn-primary"&ndash;&gt;-->
-                    <!--                        &lt;!&ndash;                                groups="ommat_training_module.training_dept_manager_group"/>&ndash;&gt;-->
+                        <button name="action_confirm" type="object"
+                                string="Confirm" class="btn-primary" states="draft"
 
-                    <!--                        &lt;!&ndash;                        <button name="action_approve" type="object"&ndash;&gt;-->
-                    <!--                        &lt;!&ndash;                                string="General Manager Approve" states="high_approve" class="btn-primary"&ndash;&gt;-->
-                    <!--                        &lt;!&ndash;                                groups="ommat_training_module.training_general_manager_group"/>&ndash;&gt;-->
+                        />
 
+                        <!--                        <button name="action_high_approve" type="object"-->
+                        <!--                                string="HR Manager Approve" states="confirmed" class="btn-primary"-->
+                        <!--                                groups="ommat_training_module.training_dept_manager_group"/>-->
 
-                    <!--                        <field name="state" widget="statusbar"/>-->
+                        <!--                        <button name="action_approve" type="object"-->
+                        <!--                                string="General Manager Approve" states="high_approve" class="btn-primary"-->
+                        <!--                                groups="ommat_training_module.training_general_manager_group"/>-->
 
-                    <!--                    </header>-->
+                        <field name="state" widget="statusbar"/>
+                    </header>
                     <sheet>
+                        <h3>
+                            <field name="seq" readonly="1"/>
+                        </h3>
                         <group>
+
                             <group>
-                                <field name="customer" required="1"/>
-                                <field name="product"/>
-                                <label for="quantity"/>
+                                <field name="customer" required="1" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="product" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <label for="quantity" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
                                 <div class="o_row">
-                                    <field name="quantity" class="oe_inline"/>
-                                    <field name="product_uom" class="oe_inline"/>
+                                    <field name="quantity" class="oe_inline"
+                                           attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                    <field name="product_uom" class="oe_inline"
+                                           attrs="{'readonly':[('state', '!=', 'draft')]}"/>
                                 </div>
-                                <field name="bom_template"/>
+                                <field name="bom_template" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
                             </group>
                             <group>
 
-                                <field name="attachment"/>
-                                <field name="delivery_date"/>
-                                <field name="source"/>
+                                <field name="attachment" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="delivery_date" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="source" attrs="{'readonly':[('state', '!=', 'draft')]}"/>
+                                <field name="mrb_order_id"/>
                             </group>
                         </group>
                         <notebook>
-                                                    <page string="Lines" name="mrp_request_lines">
-                                                        <field name="mrp_request_table" widget="one2many_list" force_save="1">
-                                                            <tree editable="bottom">
-                                                                <field name="product" force_save="1"/>
-                                                                <field name="quantity" force_save="1"/>
-                                                                <field name="product_uom" force_save="1"/>
-                                                                <field name="total_quantity" force_save="1"/>
+                            <page string="Lines" name="mrp_request_lines">
+                                <field name="mrp_request_table" widget="one2many_list" force_save="1"
+                                       attrs="{'readonly':[('state', '!=', 'draft')]}">
+                                    <tree editable="bottom">
+                                        <field name="product" force_save="1"/>
+                                        <field name="quantity" force_save="1"/>
+                                        <field name="product_uom" force_save="1"/>
+                                        <field name="operation" force_save="1" required="1"/>
+                                        <field name="total_quantity" force_save="1"/>
 
 
-                                                            </tree>
-                                                        </field>
-                                                    </page>
-                                                </notebook>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
 
                     <div class="oe_chatter">
@@ -85,6 +102,7 @@
                     <field name="product"/>
                     <field name="quantity"/>
                     <field name="product_uom"/>
+                     <field name="state" />
                 </tree>
             </field>
         </record>
@@ -105,7 +123,7 @@
                   name="Manfucturing Request"
                   action="action_mrp_request"
                   parent="menu_mrp_root_menu"
-                  sequence="1"
+                  sequence="2"
 
         />
 

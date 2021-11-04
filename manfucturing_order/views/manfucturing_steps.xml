@@ -23,6 +23,8 @@
                                     <tree editable="bottom">
                                         <field name="operation" force_save="1"/>
                                         <field name="work_center" force_save="1"/>
+                                        <field name="time" force_save="1"/>
+                                        <field name="time_unit" force_save="1"/>
 
                                     </tree>
                                 </field>
