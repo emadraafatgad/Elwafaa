@@ -53,7 +53,7 @@
                                 groups="sales_policy.sales_policy_manager_group"
                         />
 
-                        <field name="state" widget="statusbar" />
+                        <field name="state" widget="statusbar" clickable="0"/>
 
                     </header>
                     <sheet>
@@ -78,7 +78,7 @@
                                 <field name="sliders"/>
                                 <field name="traps"/>
                                 <field name="danagel"/>
-                                <field name="car_issue"/>
+                                <field name="car_issue" widget="many2many_tags"/>
                             </group>
                             <group>
                                 <field name="fuel_tank"/>
@@ -127,7 +127,7 @@
                                     <tree string="services" editable="bottom">
                                         <field name="product" force_save="1"/>
                                         <field name="worker" force_save="1"/>
-                                        <field name="no_of_hours" force_save="1"/>
+                                        <field name="no_of_hours" force_save="1" widget="float_time"/>
                                         <field name="account_id" force_save="1"/>
                                         <field name="price_unit" force_save="1"/>
 
