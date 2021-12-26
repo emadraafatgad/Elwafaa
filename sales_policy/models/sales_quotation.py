@@ -1,6 +1,6 @@
-import dp as dp
 
 from odoo import models, fields, api, exceptions, _
+
 
 class SalesQuotationLineInherit(models.Model):
     _inherit = 'sale.order.line'

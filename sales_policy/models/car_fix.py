@@ -32,13 +32,13 @@ class CarsFixClass(models.Model):
 
 
     customer = fields.Many2one('res.partner', string='Customer/Company',track_visibility='onchange',required=True)
-    car = fields.Many2one('car.data', string='Car Information', domain="[('customer','=',customer)]",track_visibility='onchange',required=True)
-    plate_number = fields.Char(string='Plate Number',track_visibility='onchange',required=True,related='car.plate_number',readonly=False)
-    chassis_number = fields.Char(string='Chassis Number',track_visibility='onchange',required=True,related='car.chassis_number',readonly=False)
-    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,required=True,related='car.car_model',readonly=False)
-    driver_name = fields.Char(string='Driver Name',related='car.driver_name',readonly=False)
+    car = fields.Many2one('car.data', string='Car Information', domain="[('customer','=',customer)]",track_visibility='onchange')
+    plate_number = fields.Char(string='Plate Number',track_visibility='onchange',required=True,readonly=False)
+    chassis_number = fields.Char(string='Chassis Number',track_visibility='onchange',required=True,readonly=False)
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,required=True,readonly=False)
+    driver_name = fields.Char(string='Driver Name',readonly=False)
     fuel_tank = fields.Selection(
-        [('zero', '0'), ('quarter', '1/4'), ('one_th', '1/3'), ('th_fo', '3/4'), ('one', '1')], string='Fuel Tank',related='car.fuel_tank',readonly=False
+        [('zero', '0'), ('quarter', '1/4'), ('one_th', '1/3'), ('th_fo', '3/4'), ('one', '1')], string='Fuel Tank',readonly=False
        )
     entry_counter = fields.Char(string='Entry Counter per KM')
     exit_counter = fields.Char(string='Exit Counter per KM')

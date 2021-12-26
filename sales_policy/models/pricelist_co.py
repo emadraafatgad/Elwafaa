@@ -1,6 +1,7 @@
 from odoo import models, fields, api, exceptions, _
 import datetime
 # from  datetime import  datetime,date,timedelta
+
 class CompanyPriceList(models.Model):
     _name = 'company.price'
     _rec_name = 'customer'
@@ -16,7 +17,7 @@ class CompanyPriceList(models.Model):
     payment_term=fields.Many2one('payement.method',string='Payment Terms',track_visibility='onchange')
     no_of_days= fields.Integer('Number of days',related='payment_term.no_of_days')
     categories = fields.Selection([('companies','Companies'),('individuals','Individuals'),('workshops','Workshops')],string='Categories',track_visibility='onchange')
-    pricelist_table=fields.One2many('company.price_bridge','bridge_inverse_price',track_visibility='onchange',compute='create_price_template_records',store=True,copy=True)
+    pricelist_table=fields.One2many('company.price_bridge','bridge_inverse_price',track_visibility='onchange',store=True,copy=True)
     accessories_percentage= fields.Float(string='Accessories Percentage')
     steel_percentage= fields.Float(string='Steel Percentage')
     service_percentage= fields.Float(string='Service Percentage')
@@ -105,7 +106,7 @@ class CompanyPriceListBridge(models.Model):
     steel_percentage = fields.Float(string='Steel Percentage',related='bridge_inverse_price.steel_percentage')
     service_percentage = fields.Float(string='Service Percentage',related='bridge_inverse_price.service_percentage')
     # car_type = fields.Many2one('car.data', string='Car', compute='cal_car_type_inv', store=True,copy=True)
-    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,compute='cal_car_type_inv')
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True)
 
     @api.multi
     @api.depends('product', 'bridge_inverse_price')
@@ -190,13 +191,13 @@ class CompanyPriceListTemplate(models.Model):
     @api.multi
     def action_filter(self):
         for rec in self.temp_price:
-            asd = self.env['product.product'].search([('name', '=', rec.product.name),('car_model', '=', self.car_model.id)])
+            asd = self.env['product.product'].search([('name', '=', rec.product.name),('car_model', '=', self.car_model.id)],limit=1)
             if asd:
                 # for m in asd:
                 #     if m.car_model ==self.car_model:
                 #         print(m.id)
-
-                            rec.product= asd.id
+                rec.car_model = asd.car_model.id
+                rec.product= asd.id
 
 
 

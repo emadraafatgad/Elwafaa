@@ -1,5 +1,6 @@
 from odoo import models, fields, api, exceptions, _
 
+
 class ResPartnerModify(models.Model):
     _inherit = 'res.partner'
 
@@ -32,7 +33,7 @@ class ResPartnerModify(models.Model):
     best_price_for_customer=fields.Float('Best Price For Customer',track_visibility='onchange')
     average_customer_consumption = fields.Char('Average Customer Consumption',track_visibility='onchange')
     cars= fields.One2many('car.data','customer',string='Cars',track_visibility='onchange')
-    fix_cars = fields.One2many('car.fix', 'customer', string='Fixing Cars',track_visibility='onchange')
+    fix_cars = fields.One2many('car.fix','customer',string='Fixing Cars',track_visibility='onchange')
 
     credit_limit = fields.Float(string='حد الائتمان')
     customer_evaluation = fields.Selection([('bad','Bad'),('good','Good'),('very_good','Very Good')],string='Customer Evaluation',default='good',track_visibility='onchange')
