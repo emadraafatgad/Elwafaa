@@ -23,6 +23,19 @@ class CompanyPriceList(models.Model):
     service_percentage= fields.Float(string='Service Percentage')
     company_category = fields.Selection([('a','A'),('b','B'),('c','C'),('d','D'),('competitive','Competitive')],string='Company Category',track_visibility='onchange',related='customer.company_category')
 
+    @api.multi
+    def action_filter(self):
+        for rec in self.pricelist_table:
+            asd = self.env['product.product'].search(
+                [('name', '=', rec.product.name), ('car_model', '=', self.car_model.id)], limit=1)
+            if asd:
+                for m in asd:
+                    #     if m.car_model ==self.car_model:
+                    #         print(m.id)
+                    rec.product = m.id
+                    rec.car_model = self.car_model
+            # if rec.car_model != self.car_model:
+            #     rec.unlink()
 
     @api.one
     @api.depends('pricelist_temp')
@@ -106,14 +119,14 @@ class CompanyPriceListBridge(models.Model):
     steel_percentage = fields.Float(string='Steel Percentage',related='bridge_inverse_price.steel_percentage')
     service_percentage = fields.Float(string='Service Percentage',related='bridge_inverse_price.service_percentage')
     # car_type = fields.Many2one('car.data', string='Car', compute='cal_car_type_inv', store=True,copy=True)
-    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True)
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,related='bridge_inverse_price.car_model')
 
-    @api.multi
-    @api.depends('product', 'bridge_inverse_price')
-    def cal_car_type_inv(self):
-        for rec in self:
-            # rec.car_type = rec.bridge_inverse_price.car
-            rec.car_model = rec.bridge_inverse_price.car_model
+    # @api.multi
+    # @api.depends('product', 'bridge_inverse_price')
+    # def cal_car_type_inv(self):
+    #     for rec in self:
+    #         # rec.car_type = rec.bridge_inverse_price.car
+    #         rec.car_model = rec.bridge_inverse_price.car_model
 
     @api.one
     @api.depends('product')
@@ -191,13 +204,16 @@ class CompanyPriceListTemplate(models.Model):
     @api.multi
     def action_filter(self):
         for rec in self.temp_price:
-            asd = self.env['product.product'].search([('name', '=', rec.product.name),('car_model', '=', self.car_model.id)],limit=1)
+            asd = self.env['product.product'].search(
+                [('name', '=', rec.product.name), ('car_model', '=', self.car_model.id)], limit=1)
             if asd:
-                # for m in asd:
-                #     if m.car_model ==self.car_model:
-                #         print(m.id)
-                rec.car_model = asd.car_model.id
-                rec.product= asd.id
+                for m in asd:
+                    #     if m.car_model ==self.car_model:
+                    #         print(m.id)
+                    rec.product = m.id
+                    rec.car_model = self.car_model
+            # if rec.car_model != self.car_model:
+            #     rec.unlink()
 
 
 
@@ -216,14 +232,14 @@ class CompanyPriceListtTemplateBridge(models.Model):
     # customerr=fields.Many2one('res.partner',string='Customer',related='bridge_inverse_price.customer')
 
     car_type = fields.Many2one('car.data', string='Car', compute='cal_type_inv', store=True)
-    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,compute='cal_type_inv')
+    car_model = fields.Many2one('model.car', string='Car Model', store=True, copy=True,related='bridge_inverse_price_temp.car_model')
 
-    @api.multi
-    @api.onchange('product', 'bridge_inverse_price_temp')
-    def cal_type_inv(self):
-        for rec in self:
-            # rec.car_type = rec.bridge_inverse_price_temp.car
-            rec.car_model = rec.bridge_inverse_price_temp.car_model
+    # @api.multi
+    # @api.onchange('product', 'bridge_inverse_price_temp')
+    # def cal_type_inv(self):
+    #     for rec in self:
+    #         # rec.car_type = rec.bridge_inverse_price_temp.car
+    #         rec.car_model = rec.bridge_inverse_price_temp.car_model
 
 
     @api.one

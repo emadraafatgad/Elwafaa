@@ -41,16 +41,16 @@
                         <field name="dealing_way" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')],'required':[('categories', '=', 'company')]}"/>
                         <field name="payment_method" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')],'required':[('categories', '=', 'company')]}"/>
                         <field name="work_method" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')],'required':[('categories', '=', 'company')]}"/>
-                        <field name="attachment"  attrs="{'invisible':['|','|',('customer', '=', False),('categories',  '!=', 'company'),('work_method', 'not in', ('taxed_accrual','untaxed_accrual'))],'required':[('work_method', 'in', ('taxed_accrual','untaxed_accrual'))],'required':[('categories', '=', 'company')]}"/>
+                        <field name="attachment"  attrs="{'invisible':['|','|',('customer', '=', False),('categories',  '!=', 'company'),('work_method', 'not in', ('taxed_accrual','untaxed_accrual'))],'required':[('work_method', 'in', ('taxed_accrual','untaxed_accrual'))]}"/>
                         <field name="Competitor_companies" attrs="{'invisible':['|',('customer', '=', False),('categories',  '!=', 'company')],'required':[('categories', '=', 'company')]}"/>
                     </group>
 
                     <group>
-                        <field name="area" attrs="{'invisible':['|',('customer', '=', False),('categories', '=', 'company')],'required':[('categories', '=', 'company')]}"/>
-                        <field name="used_paper_type" attrs="{'invisible':['|',('customer', '=', False),('categories', '=', 'company')],'required':[('categories', '=', 'company')]}"/>
-                        <field name="best_price_for_customer" attrs="{'invisible':['|',('customer', '=', False),('categories', '=', 'company')],'required':[('categories', '=', 'company')]}"/>
+                        <field name="area" attrs="{'invisible':['|',('customer', '=', False),('categories', '=', 'company')],'required':[('categories', '!=', 'company')]}"/>
+                        <field name="used_paper_type" attrs="{'invisible':['|',('customer', '=', False),('categories', '=', 'company')],'required':[('categories', '!=', 'company')]}"/>
+                        <field name="best_price_for_customer" attrs="{'invisible':['|',('customer', '=', False),('categories', '=', 'company')],'required':[('categories', '!=', 'company')]}"/>
                         <field name="average_customer_consumption"
-                               attrs="{'invisible':['|',('customer', '=', False),('categories', '=', 'company')],'required':[('categories', '=', 'company')]}"/>
+                               attrs="{'invisible':['|',('customer', '=', False),('categories', '=', 'company')],'required':[('categories', '!=', 'company')]}"/>
                     </group>
                 </xpath>
                 <xpath expr="//sheet/div[@class='oe_title']/field[@name='company_type']" position="replace">
